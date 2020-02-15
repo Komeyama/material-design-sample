@@ -8,6 +8,12 @@ import kotlinx.android.synthetic.main.fragment_bottm_bar.*
 import timber.log.Timber
 
 class BottomBarFragment : Fragment() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -17,17 +23,13 @@ class BottomBarFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_bottm_bar, container, false)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
-
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
+
+        bottom_bar.replaceMenu(R.menu.bottom_bar_menu)
         bottom_bar.setNavigationOnClickListener{
             Timber.d("tap navigation button")
         }
-        bottom_bar.replaceMenu(R.menu.bottom_bar_menu)
         bottom_bar.setOnMenuItemClickListener { item ->
             when(item.itemId) {
                 R.id.bottom_bar_serch -> {
@@ -40,6 +42,9 @@ class BottomBarFragment : Fragment() {
                 }
                 else -> true
             }
+        }
+        bottom_fab.setOnClickListener {
+            Timber.d("tap bottom fab button")
         }
     }
 }
