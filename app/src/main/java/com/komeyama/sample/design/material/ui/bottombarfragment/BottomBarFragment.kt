@@ -1,4 +1,4 @@
-package com.komeyama.sample.design.material.ui.fragment
+package com.komeyama.sample.design.material.ui.bottombarfragment
 
 import android.os.Bundle
 import android.view.*
