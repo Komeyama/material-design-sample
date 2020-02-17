@@ -5,14 +5,16 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.komeyama.sample.design.material.ui.topfragment.TopFragment"
+        android:name="com.komeyama.sample.design.material.ui.mainfragment.MainFragment"
         android:label="MainFragment" >
         <action
             android:id="@+id/action_mainFragment_to_bottomBarFragment"
             app:destination="@id/bottomBarFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/bottomBarFragment"
         android:name="com.komeyama.sample.design.material.ui.bottombarfragment.BottomBarFragment"
         android:label="BottomBarFragment" />
+
 </navigation>

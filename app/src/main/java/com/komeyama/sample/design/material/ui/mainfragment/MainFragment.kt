@@ -1,4 +1,4 @@
-package com.komeyama.sample.design.material.ui.topfragment
+package com.komeyama.sample.design.material.ui.mainfragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.komeyama.sample.design.material.R
 import timber.log.Timber
 
-class TopFragment : Fragment(){
+class MainFragment : Fragment(){
     private var items: List<DesignInformation> = listOf(
         DesignInformation(R.drawable.top_image_bottom_bar, DesignName.APP_BARS_BOTTOM.designName),
         DesignInformation(R.drawable.ic_launcher_foreground, DesignName.COMING_SOON.designName),
@@ -28,7 +28,7 @@ class TopFragment : Fragment(){
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
 
-        val root = inflater.inflate(R.layout.fragment_top, container, false)
+        val root = inflater.inflate(R.layout.fragment_main, container, false)
         val topListAdapter = TopListAdapter(items, ItemClick {
             Timber.d("tap: %s",it)
             when(it.designName){
@@ -89,5 +89,6 @@ data class DesignInformation(val imageResource:Int, val designName: String)
 
 enum class DesignName(val designName: String){
     APP_BARS_BOTTOM("App bars: bottom"),
+    APP_BARS_TOP("App bars: top"),
     COMING_SOON("Coming soon")
 }

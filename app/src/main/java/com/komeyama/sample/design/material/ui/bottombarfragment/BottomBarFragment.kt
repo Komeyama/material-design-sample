@@ -25,7 +25,6 @@ class BottomBarFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-
         bottom_bar.replaceMenu(R.menu.bottom_bar_menu)
         bottom_bar.setNavigationOnClickListener{
             Timber.d("tap navigation button")
