@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/left_well"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="10dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/right_well"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="10dp" />
+
+    <ImageView
+        android:id="@+id/user_icon"
+        android:layout_width="@dimen/user_list_image_size"
+        android:layout_height="@dimen/user_list_image_size"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/default_user_name"
+        app:layout_constraintStart_toStartOf="@+id/left_well"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_person_black_24dp" />
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="22dp"
+        android:text="@string/default_user_name"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/greeting_word"
+        app:layout_constraintEnd_toStartOf="@+id/right_well"
+        app:layout_constraintStart_toEndOf="@+id/user_icon" />
+
+    <TextView
+        android:id="@+id/greeting_word"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/default_user_greeting"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/right_well"
+        app:layout_constraintStart_toEndOf="@+id/user_icon"
+        app:layout_constraintTop_toBottomOf="@id/user_name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -89,6 +89,5 @@ data class DesignInformation(val imageResource:Int, val designName: String)
 
 enum class DesignName(val designName: String){
     APP_BARS_BOTTOM("App bars: bottom"),
-    APP_BARS_TOP("App bars: top"),
     COMING_SOON("Coming soon")
 }

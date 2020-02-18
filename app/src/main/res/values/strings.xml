@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">material-design-sample</string>
     <string name="coming_soon">Coming soon</string>
+    <string name="dummy_user_image">dummy image</string>
+    <string name="default_user_name">user name</string>
+    <string name="default_user_greeting">Hello!</string>
 </resources>
