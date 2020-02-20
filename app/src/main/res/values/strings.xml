@@ -4,4 +4,8 @@
     <string name="dummy_user_image">dummy image</string>
     <string name="default_user_name">user name</string>
     <string name="default_user_greeting">Hello!</string>
+    <string name="bottom_bar_search">Search</string>
+    <string name="bottom_bar_edit">Edit</string>
+    <string name="bottom_bar_fab_position_button_center">Center</string>
+    <string name="bottom_bar_fab_position_button_end">End</string>
 </resources>

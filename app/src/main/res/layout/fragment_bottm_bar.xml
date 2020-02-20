@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_view_coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bottom_bar_fab_position_change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textAllCaps="false"
+                android:text="@string/bottom_bar_fab_position_button_end"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -19,11 +45,11 @@
                 android:id="@+id/bottom_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:listitem="@layout/list_item_user"
                 app:layout_constraintBottom_toTopOf="@+id/adjust_bald"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"  />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/list_item_user" />
 
             <View
                 android:id="@+id/adjust_bald"
@@ -44,10 +70,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:theme="@style/Widget.MaterialComponents.BottomAppBar.Colored"
-        app:navigationIcon="@drawable/ic_menu_24dp"
         app:backgroundTint="@color/colorPrimary"
         app:fabAlignmentMode="center"
-        app:hideOnScroll="true">
+        app:fabAnimationMode="scale"
+        app:hideOnScroll="true"
+        app:navigationIcon="@drawable/ic_menu_24dp">
 
     </com.google.android.material.bottomappbar.BottomAppBar>
 
@@ -55,8 +82,8 @@
         android:id="@+id/bottom_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_add_24dp"
         app:backgroundTint="@color/colorBlue"
-        app:layout_anchor="@id/bottom_bar"/>
+        app:layout_anchor="@id/bottom_bar"
+        app:srcCompat="@drawable/ic_add_24dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -7,6 +7,7 @@ import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomappbar.BottomAppBar
 import com.komeyama.sample.design.material.R
 import kotlinx.android.synthetic.main.fragment_bottm_bar.*
 import timber.log.Timber
@@ -77,21 +78,33 @@ class BottomBarFragment : Fragment() {
         bottom_bar.setNavigationOnClickListener{
             Timber.d("tap navigation button")
         }
+
         bottom_bar.setOnMenuItemClickListener { item ->
             when(item.itemId) {
                 R.id.bottom_bar_serch -> {
                     Timber.d("tap bottom bar search button")
                     true
                 }
-                R.id.bottom_bar_more_vert -> {
-                    Timber.d("tap bottom more vert button")
+                R.id.bottom_bar_edit -> {
+                    Timber.d("tap bottom more edit button")
                     true
                 }
                 else -> true
             }
         }
+
         bottom_fab.setOnClickListener {
             Timber.d("tap bottom fab button")
+        }
+
+        bottom_bar_fab_position_change.setOnClickListener {
+            if(bottom_bar_fab_position_change.text == getString(R.string.bottom_bar_fab_position_button_end)){
+                bottom_bar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
+                bottom_bar_fab_position_change.text = getString(R.string.bottom_bar_fab_position_button_center)
+            } else {
+                bottom_bar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
+                bottom_bar_fab_position_change.text = getString(R.string.bottom_bar_fab_position_button_end)
+            }
         }
     }
 }

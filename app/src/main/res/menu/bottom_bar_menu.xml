@@ -5,14 +5,14 @@
         android:id="@+id/bottom_bar_serch"
         android:icon="@drawable/ic_search_24dp"
         app:showAsAction="ifRoom"
-        android:title="search">
+        android:title="@string/bottom_bar_search">
     </item>
 
     <item
-        android:id="@+id/bottom_bar_more_vert"
-        android:icon="@drawable/ic_more_vert_24dp"
+        android:id="@+id/bottom_bar_edit"
+        android:icon="@drawable/ic_edit_24dp"
         app:showAsAction="ifRoom"
-        android:title="more_vert" >
+        android:title="@string/bottom_bar_edit">
     </item>
 
 </menu>
