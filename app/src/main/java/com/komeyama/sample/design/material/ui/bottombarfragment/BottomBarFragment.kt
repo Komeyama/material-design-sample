@@ -1,6 +1,7 @@
 package com.komeyama.sample.design.material.ui.bottombarfragment
 
 import android.content.res.ColorStateList
+import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.view.*
@@ -115,10 +116,12 @@ class BottomBarFragment : Fragment() {
         val background = bottom_bar_fab_position_change_animation.background
         bottom_bar_fab_position_change_animation.setOnClickListener {
             if(bottom_bar.fabAnimationMode == FAB_ANIMATION_MODE_SCALE) {
+                bottom_bar_fab_position_change_animation.setTextColor(ContextCompat.getColor(activity!!, R.color.colorWhiteThin))
                 bottom_bar.fabAnimationMode = FAB_ANIMATION_MODE_SLIDE
                 background.setTint(ContextCompat.getColor(activity!!, R.color.colorPrimaryDarkThin))
                 bottom_bar_fab_position_change_animation.text = getString(R.string.bottom_bar_fab_position_animation_button_slide)
             } else {
+                bottom_bar_fab_position_change_animation.setTextColor(ContextCompat.getColor(activity!!, R.color.colorWhite))
                 bottom_bar.fabAnimationMode = FAB_ANIMATION_MODE_SCALE
                 background.setTint(ContextCompat.getColor(activity!!, R.color.colorPrimaryDark))
                 bottom_bar_fab_position_change_animation.text = getString(R.string.bottom_bar_fab_position_animation_button_scale)
