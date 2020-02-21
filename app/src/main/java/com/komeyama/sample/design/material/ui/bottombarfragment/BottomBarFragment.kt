@@ -1,13 +1,18 @@
 package com.komeyama.sample.design.material.ui.bottombarfragment
 
+import android.content.res.ColorStateList
+import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.view.*
 import android.widget.TextView
 import androidx.annotation.LayoutRes
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.bottomappbar.BottomAppBar.FAB_ANIMATION_MODE_SCALE
+import com.google.android.material.bottomappbar.BottomAppBar.FAB_ANIMATION_MODE_SLIDE
 import com.komeyama.sample.design.material.R
 import kotlinx.android.synthetic.main.fragment_bottm_bar.*
 import timber.log.Timber
@@ -98,12 +103,25 @@ class BottomBarFragment : Fragment() {
         }
 
         bottom_bar_fab_position_change.setOnClickListener {
-            if(bottom_bar_fab_position_change.text == getString(R.string.bottom_bar_fab_position_button_end)){
+            if(bottom_bar.fabAlignmentMode == BottomAppBar.FAB_ALIGNMENT_MODE_CENTER){
                 bottom_bar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
                 bottom_bar_fab_position_change.text = getString(R.string.bottom_bar_fab_position_button_center)
             } else {
                 bottom_bar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
                 bottom_bar_fab_position_change.text = getString(R.string.bottom_bar_fab_position_button_end)
+            }
+        }
+
+        val background = bottom_bar_fab_position_change_animation.background
+        bottom_bar_fab_position_change_animation.setOnClickListener {
+            if(bottom_bar.fabAnimationMode == FAB_ANIMATION_MODE_SCALE) {
+                bottom_bar.fabAnimationMode = FAB_ANIMATION_MODE_SLIDE
+                background.setTint(ContextCompat.getColor(activity!!, R.color.colorPrimaryDarkThin))
+                bottom_bar_fab_position_change_animation.text = getString(R.string.bottom_bar_fab_position_animation_button_slide)
+            } else {
+                bottom_bar.fabAnimationMode = FAB_ANIMATION_MODE_SCALE
+                background.setTint(ContextCompat.getColor(activity!!, R.color.colorPrimaryDark))
+                bottom_bar_fab_position_change_animation.text = getString(R.string.bottom_bar_fab_position_animation_button_scale)
             }
         }
     }

@@ -8,4 +8,6 @@
     <string name="bottom_bar_edit">Edit</string>
     <string name="bottom_bar_fab_position_button_center">Center</string>
     <string name="bottom_bar_fab_position_button_end">End</string>
+    <string name="bottom_bar_fab_position_animation_button_slide">Slide</string>
+    <string name="bottom_bar_fab_position_animation_button_scale">Scale</string>
 </resources>
