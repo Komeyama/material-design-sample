@@ -12,6 +12,16 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/bottom_fragment_top_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:titleTextAppearance="@style/Toolbar.TitleText"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/colorWhite"
+            app:navigationIcon="@drawable/ic_navigate_before_24dp"
+            app:layout_scrollFlags="scroll"/>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
