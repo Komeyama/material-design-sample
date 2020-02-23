@@ -2,9 +2,12 @@ package com.komeyama.sample.design.material.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.widget.Toolbar
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import com.komeyama.sample.design.material.R
 import kotlinx.android.synthetic.main.activity_main.*
@@ -26,10 +29,15 @@ class MainActivity : AppCompatActivity() {
                 else -> top_toolbar.visibility = View.VISIBLE
             }
         }
+
+        top_toolbar.setNavigationOnClickListener {
+            top_drawer.openDrawer(Gravity.LEFT)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.top_bar_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
+
 }
