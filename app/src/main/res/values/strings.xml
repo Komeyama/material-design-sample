@@ -10,4 +10,9 @@
     <string name="bottom_bar_fab_position_button_end">End</string>
     <string name="bottom_bar_fab_position_animation_button_slide">Slide</string>
     <string name="bottom_bar_fab_position_animation_button_scale">Scale</string>
+    <string name="top_drawer_menu_01">About This App</string>
+    <string name="top_drawer_menu_02">News</string>
+    <string name="top_drawer_menu_03">Column</string>
+    <string name="top_drawer_sub_menu_01">Setting</string>
+    <string name="top_drawer_sub_menu_02">Help</string>
 </resources>
