@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
+import com.google.android.material.shape.ShapeAppearanceModel
 import com.komeyama.sample.design.material.R
 import kotlinx.android.synthetic.main.fragment_backdrop.*
 
@@ -22,10 +24,21 @@ class BackDropFragment : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initBackDropTopSheet()
+    }
+
+    private fun initBackDropTopSheet() {
+        val shapeAppearanceModel = ShapeAppearanceModel.Builder().setTopLeftCorner(
+            CornerFamily.ROUNDED,
+            resources.getDimension(R.dimen.backdrop_sheet_corner_radius)
+        ).build()
+
         val materialShapeDrawable = MaterialShapeDrawable.createWithElevationOverlay(
             activity,
             resources.getDimension(R.dimen.bottom_sheet_elevation)
-        )
+        ).apply {
+            setShapeAppearanceModel(shapeAppearanceModel)
+        }
         top_layer_sheet.background = materialShapeDrawable
     }
 }
