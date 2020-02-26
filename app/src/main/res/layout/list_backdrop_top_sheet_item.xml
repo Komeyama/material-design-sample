@@ -17,6 +17,7 @@
         android:id="@+id/design_image"
         android:layout_width="160dp"
         android:layout_height="160dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toStartOf="@+id/design_tile_Underlay"
         app:layout_constraintTop_toTopOf="parent"
