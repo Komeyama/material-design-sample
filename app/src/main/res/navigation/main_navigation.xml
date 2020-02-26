@@ -10,11 +10,18 @@
         <action
             android:id="@+id/action_mainFragment_to_bottomBarFragment"
             app:destination="@id/bottomBarFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_backDropFragment"
+            app:destination="@id/backDropFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/bottomBarFragment"
         android:name="com.komeyama.sample.design.material.ui.bottombarfragment.BottomBarFragment"
         android:label="BottomBarFragment" />
+    <fragment
+        android:id="@+id/backDropFragment"
+        android:name="com.komeyama.sample.design.material.ui.backdropfragment.BackDropFragment"
+        android:label="BackDropFragment" />
 
 </navigation>

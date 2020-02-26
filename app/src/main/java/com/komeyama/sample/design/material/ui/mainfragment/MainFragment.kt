@@ -17,7 +17,7 @@ import timber.log.Timber
 class MainFragment : Fragment(){
     private var items: List<DesignInformation> = listOf(
         DesignInformation(R.drawable.top_image_bottom_bar, DesignName.APP_BARS_BOTTOM.designName),
-        DesignInformation(R.drawable.ic_launcher_foreground, DesignName.COMING_SOON.designName),
+        DesignInformation(R.drawable.ic_launcher_foreground, DesignName.BACKDROP.designName),
         DesignInformation(R.drawable.ic_launcher_foreground, DesignName.COMING_SOON.designName)
     )
 
@@ -35,8 +35,10 @@ class MainFragment : Fragment(){
                 DesignName.APP_BARS_BOTTOM.designName -> {
                     findNavController().navigate(R.id.action_mainFragment_to_bottomBarFragment)
                 }
+                DesignName.BACKDROP.designName -> {
+                    findNavController().navigate(R.id.action_mainFragment_to_backDropFragment)
+                }
             }
-
         })
         root.findViewById<RecyclerView>(R.id.top_recycler_view).apply{
             adapter = topListAdapter
@@ -89,5 +91,6 @@ data class DesignInformation(val imageResource:Int, val designName: String)
 
 enum class DesignName(val designName: String){
     APP_BARS_BOTTOM("App bars: bottom"),
+    BACKDROP("Backdrop"),
     COMING_SOON("Coming soon")
 }
