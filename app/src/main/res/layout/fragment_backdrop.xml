@@ -45,7 +45,7 @@
                 app:layout_constraintGuide_end="16dp" />
 
             <TextView
-                android:id="@+id/sub_header_name"
+                android:id="@+id/backdrop_sub_header_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/backdrop_sheet_title_name"
@@ -53,7 +53,7 @@
                 android:layout_marginTop="80dp"
                 app:layout_constraintStart_toStartOf="@id/guideline_start"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/divider"/>
+                app:layout_constraintBottom_toTopOf="@id/backdrop_sheet_divider"/>
 
             <ImageButton
                 android:id="@+id/sheet_operation_button"
@@ -63,10 +63,10 @@
                 android:src="@drawable/ic_arrow_drop_up_24dp"
                 app:layout_constraintEnd_toEndOf="@id/guideline_end"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/divider"/>
+                app:layout_constraintBottom_toTopOf="@id/backdrop_sheet_divider"/>
 
             <View
-                android:id="@+id/divider"
+                android:id="@+id/backdrop_sheet_divider"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:background="@color/colorLightGray"
@@ -74,7 +74,7 @@
                 app:layout_constraintEnd_toEndOf="@id/guideline_end"
                 app:layout_constraintStart_toStartOf="@id/guideline_start"
                 app:layout_constraintBottom_toTopOf="@id/backdrop_top_sheet_recycler_view"
-                app:layout_constraintTop_toBottomOf="@id/sub_header_name"/>
+                app:layout_constraintTop_toBottomOf="@id/backdrop_sub_header_name"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/backdrop_top_sheet_recycler_view"
@@ -84,7 +84,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@id/divider"
+                app:layout_constraintTop_toTopOf="@id/backdrop_sheet_divider"
                 tools:listitem="@layout/list_backdrop_top_sheet_item" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
