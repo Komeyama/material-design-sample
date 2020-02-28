@@ -10,6 +10,7 @@ import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.shape.ShapeAppearanceModel
@@ -69,7 +70,31 @@ class BackDropFragment : Fragment(){
             setShapeAppearanceModel(shapeAppearanceModel)
         }
         top_layer_sheet.background = materialShapeDrawable
+
+        val behavior = BottomSheetBehavior.from(top_layer_sheet)
+        sheet_operation_button.setOnClickListener {
+            if (behavior.state == BottomSheetBehavior.STATE_EXPANDED){
+                behavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
+            } else {
+                behavior.setState(BottomSheetBehavior.STATE_EXPANDED)
+            }
+        }
+        behavior.addBottomSheetCallback(bottomSheetCallback)
+
     }
+
+    private val bottomSheetCallback = object : BottomSheetBehavior.BottomSheetCallback() {
+        override fun onSlide(bottomSheet: View, slideOffset: Float) {}
+
+        override fun onStateChanged(bottomSheet: View, newState: Int) {
+            when(newState) {
+                BottomSheetBehavior.STATE_EXPANDED -> sheet_operation_button.setImageResource(R.drawable.ic_arrow_drop_down_24dp)
+                BottomSheetBehavior.STATE_COLLAPSED -> sheet_operation_button.setImageResource(R.drawable.ic_arrow_drop_up_24dp)
+                else -> sheet_operation_button.setImageDrawable(null)
+            }
+        }
+    }
+
 }
 
 class BackDropSheetAdapter(private val items:List<BackDropSheetInformation>, private val itemClick: ItemClick): RecyclerView.Adapter<BackDropSheetListHolder>() {

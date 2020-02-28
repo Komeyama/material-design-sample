@@ -16,4 +16,5 @@
     <string name="top_drawer_sub_menu_01">Setting</string>
     <string name="top_drawer_sub_menu_02">Help</string>
     <string name="backdrop_sheet_title_name">Sub header</string>
+    <string name="sheet_operation_button_name">sheet</string>
 </resources>
