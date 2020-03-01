@@ -17,7 +17,7 @@ import timber.log.Timber
 class MainFragment : Fragment(){
     private var items: List<DesignInformation> = listOf(
         DesignInformation(R.drawable.top_image_bottom_bar, DesignName.APP_BARS_BOTTOM.designName),
-        DesignInformation(R.drawable.ic_launcher_foreground, DesignName.BACKDROP.designName),
+        DesignInformation(R.drawable.top_image_backdrop, DesignName.BACKDROP.designName),
         DesignInformation(R.drawable.ic_launcher_foreground, DesignName.COMING_SOON.designName)
     )
 
