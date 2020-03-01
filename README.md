@@ -3,14 +3,18 @@ material-design-sample
 [![platform](https://img.shields.io/badge/platform-android-lightgrey)](https://img.shields.io/badge/platform-android-lightgrey)
 
 ## Feature
-This repository is a reproduction of [Material.io Commonents page](https://material.io/components/) by android.
+This is a practice repository that reproduces the [Material.io Commonents page](https://material.io/components/) by android.
 
 ### App bars: bottom 
+<img width="200" src="https://github.com/Komeyama/material-design-sample/blob/images/bottom_app_bar.gif">
 
 ### Backdrop
 - constructing now ...
 
 ### Navigation drawer 
+
+<img width="200" src="https://github.com/Komeyama/material-design-sample/blob/images/navigation_drawer.gif">
+
 
 ## Future outlook
 - [ ] Bottom navigation
