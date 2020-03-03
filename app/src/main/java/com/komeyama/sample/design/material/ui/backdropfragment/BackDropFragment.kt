@@ -21,21 +21,6 @@ import timber.log.Timber
 
 class BackDropFragment : Fragment(){
 
-    private var items: List<BackDropSheetInformation> = listOf(
-        BackDropSheetInformation(R.drawable.ic_launcher_background, SheetItemName.ITEM_01.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_foreground, SheetItemName.ITEM_02.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_foreground, SheetItemName.ITEM_03.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_background, SheetItemName.ITEM_04.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_background, SheetItemName.ITEM_05.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_foreground, SheetItemName.ITEM_06.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_foreground, SheetItemName.ITEM_07.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_background, SheetItemName.ITEM_08.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_background, SheetItemName.ITEM_09.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_background, SheetItemName.ITEM_10.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_foreground, SheetItemName.ITEM_11.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_foreground, SheetItemName.ITEM_12.designName)
-    )
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -43,7 +28,7 @@ class BackDropFragment : Fragment(){
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         val root = inflater.inflate(R.layout.fragment_backdrop, container, false)
-        val backDropSheetAdapter = BackDropSheetAdapter(items, ItemClick {
+        val backDropSheetAdapter = BackDropSheetAdapter(BackDropData().backdropDummyItems, ItemClick {
             Timber.d("tap: %s", it)
         })
         root.findViewById<RecyclerView>(R.id.backdrop_top_sheet_recycler_view).apply{
@@ -146,18 +131,3 @@ class ItemClick(val item:(BackDropSheetInformation) -> Unit) {
 }
 
 data class BackDropSheetInformation(val imageResource:Int, val itemName: String)
-
-enum class SheetItemName(val designName: String){
-    ITEM_01("item_1"),
-    ITEM_02("item_2"),
-    ITEM_03("item_3"),
-    ITEM_04("item_4"),
-    ITEM_05("item_5"),
-    ITEM_06("item_6"),
-    ITEM_07("item_7"),
-    ITEM_08("item_8"),
-    ITEM_09("item_9"),
-    ITEM_10("item_10"),
-    ITEM_11("item_11"),
-    ITEM_12("item_12")
-}
