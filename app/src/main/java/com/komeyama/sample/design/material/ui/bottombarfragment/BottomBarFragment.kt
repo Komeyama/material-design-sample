@@ -18,41 +18,6 @@ import timber.log.Timber
 
 class BottomBarFragment : Fragment() {
 
-    private var users: List<UserInformation> = listOf(
-        UserInformation(
-            "dummy_0",
-            "Hello"
-        ),
-        UserInformation(
-            "dummy_1",
-            "Hello!"
-        ),
-        UserInformation(
-            "dummy_2",
-            "Hello!!"
-        ),
-        UserInformation(
-            "dummy_3",
-            "Hello!!!"
-        ),
-        UserInformation(
-            "dummy_4",
-            "Hello!!!!"
-        ),
-        UserInformation(
-            "dummy_5",
-            "Hello!!!!!"
-        ),
-        UserInformation(
-            "dummy_6",
-            "Hello!!!!!!"
-        ),
-        UserInformation(
-            "dummy_7",
-            "Hello!!!!!!!"
-        )
-    )
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
@@ -65,7 +30,7 @@ class BottomBarFragment : Fragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         val root = inflater.inflate(R.layout.fragment_bottm_bar, container, false)
-        val userListAdapter = UserListAdapter(users, UserClick {
+        val userListAdapter = UserListAdapter(BottomBarData().bottomBarItems, UserClick {
             Timber.d("tap: %s",it)
         })
         root.findViewById<RecyclerView>(R.id.bottom_recycler_view).apply{
