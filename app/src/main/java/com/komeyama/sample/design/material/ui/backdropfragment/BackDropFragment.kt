@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.TypedValue
 import android.view.*
+import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.LayoutRes
@@ -64,7 +65,9 @@ class BackDropFragment : Fragment(){
         top_layer_sheet.background = materialShapeDrawable
 
         val behavior = BottomSheetBehavior.from(top_layer_sheet)
-        sheet_operation_button.setOnClickListener {
+
+        behavior.state = BottomSheetBehavior.STATE_EXPANDED
+        switch_sheet.setOnClickListener {
             if (behavior.state == BottomSheetBehavior.STATE_EXPANDED){
                 behavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
             } else {
@@ -72,23 +75,10 @@ class BackDropFragment : Fragment(){
             }
         }
 
-        behavior.peekHeight = getDefaultDisplayHeight() - getActionBarHeight() - getStatusBarHeight()
+        behavior.isDraggable = false
 
-        behavior.addBottomSheetCallback(bottomSheetCallback)
-
+        setTopSheetHeight()
         backdrop_top_sheet_recycler_view.addOnScrollListener(onScrollListener)
-    }
-
-    private val bottomSheetCallback = object : BottomSheetBehavior.BottomSheetCallback() {
-        override fun onSlide(bottomSheet: View, slideOffset: Float) {}
-
-        override fun onStateChanged(bottomSheet: View, newState: Int) {
-            when(newState) {
-                BottomSheetBehavior.STATE_EXPANDED -> sheet_operation_button.setImageResource(R.drawable.ic_arrow_drop_down_24dp)
-                BottomSheetBehavior.STATE_COLLAPSED -> sheet_operation_button.setImageResource(R.drawable.ic_arrow_drop_up_24dp)
-                else -> sheet_operation_button.setImageDrawable(null)
-            }
-        }
     }
 
     private val onScrollListener = object: RecyclerView.OnScrollListener() {
@@ -99,6 +89,12 @@ class BackDropFragment : Fragment(){
                 backdrop_sheet_divider.background.setTint(ContextCompat.getColor(activity!!, R.color.colorWhite))
             }
         }
+    }
+
+    private fun setTopSheetHeight() {
+        val topSheetHeight = getDefaultDisplayHeight() - getActionBarHeight() - getStatusBarHeight()
+        val topLayerSheetParams = top_layer_sheet.layoutParams
+        topLayerSheetParams.height = topSheetHeight
     }
 
     private fun getDefaultDisplayHeight(): Int {
