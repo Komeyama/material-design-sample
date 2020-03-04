@@ -36,7 +36,7 @@ class MainFragment : Fragment(){
                     findNavController().navigate(R.id.action_mainFragment_to_bottomBarFragment)
                 }
                 DesignName.BACKDROP.designName -> {
-                    findNavController().navigate(R.id.action_mainFragment_to_backDropFragment)
+                    findNavController().navigate(R.id.action_mainFragment_to_backDropTypeSelectFragment)
                 }
             }
         })

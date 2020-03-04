@@ -33,3 +33,8 @@ enum class SheetItemName(val designName: String){
     ITEM_11("item_11"),
     ITEM_12("item_12")
 }
+
+enum class BackDropType(val backDropTypeName: String){
+    TYPE_01("type01"),
+    TYPE_02("type02")
+}

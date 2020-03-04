@@ -18,12 +18,9 @@ class MainActivity : AppCompatActivity() {
         val toolbar = top_toolbar as Toolbar
         setSupportActionBar(toolbar)
 
-        /**
-         * Because of hide tool bar on bottom bar fragment
-         */
         findNavController(R.id.nav_host_fragment).addOnDestinationChangedListener { _, destination, _ ->
             when(destination.id) {
-                R.id.bottomBarFragment -> top_toolbar.visibility = View.GONE
+                R.id.bottomBarFragment, R.id.backDropFragment -> top_toolbar.visibility = View.GONE
                 else -> top_toolbar.visibility = View.VISIBLE
             }
         }

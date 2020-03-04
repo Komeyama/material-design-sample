@@ -1,9 +1,10 @@
 package com.komeyama.sample.design.material.ui.backdropfragment
 
+import android.graphics.Rect
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.util.DisplayMetrics
+import android.util.TypedValue
+import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.LayoutRes
@@ -27,6 +28,10 @@ class BackDropFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
+
+        val args = BackDropFragmentArgs.fromBundle(arguments!!)
+        Timber.d("backdrop fragment type %s", args.backDropType)
+
         val root = inflater.inflate(R.layout.fragment_backdrop, container, false)
         val backDropSheetAdapter = BackDropSheetAdapter(BackDropData().backdropDummyItems, ItemClick {
             Timber.d("tap: %s", it)
@@ -35,6 +40,7 @@ class BackDropFragment : Fragment(){
             adapter = backDropSheetAdapter
             layoutManager = GridLayoutManager(context, 2)
         }
+
         return root
     }
 
@@ -65,6 +71,9 @@ class BackDropFragment : Fragment(){
                 behavior.setState(BottomSheetBehavior.STATE_EXPANDED)
             }
         }
+
+        behavior.peekHeight = getDefaultDisplayHeight() - getActionBarHeight() - getStatusBarHeight()
+
         behavior.addBottomSheetCallback(bottomSheetCallback)
 
         backdrop_top_sheet_recycler_view.addOnScrollListener(onScrollListener)
@@ -90,6 +99,29 @@ class BackDropFragment : Fragment(){
                 backdrop_sheet_divider.background.setTint(ContextCompat.getColor(activity!!, R.color.colorWhite))
             }
         }
+    }
+
+    private fun getDefaultDisplayHeight(): Int {
+        val dm = DisplayMetrics()
+        activity?.windowManager?.defaultDisplay?.getMetrics(dm)
+        return dm.heightPixels
+    }
+
+    private fun getActionBarHeight(): Int {
+        var actionBarHeight = 0
+        val tv = TypedValue()
+        if (activity?.theme!!.resolveAttribute(android.R.attr.actionBarSize, tv, true))
+        {
+            actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data, resources.displayMetrics)
+        }
+        return actionBarHeight
+    }
+
+    private fun getStatusBarHeight(): Int {
+        val rect = Rect()
+        val window: Window = activity!!.window
+        window.decorView.getWindowVisibleDisplayFrame(rect)
+        return rect.top
     }
 }
 

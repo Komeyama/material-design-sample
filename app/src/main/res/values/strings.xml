@@ -1,20 +1,24 @@
 <resources>
     <string name="app_name">material-design-sample</string>
-    <string name="coming_soon">Coming soon</string>
-    <string name="dummy_user_image">dummy image</string>
-    <string name="default_user_name">user name</string>
-    <string name="default_user_greeting">Hello!</string>
+    <string name="backdrop_sheet_title_name">Sub header</string>
+    <string name="backdrop_tune">Backdrop tune</string>
+    <string name="backdrop_type1">Type 1</string>
+    <string name="backdrop_type2">Type 2</string>
+    <string name="backdrop_switch_layer">Switch layer</string>
     <string name="bottom_bar_search">Search</string>
     <string name="bottom_bar_edit">Edit</string>
     <string name="bottom_bar_fab_position_button_center">Center</string>
     <string name="bottom_bar_fab_position_button_end">End</string>
     <string name="bottom_bar_fab_position_animation_button_slide">Slide</string>
     <string name="bottom_bar_fab_position_animation_button_scale">Scale</string>
+    <string name="coming_soon">Coming soon</string>
+    <string name="dummy_user_image">dummy image</string>
+    <string name="default_user_name">user name</string>
+    <string name="default_user_greeting">Hello!</string>
+    <string name="sheet_operation_button_name">sheet</string>
     <string name="top_drawer_menu_01">About This App</string>
     <string name="top_drawer_menu_02">News</string>
     <string name="top_drawer_menu_03">Column</string>
     <string name="top_drawer_sub_menu_01">Setting</string>
     <string name="top_drawer_sub_menu_02">Help</string>
-    <string name="backdrop_sheet_title_name">Sub header</string>
-    <string name="sheet_operation_button_name">sheet</string>
 </resources>
