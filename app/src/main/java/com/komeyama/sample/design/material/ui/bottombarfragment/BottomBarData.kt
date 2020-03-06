@@ -1,5 +1,7 @@
 package com.komeyama.sample.design.material.ui.bottombarfragment
 
+import com.komeyama.sample.design.material.ui.bottombarfragment.BottomBarRecycleView.UserInformation
+
 class BottomBarData () {
     var bottomBarItems: List<UserInformation> = listOf(
         UserInformation(

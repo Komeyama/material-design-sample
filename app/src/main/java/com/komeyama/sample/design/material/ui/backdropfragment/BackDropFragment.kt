@@ -2,9 +2,6 @@ package com.komeyama.sample.design.material.ui.backdropfragment
 
 import android.os.Bundle
 import android.view.*
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.annotation.LayoutRes
 import androidx.core.content.ContextCompat
 import androidx.core.view.marginTop
 import androidx.fragment.app.Fragment
@@ -35,9 +32,11 @@ class BackDropFragment : Fragment(R.layout.fragment_backdrop){
 
     private fun initBackDropTopSheet() {
         // recycleView
-        val backDropSheetAdapter = BackDropSheetAdapter(BackDropData().backdropDummyItems, ItemClick {
-            Timber.d("tap: %s", it)
-        })
+        val backDropSheetAdapter =
+            BackDropRecycleView.BackDropSheetAdapter(BackDropData().backdropDummyItems,
+                BackDropRecycleView.ItemClick {
+                    Timber.d("tap: %s", it)
+                })
         activity!!.findViewById<RecyclerView>(R.id.backdrop_top_sheet_recycler_view).apply {
             adapter = backDropSheetAdapter
             layoutManager = GridLayoutManager(context, 2)
@@ -93,42 +92,3 @@ class BackDropFragment : Fragment(R.layout.fragment_backdrop){
         backdrop_constraint_top.setMaterialHeight(topSheetHeight)
     }
 }
-
-class BackDropSheetAdapter(private val items:List<BackDropSheetInformation>, private val itemClick: ItemClick): RecyclerView.Adapter<BackDropSheetListHolder>() {
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BackDropSheetListHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        return BackDropSheetListHolder(layoutInflater.inflate(R.layout.list_backdrop_top_sheet_item, parent, false))
-    }
-
-    override fun getItemCount() = items.size
-
-    override fun onBindViewHolder(holder: BackDropSheetListHolder, position: Int) {
-        holder.let {
-            it.imageView.setImageResource(items[position].imageResource)
-            it.textView.text = items[position].itemName
-        }
-
-        holder.view.setOnClickListener {
-            itemClick.onClick(items[position])
-        }
-    }
-}
-
-class BackDropSheetListHolder(val view: View): RecyclerView.ViewHolder(view) {
-    companion object {
-        @LayoutRes
-        val LAYOUT = R.layout.list_backdrop_top_sheet_item
-    }
-
-    val imageView: ImageView = view.findViewById(R.id.design_image)
-    val textView: TextView = view.findViewById(R.id.design_name)
-}
-
-class ItemClick(val item:(BackDropSheetInformation) -> Unit) {
-    fun onClick(item: BackDropSheetInformation) {
-        item(item)
-    }
-}
-
-data class BackDropSheetInformation(val imageResource:Int, val itemName: String)
