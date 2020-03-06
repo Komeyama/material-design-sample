@@ -1,10 +1,6 @@
 package com.komeyama.sample.design.material.ui.backdropfragment
 
-import android.content.res.ColorStateList
-import android.graphics.Rect
 import android.os.Bundle
-import android.util.DisplayMetrics
-import android.util.TypedValue
 import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
@@ -16,71 +12,45 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.shape.CornerFamily
-import com.google.android.material.shape.MaterialShapeDrawable
-import com.google.android.material.shape.ShapeAppearanceModel
 import com.komeyama.sample.design.material.R
 import kotlinx.android.synthetic.main.fragment_backdrop.*
 import timber.log.Timber
 
-class BackDropFragment : Fragment(){
+class BackDropFragment : Fragment(R.layout.fragment_backdrop){
 
     private var isRecycleViewScrollable = true
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        super.onCreateView(inflater, container, savedInstanceState)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
 
         val args = BackDropFragmentArgs.fromBundle(arguments!!)
         Timber.d("backdrop fragment type %s", args.backDropType)
 
-        val root = inflater.inflate(R.layout.fragment_backdrop, container, false)
-        val backDropSheetAdapter = BackDropSheetAdapter(BackDropData().backdropDummyItems, ItemClick {
-            Timber.d("tap: %s", it)
-        })
-        root.findViewById<RecyclerView>(R.id.backdrop_top_sheet_recycler_view).apply{
-            adapter = backDropSheetAdapter
-            layoutManager = GridLayoutManager(context, 2)
-        }
-
-        return root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         initBackDropTopSheet()
+
         backdrop_toolbar.setNavigationOnClickListener {
             findNavController().navigateUp()
         }
     }
 
     private fun initBackDropTopSheet() {
-        val shapeAppearanceModel = ShapeAppearanceModel.Builder().setTopLeftCorner(
-            CornerFamily.ROUNDED,
-            resources.getDimension(R.dimen.backdrop_sheet_corner_radius)
-        ).build()
-
-        val topLayerSheetMaterialShapeDrawable = MaterialShapeDrawable.createWithElevationOverlay(
-            activity,
-            resources.getDimension(R.dimen.bottom_sheet_elevation)
-        ).apply {
-            setShapeAppearanceModel(shapeAppearanceModel)
+        // recycleView
+        val backDropSheetAdapter = BackDropSheetAdapter(BackDropData().backdropDummyItems, ItemClick {
+            Timber.d("tap: %s", it)
+        })
+        activity!!.findViewById<RecyclerView>(R.id.backdrop_top_sheet_recycler_view).apply {
+            adapter = backDropSheetAdapter
+            layoutManager = GridLayoutManager(context, 2)
         }
-        top_layer_sheet.background = topLayerSheetMaterialShapeDrawable
 
-        val topLayerSheetCoverMaterialShapeDrawable = MaterialShapeDrawable.createWithElevationOverlay(
-            activity,
-            resources.getDimension(R.dimen.bottom_sheet_elevation)
-        ).apply {
-            setShapeAppearanceModel(shapeAppearanceModel)
-        }
-        topLayerSheetCoverMaterialShapeDrawable.fillColor = ColorStateList.valueOf(activity!!.getColor(R.color.colorWhiteThin))
-        top_layer_sheet_cover.background = topLayerSheetCoverMaterialShapeDrawable
+        // sheet shape and height
+        top_layer_sheet.createTopSheetMaterialShape(activity!!, R.color.colorWhite)
+        top_layer_sheet_cover.createTopSheetMaterialShape(activity!!, R.color.colorWhiteThin)
+        setTopSheetHeight()
 
+        // sheet control
         val behavior = BottomSheetBehavior.from(top_layer_sheet)
+        behavior.isDraggable = false
         behavior.state = BottomSheetBehavior.STATE_EXPANDED
         top_layer_sheet_cover.visibility = View.GONE
         switch_sheet.setOnClickListener {
@@ -94,10 +64,6 @@ class BackDropFragment : Fragment(){
                 isRecycleViewScrollable = true
             }
         }
-
-        behavior.isDraggable = false
-
-        setTopSheetHeight()
         backdrop_top_sheet_recycler_view.addOnScrollListener(onScrollListener)
         backdrop_top_sheet_recycler_view.addOnItemTouchListener(onTouchListener)
     }
@@ -113,49 +79,18 @@ class BackDropFragment : Fragment(){
     }
 
     private val onTouchListener = object: RecyclerView.OnItemTouchListener {
-        override fun onTouchEvent(rv: RecyclerView, e: MotionEvent) {}
-
         override fun onInterceptTouchEvent(rv: RecyclerView, e: MotionEvent): Boolean {
             return !isRecycleViewScrollable
         }
-
+        override fun onTouchEvent(rv: RecyclerView, e: MotionEvent) {}
         override fun onRequestDisallowInterceptTouchEvent(disallowIntercept: Boolean) {}
-
     }
 
     private fun setTopSheetHeight() {
-        val topSheetHeight = getDefaultDisplayHeight() - getActionBarHeight() - getStatusBarHeight()
-        val topLayerSheetParams = top_layer_sheet.layoutParams
-        topLayerSheetParams.height = topSheetHeight
-
-        val backDropRecyclerViewParams = backdrop_top_sheet_recycler_view.layoutParams
-        backDropRecyclerViewParams.height = topSheetHeight - backdrop_sub_header_name.layoutParams.height - backdrop_sub_header_name.marginTop
-
-        val backDropConstraintTopParams = backdrop_constraint_top.layoutParams
-        backDropConstraintTopParams.height = topSheetHeight
-    }
-
-    private fun getDefaultDisplayHeight(): Int {
-        val dm = DisplayMetrics()
-        activity?.windowManager?.defaultDisplay?.getMetrics(dm)
-        return dm.heightPixels
-    }
-
-    private fun getActionBarHeight(): Int {
-        var actionBarHeight = 0
-        val tv = TypedValue()
-        if (activity?.theme!!.resolveAttribute(android.R.attr.actionBarSize, tv, true))
-        {
-            actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data, resources.displayMetrics)
-        }
-        return actionBarHeight
-    }
-
-    private fun getStatusBarHeight(): Int {
-        val rect = Rect()
-        val window: Window = activity!!.window
-        window.decorView.getWindowVisibleDisplayFrame(rect)
-        return rect.top
+        val topSheetHeight = getDefaultDisplayHeight(activity!!) - getActionBarHeight(activity!!) - getStatusBarHeight(activity!!)
+        top_layer_sheet.setMaterialHeight(topSheetHeight)
+        backdrop_top_sheet_recycler_view.setMaterialHeight(topSheetHeight - backdrop_sub_header_name.layoutParams.height - backdrop_sub_header_name.marginTop)
+        backdrop_constraint_top.setMaterialHeight(topSheetHeight)
     }
 }
 
