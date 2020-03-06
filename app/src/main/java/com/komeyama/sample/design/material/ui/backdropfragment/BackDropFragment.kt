@@ -21,7 +21,6 @@ import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.shape.ShapeAppearanceModel
 import com.komeyama.sample.design.material.R
 import kotlinx.android.synthetic.main.fragment_backdrop.*
-import kotlinx.android.synthetic.main.fragment_bottm_bar.*
 import timber.log.Timber
 
 class BackDropFragment : Fragment(){

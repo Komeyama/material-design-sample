@@ -4,6 +4,26 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/backdrop_type_app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:elevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/backdrop_type_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:titleTextAppearance="@style/Toolbar.TitleText"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/colorWhite"
+            app:navigationIcon="@drawable/ic_navigate_before_24dp" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/backdrop_type01_button"
         android:layout_width="wrap_content"

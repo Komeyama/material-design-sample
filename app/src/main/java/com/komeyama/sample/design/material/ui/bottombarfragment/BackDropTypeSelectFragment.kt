@@ -17,6 +17,9 @@ class BackDropTypeSelectFragment: Fragment(R.layout.fragment_backdrop_select) {
         backdrop_type02_button.setOnClickListener {
             navigateBackDropFragment(BackDropType.TYPE_02)
         }
+        backdrop_type_toolbar.setNavigationOnClickListener{
+            findNavController().navigateUp()
+        }
     }
 
     private fun navigateBackDropFragment(backDropType: BackDropType){
