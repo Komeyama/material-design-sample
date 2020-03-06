@@ -1,15 +1,16 @@
 package com.komeyama.sample.design.material.ui.backdropfragment
 
+import android.content.res.ColorStateList
 import android.graphics.Rect
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.TypedValue
 import android.view.*
-import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.LayoutRes
 import androidx.core.content.ContextCompat
+import androidx.core.view.marginTop
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,6 +23,8 @@ import kotlinx.android.synthetic.main.fragment_backdrop.*
 import timber.log.Timber
 
 class BackDropFragment : Fragment(){
+
+    private var isRecycleViewScrollable = true
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -56,22 +59,35 @@ class BackDropFragment : Fragment(){
             resources.getDimension(R.dimen.backdrop_sheet_corner_radius)
         ).build()
 
-        val materialShapeDrawable = MaterialShapeDrawable.createWithElevationOverlay(
+        val topLayerSheetMaterialShapeDrawable = MaterialShapeDrawable.createWithElevationOverlay(
             activity,
             resources.getDimension(R.dimen.bottom_sheet_elevation)
         ).apply {
             setShapeAppearanceModel(shapeAppearanceModel)
         }
-        top_layer_sheet.background = materialShapeDrawable
+        top_layer_sheet.background = topLayerSheetMaterialShapeDrawable
+
+        val topLayerSheetCoverMaterialShapeDrawable = MaterialShapeDrawable.createWithElevationOverlay(
+            activity,
+            resources.getDimension(R.dimen.bottom_sheet_elevation)
+        ).apply {
+            setShapeAppearanceModel(shapeAppearanceModel)
+        }
+        topLayerSheetCoverMaterialShapeDrawable.fillColor = ColorStateList.valueOf(activity!!.getColor(R.color.colorWhiteThin))
+        top_layer_sheet_cover.background = topLayerSheetCoverMaterialShapeDrawable
 
         val behavior = BottomSheetBehavior.from(top_layer_sheet)
-
         behavior.state = BottomSheetBehavior.STATE_EXPANDED
+        top_layer_sheet_cover.visibility = View.GONE
         switch_sheet.setOnClickListener {
             if (behavior.state == BottomSheetBehavior.STATE_EXPANDED){
-                behavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
+                behavior.state = BottomSheetBehavior.STATE_COLLAPSED
+                top_layer_sheet_cover.visibility = View.VISIBLE
+                isRecycleViewScrollable = false
             } else {
-                behavior.setState(BottomSheetBehavior.STATE_EXPANDED)
+                behavior.state = BottomSheetBehavior.STATE_EXPANDED
+                top_layer_sheet_cover.visibility = View.GONE
+                isRecycleViewScrollable = true
             }
         }
 
@@ -79,6 +95,7 @@ class BackDropFragment : Fragment(){
 
         setTopSheetHeight()
         backdrop_top_sheet_recycler_view.addOnScrollListener(onScrollListener)
+        backdrop_top_sheet_recycler_view.addOnItemTouchListener(onTouchListener)
     }
 
     private val onScrollListener = object: RecyclerView.OnScrollListener() {
@@ -91,10 +108,27 @@ class BackDropFragment : Fragment(){
         }
     }
 
+    private val onTouchListener = object: RecyclerView.OnItemTouchListener {
+        override fun onTouchEvent(rv: RecyclerView, e: MotionEvent) {}
+
+        override fun onInterceptTouchEvent(rv: RecyclerView, e: MotionEvent): Boolean {
+            return !isRecycleViewScrollable
+        }
+
+        override fun onRequestDisallowInterceptTouchEvent(disallowIntercept: Boolean) {}
+
+    }
+
     private fun setTopSheetHeight() {
         val topSheetHeight = getDefaultDisplayHeight() - getActionBarHeight() - getStatusBarHeight()
         val topLayerSheetParams = top_layer_sheet.layoutParams
         topLayerSheetParams.height = topSheetHeight
+
+        val backDropRecyclerViewParams = backdrop_top_sheet_recycler_view.layoutParams
+        backDropRecyclerViewParams.height = topSheetHeight - backdrop_sub_header_name.layoutParams.height - backdrop_sub_header_name.marginTop
+
+        val backDropConstraintTopParams = backdrop_constraint_top.layoutParams
+        backDropConstraintTopParams.height = topSheetHeight
     }
 
     private fun getDefaultDisplayHeight(): Int {
