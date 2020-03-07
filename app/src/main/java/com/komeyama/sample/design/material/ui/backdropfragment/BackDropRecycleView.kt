@@ -10,7 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.komeyama.sample.design.material.R
 
 class BackDropRecycleView {
-    class BackDropSheetAdapter(private val items:List<BackDropSheetInformation>, private val itemClick: ItemClick): RecyclerView.Adapter<BackDropSheetListHolder>() {
+    class BackDropSheetAdapter(
+        private val items:List<BackDropTopSheetInformation>,
+        private val itemClick: ItemClick): RecyclerView.Adapter<BackDropSheetListHolder>() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BackDropSheetListHolder {
             val layoutInflater = LayoutInflater.from(parent.context)
             return BackDropSheetListHolder(layoutInflater.inflate(R.layout.list_backdrop_top_sheet_item, parent, false))
@@ -19,11 +21,8 @@ class BackDropRecycleView {
         override fun getItemCount() = items.size
 
         override fun onBindViewHolder(holder: BackDropSheetListHolder, position: Int) {
-            holder.let {
-                it.imageView.setImageResource(items[position].imageResource)
-                it.textView.text = items[position].itemName
-            }
-
+            holder.imageView.setImageResource(items[position].imageResource)
+            holder.textView.text = items[position].itemName
             holder.view.setOnClickListener {
                 itemClick.onClick(items[position])
             }
@@ -35,17 +34,16 @@ class BackDropRecycleView {
             @LayoutRes
             val LAYOUT = R.layout.list_backdrop_top_sheet_item
         }
-
-        val imageView: ImageView = view.findViewById(R.id.design_image)
-        val textView: TextView = view.findViewById(R.id.design_name)
+        val imageView: ImageView = view.findViewById(R.id.backdrop_top_design_image)
+        val textView: TextView = view.findViewById(R.id.backdrop_top_design_name)
     }
 
-    class ItemClick(val item:(BackDropSheetInformation) -> Unit) {
-        fun onClick(item: BackDropSheetInformation) {
+    class ItemClick(val item:(BackDropTopSheetInformation) -> Unit) {
+        fun onClick(item: BackDropTopSheetInformation) {
             item(item)
         }
     }
 
-    data class BackDropSheetInformation(val imageResource:Int, val itemName: String)
+    data class BackDropTopSheetInformation(val imageResource: Int,val itemName: String)
 }
 

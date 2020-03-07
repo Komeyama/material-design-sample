@@ -7,6 +7,7 @@ import androidx.core.view.marginTop
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.komeyama.sample.design.material.R
@@ -23,6 +24,7 @@ class BackDropFragment : Fragment(R.layout.fragment_backdrop){
         val args = BackDropFragmentArgs.fromBundle(arguments!!)
         Timber.d("backdrop fragment type %s", args.backDropType)
 
+        initBackdropUnderSheet()
         initBackDropTopSheet()
 
         backdrop_toolbar.setNavigationOnClickListener {
@@ -30,10 +32,22 @@ class BackDropFragment : Fragment(R.layout.fragment_backdrop){
         }
     }
 
+    private fun initBackdropUnderSheet() {
+        val backdropUnderSheetAdapter =
+            BackDropUnderRecycleView.BackDropUnderSheetAdapter(BackDropUnderSheetData().backdropBottomDummyItems,
+                BackDropUnderRecycleView.ItemClick {
+                    Timber.d("tap: %s", it)
+                })
+        activity!!.findViewById<RecyclerView>(R.id.backdrop_under_sheet_recycler_view).apply {
+            adapter = backdropUnderSheetAdapter
+            layoutManager = LinearLayoutManager(context)
+        }
+    }
+
     private fun initBackDropTopSheet() {
-        // recycleView
+        // top sheet recycleView
         val backDropSheetAdapter =
-            BackDropRecycleView.BackDropSheetAdapter(BackDropData().backdropDummyItems,
+            BackDropRecycleView.BackDropSheetAdapter(BackDropTopSheetData().backdropDummyItems,
                 BackDropRecycleView.ItemClick {
                     Timber.d("tap: %s", it)
                 })

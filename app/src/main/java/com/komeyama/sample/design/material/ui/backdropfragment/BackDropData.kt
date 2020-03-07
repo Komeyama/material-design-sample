@@ -1,22 +1,31 @@
 package com.komeyama.sample.design.material.ui.backdropfragment
 
 import com.komeyama.sample.design.material.R
-import com.komeyama.sample.design.material.ui.backdropfragment.BackDropRecycleView.BackDropSheetInformation
+import com.komeyama.sample.design.material.ui.backdropfragment.BackDropRecycleView.BackDropTopSheetInformation
+import com.komeyama.sample.design.material.ui.backdropfragment.BackDropUnderRecycleView.BackDropUnderSheetInformation
 
-class BackDropData {
-    val backdropDummyItems: List<BackDropSheetInformation> = listOf(
-        BackDropSheetInformation(R.drawable.ic_launcher_background, SheetItemName.ITEM_01.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_foreground, SheetItemName.ITEM_02.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_foreground, SheetItemName.ITEM_03.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_background, SheetItemName.ITEM_04.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_background, SheetItemName.ITEM_05.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_foreground, SheetItemName.ITEM_06.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_foreground, SheetItemName.ITEM_07.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_background, SheetItemName.ITEM_08.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_background, SheetItemName.ITEM_09.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_background, SheetItemName.ITEM_10.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_foreground, SheetItemName.ITEM_11.designName),
-        BackDropSheetInformation(R.drawable.ic_launcher_foreground, SheetItemName.ITEM_12.designName)
+class BackDropTopSheetData {
+    val backdropDummyItems: List<BackDropTopSheetInformation> = listOf(
+        BackDropTopSheetInformation(R.drawable.ic_launcher_background, SheetItemName.ITEM_01.designName),
+        BackDropTopSheetInformation(R.drawable.ic_launcher_foreground, SheetItemName.ITEM_02.designName),
+        BackDropTopSheetInformation(R.drawable.ic_launcher_foreground, SheetItemName.ITEM_03.designName),
+        BackDropTopSheetInformation(R.drawable.ic_launcher_background, SheetItemName.ITEM_04.designName),
+        BackDropTopSheetInformation(R.drawable.ic_launcher_background, SheetItemName.ITEM_05.designName),
+        BackDropTopSheetInformation(R.drawable.ic_launcher_foreground, SheetItemName.ITEM_06.designName),
+        BackDropTopSheetInformation(R.drawable.ic_launcher_foreground, SheetItemName.ITEM_07.designName),
+        BackDropTopSheetInformation(R.drawable.ic_launcher_background, SheetItemName.ITEM_08.designName),
+        BackDropTopSheetInformation(R.drawable.ic_launcher_background, SheetItemName.ITEM_09.designName),
+        BackDropTopSheetInformation(R.drawable.ic_launcher_background, SheetItemName.ITEM_10.designName),
+        BackDropTopSheetInformation(R.drawable.ic_launcher_foreground, SheetItemName.ITEM_11.designName),
+        BackDropTopSheetInformation(R.drawable.ic_launcher_foreground, SheetItemName.ITEM_12.designName)
+    )
+}
+
+class BackDropUnderSheetData {
+    val backdropBottomDummyItems: List<BackDropUnderSheetInformation> = listOf(
+        BackDropUnderSheetInformation(SheetItemName.ITEM_01.designName),
+        BackDropUnderSheetInformation(SheetItemName.ITEM_02.designName),
+        BackDropUnderSheetInformation(SheetItemName.ITEM_03.designName)
     )
 }
 

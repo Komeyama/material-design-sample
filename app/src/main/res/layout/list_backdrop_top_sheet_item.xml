@@ -14,24 +14,24 @@
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <ImageView
-        android:id="@+id/design_image"
+        android:id="@+id/backdrop_top_design_image"
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toStartOf="@+id/design_tile_Underlay"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/design_name"
+        app:layout_constraintBottom_toTopOf="@+id/backdrop_top_design_name"
         app:srcCompat="@drawable/ic_launcher_background"/>
 
     <TextView
-        android:id="@+id/design_name"
+        android:id="@+id/backdrop_top_design_name"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:text="@string/coming_soon"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="@+id/design_tile_Underlay"
-        app:layout_constraintTop_toBottomOf="@+id/design_image"/>
+        app:layout_constraintTop_toBottomOf="@+id/backdrop_top_design_image"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
