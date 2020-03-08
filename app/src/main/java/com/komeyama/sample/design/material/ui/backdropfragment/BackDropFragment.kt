@@ -3,6 +3,7 @@ package com.komeyama.sample.design.material.ui.backdropfragment
 import android.os.Bundle
 import android.os.Handler
 import android.view.*
+import android.widget.FrameLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.marginTop
 import androidx.fragment.app.Fragment
@@ -22,7 +23,9 @@ class BackDropFragment : Fragment(R.layout.fragment_backdrop){
         private var isRecycleViewScrollable = true
         private var topSheetName = SheetItemListName.ITEM_LIST_01.itemListName
         private var mBackdropUnderSheetAdapter: BackDropRecycleViewUnder.BackDropUnderSheetAdapter? = null
+        private var initBehaviorHeight = 0
         private const val rippleTime = 400L
+        private const val detailInformationHeight = 700
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -80,7 +83,8 @@ class BackDropFragment : Fragment(R.layout.fragment_backdrop){
         setTopSheetHeight()
 
         // sheet control
-        val behavior = BottomSheetBehavior.from(top_layer_sheet)
+        val behavior: BottomSheetBehavior<FrameLayout>  = BottomSheetBehavior.from(top_layer_sheet)
+        initBehaviorHeight = behavior.peekHeight
         behavior.isDraggable = false
         behavior.state = BottomSheetBehavior.STATE_EXPANDED
         top_layer_sheet_cover.visibility = View.GONE
@@ -92,17 +96,37 @@ class BackDropFragment : Fragment(R.layout.fragment_backdrop){
                 isRecycleViewScrollable = false
                 backdrop_toolbar_title.title = getString(R.string.backdrop_toolbar_title_name)
                 mBackdropUnderSheetAdapter?.setButtonColor(topSheetName)
+                switch_under_sheet.visibility = View.VISIBLE
             } else {
                 it.changeImageResource(R.drawable.ic_menu_24dp)
                 behavior.state = BottomSheetBehavior.STATE_EXPANDED
                 top_layer_sheet_cover.visibility = View.GONE
                 isRecycleViewScrollable = true
                 backdrop_toolbar_title.title = topSheetName
+                switch_under_sheet.visibility = View.GONE
+                behavior.peekHeight = initBehaviorHeight
+                setVisibilityOfUnderSheet(recycleViewVisibility=View.VISIBLE,detailViewVisibility=View.INVISIBLE)
             }
             it.startRotateAnimation()
         }
+
+        switch_under_sheet.setOnClickListener {
+            if (backdrop_under_sheet_detail_information.visibility == View.INVISIBLE) {
+                behavior.changePeekHeight(detailInformationHeight)
+                setVisibilityOfUnderSheet(recycleViewVisibility=View.INVISIBLE,detailViewVisibility=View.VISIBLE)
+            } else {
+                behavior.changePeekHeight(initBehaviorHeight)
+                setVisibilityOfUnderSheet(recycleViewVisibility= View.VISIBLE, detailViewVisibility=View.INVISIBLE)
+            }
+        }
+
         backdrop_top_sheet_recycler_view.addOnScrollListener(onScrollListener)
         backdrop_top_sheet_recycler_view.addOnItemTouchListener(onTouchListener)
+    }
+
+    private fun setVisibilityOfUnderSheet(recycleViewVisibility: Int, detailViewVisibility: Int) {
+        backdrop_under_sheet_recycler_view.visibility = recycleViewVisibility
+        backdrop_under_sheet_detail_information.visibility = detailViewVisibility
     }
 
     private val onScrollListener = object: RecyclerView.OnScrollListener() {

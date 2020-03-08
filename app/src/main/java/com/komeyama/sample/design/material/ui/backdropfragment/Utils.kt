@@ -8,7 +8,9 @@ import android.util.TypedValue
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.RotateAnimation
+import android.widget.FrameLayout
 import android.widget.ImageView
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.shape.ShapeAppearanceModel
@@ -49,6 +51,12 @@ fun View.startRotateAnimation() {
 
 fun View.changeImageResource(resource: Int) {
     (this as ImageView).setImageResource(resource)
+}
+
+fun BottomSheetBehavior<FrameLayout>.changePeekHeight(height: Int) {
+    this.state = BottomSheetBehavior.STATE_EXPANDED
+    this.peekHeight = height
+    this.state = BottomSheetBehavior.STATE_COLLAPSED
 }
 
 fun getDefaultDisplayHeight(activity: Activity): Int {
