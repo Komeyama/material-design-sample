@@ -51,6 +51,5 @@ enum class SheetItemListName(val itemListName: String){
 }
 
 enum class BackDropType(val backDropTypeName: String){
-    TYPE_01("type01"),
-    TYPE_02("type02")
+    TYPE_01("Basic")
 }

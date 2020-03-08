@@ -4,8 +4,8 @@
     <string name="backdrop_switch_layer">Switch layer</string>
     <string name="backdrop_toolbar_title_name">Shopping</string>
     <string name="backdrop_tune">Backdrop tune</string>
-    <string name="backdrop_type1">Type 1</string>
-    <string name="backdrop_type2">Type 2</string>
+    <string name="backdrop_type1">Basic type</string>
+    <string name="backdrop_type2">Coming soon</string>
     <string name="backdrop_under_detail_information">Detail information</string>
     <string name="backdrop_under_sheet_checkbox">Dummy check</string>
     <string name="bottom_bar_search">Search</string>
