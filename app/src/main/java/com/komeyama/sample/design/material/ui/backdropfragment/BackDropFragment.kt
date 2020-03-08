@@ -22,9 +22,10 @@ class BackDropFragment : Fragment(R.layout.fragment_backdrop){
     companion object {
         private var topSheetName = SheetItemListName.ITEM_LIST_01.itemListName
         private var mBackdropUnderSheetAdapter: BackDropRecycleViewUnder.BackDropUnderSheetAdapter? = null
-        private var initBehaviorHeight = 0
         private const val rippleTime = 400L
-        private const val detailInformationHeight = 700
+        private var initBehaviorHeight = 0
+        private var detailInformationHeight = 0
+        private var statusBarHeight = 0
     }
 
     private var isRecycleViewScrollable = true
@@ -85,7 +86,11 @@ class BackDropFragment : Fragment(R.layout.fragment_backdrop){
 
         // sheet control
         val behavior: BottomSheetBehavior<FrameLayout>  = BottomSheetBehavior.from(top_layer_sheet)
-        initBehaviorHeight = behavior.peekHeight
+        initBehaviorHeight = getDefaultDisplayHeight(activity!!) * 1 / 2
+        backdrop_under_sheet_recycler_view.layoutParams.height = getDefaultDisplayHeight(activity!!) - getActionBarHeight(activity!!) - statusBarHeight - initBehaviorHeight
+        detailInformationHeight = getDefaultDisplayHeight(activity!!) * 1 / 5
+        scrollView.layoutParams.height =  getDefaultDisplayHeight(activity!!) - getActionBarHeight(activity!!) - statusBarHeight - detailInformationHeight
+        behavior.peekHeight = initBehaviorHeight
         behavior.isDraggable = false
         behavior.state = BottomSheetBehavior.STATE_EXPANDED
         top_layer_sheet_cover.visibility = View.GONE
@@ -112,7 +117,7 @@ class BackDropFragment : Fragment(R.layout.fragment_backdrop){
         }
 
         switch_under_sheet.setOnClickListener {
-            if (backdrop_under_sheet_detail_information.visibility == View.INVISIBLE) {
+            if (scrollView.visibility == View.INVISIBLE) {
                 behavior.changePeekHeight(detailInformationHeight)
                 setVisibilityOfUnderSheet(recycleViewVisibility=View.INVISIBLE,detailViewVisibility=View.VISIBLE)
             } else {
@@ -127,7 +132,7 @@ class BackDropFragment : Fragment(R.layout.fragment_backdrop){
 
     private fun setVisibilityOfUnderSheet(recycleViewVisibility: Int, detailViewVisibility: Int) {
         backdrop_under_sheet_recycler_view.visibility = recycleViewVisibility
-        backdrop_under_sheet_detail_information.visibility = detailViewVisibility
+        scrollView.visibility = detailViewVisibility
     }
 
     private val onScrollListener = object: RecyclerView.OnScrollListener() {
@@ -149,7 +154,10 @@ class BackDropFragment : Fragment(R.layout.fragment_backdrop){
     }
 
     private fun setTopSheetHeight() {
-        val topSheetHeight = getDefaultDisplayHeight(activity!!) - getActionBarHeight(activity!!) - getStatusBarHeight(activity!!)
+        if (statusBarHeight == 0) {
+            statusBarHeight = getStatusBarHeight(activity!!)
+        }
+        val topSheetHeight = getDefaultDisplayHeight(activity!!) - getActionBarHeight(activity!!) - statusBarHeight
         top_layer_sheet.setMaterialHeight(topSheetHeight)
         backdrop_top_sheet_recycler_view.setMaterialHeight(topSheetHeight - backdrop_sub_header_name.layoutParams.height - backdrop_sub_header_name.marginTop)
         backdrop_constraint_top.setMaterialHeight(topSheetHeight)
