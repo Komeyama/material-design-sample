@@ -1,6 +1,7 @@
 package com.komeyama.sample.design.material.ui.backdropfragment
 
 import android.os.Bundle
+import android.os.Handler
 import android.view.*
 import androidx.core.content.ContextCompat
 import androidx.core.view.marginTop
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.komeyama.sample.design.material.R
 import kotlinx.android.synthetic.main.fragment_backdrop.*
+import kotlinx.android.synthetic.main.list_backdrop_under_sheet_item.view.*
 import timber.log.Timber
 
 class BackDropFragment : Fragment(R.layout.fragment_backdrop){
@@ -19,6 +21,8 @@ class BackDropFragment : Fragment(R.layout.fragment_backdrop){
     companion object {
         private var isRecycleViewScrollable = true
         private var topSheetName = SheetItemListName.ITEM_LIST_01.itemListName
+        private var mBackdropUnderSheetAdapter: BackDropRecycleViewUnder.BackDropUnderSheetAdapter? = null
+        private const val rippleTime = 400L
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -40,22 +44,28 @@ class BackDropFragment : Fragment(R.layout.fragment_backdrop){
     }
 
     private fun initBackdropUnderSheet() {
-        val backdropUnderSheetAdapter =
-            BackDropRecycleViewUnder.BackDropUnderSheetAdapter(BackDropUnderSheetData().backdropBottomDummyItems,
-                BackDropRecycleViewUnder.ItemClick {
+        mBackdropUnderSheetAdapter = BackDropRecycleViewUnder.BackDropUnderSheetAdapter(
+                BackDropUnderSheetData().backdropBottomDummyItems,
+                BackDropRecycleViewUnder.ItemClick { it, v ->
                     Timber.d("tap: %s", it)
+                    Handler().postDelayed(
+                        {v.backdrop_under_design_button.background.setTint(ContextCompat.getColor(activity!!, R.color.colorWhiteThin32)) },
+                        rippleTime)
                     topSheetName = it.itemName
-                })
+                }
+        )
         activity!!.findViewById<RecyclerView>(R.id.backdrop_under_sheet_recycler_view).apply {
-            adapter = backdropUnderSheetAdapter
+            adapter = mBackdropUnderSheetAdapter
             layoutManager = LinearLayoutManager(context)
         }
+
+        activity!!.findViewById<RecyclerView>(R.id.backdrop_under_sheet_recycler_view).adapter
     }
 
     private fun initBackDropTopSheet() {
         // top sheet recycleView
-        val backDropSheetAdapter =
-            BackDropRecycleView.BackDropSheetAdapter(BackDropTopSheetData().backdropDummyItems,
+        val backDropSheetAdapter = BackDropRecycleView.BackDropSheetAdapter(
+                BackDropTopSheetData().backdropDummyItems,
                 BackDropRecycleView.ItemClick {
                     Timber.d("tap: %s", it)
                 })
@@ -81,6 +91,7 @@ class BackDropFragment : Fragment(R.layout.fragment_backdrop){
                 top_layer_sheet_cover.visibility = View.VISIBLE
                 isRecycleViewScrollable = false
                 backdrop_toolbar_title.title = getString(R.string.backdrop_toolbar_title_name)
+                mBackdropUnderSheetAdapter?.setButtonColor(topSheetName)
             } else {
                 it.changeImageResource(R.drawable.ic_menu_24dp)
                 behavior.state = BottomSheetBehavior.STATE_EXPANDED
