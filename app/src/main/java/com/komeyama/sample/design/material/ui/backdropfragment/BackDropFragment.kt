@@ -16,7 +16,10 @@ import timber.log.Timber
 
 class BackDropFragment : Fragment(R.layout.fragment_backdrop){
 
-    private var isRecycleViewScrollable = true
+    companion object {
+        private var isRecycleViewScrollable = true
+        private var topSheetName = SheetItemListName.ITEM_LIST_01.itemListName
+    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -24,19 +27,24 @@ class BackDropFragment : Fragment(R.layout.fragment_backdrop){
         val args = BackDropFragmentArgs.fromBundle(arguments!!)
         Timber.d("backdrop fragment type %s", args.backDropType)
 
+        initToolbar()
         initBackdropUnderSheet()
         initBackDropTopSheet()
+    }
 
-        backdrop_toolbar.setNavigationOnClickListener {
+    private fun initToolbar() {
+        backdrop_toolbar_title.title = topSheetName
+        backdrop_toolbar_title.setNavigationOnClickListener {
             findNavController().navigateUp()
         }
     }
 
     private fun initBackdropUnderSheet() {
         val backdropUnderSheetAdapter =
-            BackDropUnderRecycleView.BackDropUnderSheetAdapter(BackDropUnderSheetData().backdropBottomDummyItems,
-                BackDropUnderRecycleView.ItemClick {
+            BackDropRecycleViewUnder.BackDropUnderSheetAdapter(BackDropUnderSheetData().backdropBottomDummyItems,
+                BackDropRecycleViewUnder.ItemClick {
                     Timber.d("tap: %s", it)
+                    topSheetName = it.itemName
                 })
         activity!!.findViewById<RecyclerView>(R.id.backdrop_under_sheet_recycler_view).apply {
             adapter = backdropUnderSheetAdapter
@@ -68,14 +76,19 @@ class BackDropFragment : Fragment(R.layout.fragment_backdrop){
         top_layer_sheet_cover.visibility = View.GONE
         switch_sheet.setOnClickListener {
             if (behavior.state == BottomSheetBehavior.STATE_EXPANDED){
+                it.changeImageResource(R.drawable.ic_close_24dp)
                 behavior.state = BottomSheetBehavior.STATE_COLLAPSED
                 top_layer_sheet_cover.visibility = View.VISIBLE
                 isRecycleViewScrollable = false
+                backdrop_toolbar_title.title = getString(R.string.backdrop_toolbar_title_name)
             } else {
+                it.changeImageResource(R.drawable.ic_menu_24dp)
                 behavior.state = BottomSheetBehavior.STATE_EXPANDED
                 top_layer_sheet_cover.visibility = View.GONE
                 isRecycleViewScrollable = true
+                backdrop_toolbar_title.title = topSheetName
             }
+            it.startRotateAnimation()
         }
         backdrop_top_sheet_recycler_view.addOnScrollListener(onScrollListener)
         backdrop_top_sheet_recycler_view.addOnItemTouchListener(onTouchListener)

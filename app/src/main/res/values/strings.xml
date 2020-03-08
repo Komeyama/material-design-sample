@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">material-design-sample</string>
+    <string name="backdrop_toolbar_title_name">Shopping</string>
     <string name="backdrop_sheet_title_name">Sub header</string>
     <string name="backdrop_tune">Backdrop tune</string>
     <string name="backdrop_type1">Type 1</string>

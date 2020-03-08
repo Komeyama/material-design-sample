@@ -6,10 +6,14 @@ import android.graphics.Rect
 import android.util.DisplayMetrics
 import android.util.TypedValue
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.RotateAnimation
+import android.widget.ImageView
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.shape.ShapeAppearanceModel
 import com.komeyama.sample.design.material.R
+import timber.log.Timber
 
 fun View.createTopSheetMaterialShape(activity: Activity, color: Int) {
     val shapeAppearanceModel = ShapeAppearanceModel.Builder().setTopLeftCorner(
@@ -29,6 +33,22 @@ fun View.createTopSheetMaterialShape(activity: Activity, color: Int) {
 
 fun View.setMaterialHeight(height: Int) {
     this.layoutParams.height = height
+}
+
+fun View.startRotateAnimation() {
+    Timber.d("start animation")
+    val rotateAnimation = RotateAnimation(
+        0f, 180f,
+        Animation.RELATIVE_TO_SELF, 0.5f,
+        Animation.RELATIVE_TO_SELF, 0.5f)
+    rotateAnimation.duration = 250
+    rotateAnimation.repeatCount = 0
+    rotateAnimation.fillAfter = true
+    this.startAnimation(rotateAnimation)
+}
+
+fun View.changeImageResource(resource: Int) {
+    (this as ImageView).setImageResource(resource)
 }
 
 fun getDefaultDisplayHeight(activity: Activity): Int {

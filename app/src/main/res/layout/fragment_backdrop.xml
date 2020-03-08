@@ -26,13 +26,13 @@
                 android:layout_height="wrap_content">
 
                 <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/backdrop_toolbar"
+                    android:id="@+id/backdrop_toolbar_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:navigationIcon="@drawable/ic_navigate_before_24dp"
-                    app:title="@string/app_name"
+                    app:title="@string/backdrop_toolbar_title_name"
                     app:titleTextAppearance="@style/Toolbar.TitleText"
                     app:titleTextColor="@color/colorWhite" />
 
@@ -40,7 +40,7 @@
                     android:id="@+id/switch_sheet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"

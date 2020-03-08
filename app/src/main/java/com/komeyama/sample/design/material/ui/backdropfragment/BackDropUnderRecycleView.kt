@@ -8,7 +8,7 @@ import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
 import com.komeyama.sample.design.material.R
 
-class BackDropUnderRecycleView {
+class BackDropRecycleViewUnder {
     class BackDropUnderSheetAdapter(
         private val items:List<BackDropUnderSheetInformation>,
         private val itemClick: ItemClick): RecyclerView.Adapter<BackDropUnderSheetListHolder>() {

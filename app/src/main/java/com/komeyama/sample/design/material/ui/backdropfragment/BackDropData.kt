@@ -2,7 +2,7 @@ package com.komeyama.sample.design.material.ui.backdropfragment
 
 import com.komeyama.sample.design.material.R
 import com.komeyama.sample.design.material.ui.backdropfragment.BackDropRecycleView.BackDropTopSheetInformation
-import com.komeyama.sample.design.material.ui.backdropfragment.BackDropUnderRecycleView.BackDropUnderSheetInformation
+import com.komeyama.sample.design.material.ui.backdropfragment.BackDropRecycleViewUnder.BackDropUnderSheetInformation
 
 class BackDropTopSheetData {
     val backdropDummyItems: List<BackDropTopSheetInformation> = listOf(
@@ -23,9 +23,9 @@ class BackDropTopSheetData {
 
 class BackDropUnderSheetData {
     val backdropBottomDummyItems: List<BackDropUnderSheetInformation> = listOf(
-        BackDropUnderSheetInformation(SheetItemName.ITEM_01.designName),
-        BackDropUnderSheetInformation(SheetItemName.ITEM_02.designName),
-        BackDropUnderSheetInformation(SheetItemName.ITEM_03.designName)
+        BackDropUnderSheetInformation(SheetItemListName.ITEM_LIST_01.itemListName),
+        BackDropUnderSheetInformation(SheetItemListName.ITEM_LIST_02.itemListName),
+        BackDropUnderSheetInformation(SheetItemListName.ITEM_LIST_03.itemListName)
     )
 }
 
@@ -42,6 +42,12 @@ enum class SheetItemName(val designName: String){
     ITEM_10("item_10"),
     ITEM_11("item_11"),
     ITEM_12("item_12")
+}
+
+enum class SheetItemListName(val itemListName: String){
+    ITEM_LIST_01("item list 01"),
+    ITEM_LIST_02("item list 02"),
+    ITEM_LIST_03("item list 03")
 }
 
 enum class BackDropType(val backDropTypeName: String){
