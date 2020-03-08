@@ -20,13 +20,14 @@ import timber.log.Timber
 class BackDropFragment : Fragment(R.layout.fragment_backdrop){
 
     companion object {
-        private var isRecycleViewScrollable = true
         private var topSheetName = SheetItemListName.ITEM_LIST_01.itemListName
         private var mBackdropUnderSheetAdapter: BackDropRecycleViewUnder.BackDropUnderSheetAdapter? = null
         private var initBehaviorHeight = 0
         private const val rippleTime = 400L
         private const val detailInformationHeight = 700
     }
+
+    private var isRecycleViewScrollable = true
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
