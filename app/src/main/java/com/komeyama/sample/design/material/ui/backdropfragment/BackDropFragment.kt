@@ -26,6 +26,8 @@ class BackDropFragment : Fragment(R.layout.fragment_backdrop){
         private var initBehaviorHeight = 0
         private var detailInformationHeight = 0
         private var statusBarHeight = 0
+        private const val topSheetStandardPeekHeight = 2 / 3
+        private const val topSheetDetailPeekHeight = 2 / 5
     }
 
     private var isRecycleViewScrollable = true
@@ -86,9 +88,9 @@ class BackDropFragment : Fragment(R.layout.fragment_backdrop){
 
         // sheet control
         val behavior: BottomSheetBehavior<FrameLayout>  = BottomSheetBehavior.from(top_layer_sheet)
-        initBehaviorHeight = getDefaultDisplayHeight(activity!!) * 1 / 2
+        initBehaviorHeight = getDefaultDisplayHeight(activity!!) * topSheetStandardPeekHeight
         backdrop_under_sheet_recycler_view.layoutParams.height = getDefaultDisplayHeight(activity!!) - getActionBarHeight(activity!!) - statusBarHeight - initBehaviorHeight
-        detailInformationHeight = getDefaultDisplayHeight(activity!!) * 1 / 5
+        detailInformationHeight = getDefaultDisplayHeight(activity!!) * topSheetDetailPeekHeight
         scrollView.layoutParams.height =  getDefaultDisplayHeight(activity!!) - getActionBarHeight(activity!!) - statusBarHeight - detailInformationHeight
         behavior.peekHeight = initBehaviorHeight
         behavior.isDraggable = false
