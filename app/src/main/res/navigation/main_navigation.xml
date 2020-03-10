@@ -44,6 +44,14 @@
     <fragment
         android:id="@+id/dialogSelectFragment"
         android:name="com.komeyama.sample.design.material.ui.dialog.DialogSelectFragment"
-        android:label="DialogSelectFragment" />
+        android:label="DialogSelectFragment" >
+        <action
+            android:id="@+id/action_dialogSelectFragment_to_dialogType01"
+            app:destination="@id/dialogType01" />
+    </fragment>
+    <dialog
+        android:id="@+id/dialogType01"
+        android:name="com.komeyama.sample.design.material.ui.dialog.DialogType01"
+        android:label="DialogType01" />
 
 </navigation>

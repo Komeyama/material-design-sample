@@ -18,6 +18,8 @@
     <string name="dummy_user_image">dummy image</string>
     <string name="default_user_name">user name</string>
     <string name="default_user_greeting">Hello!</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_no">NO</string>
     <string name="dialog_type_01">Type01</string>
     <string name="dialog_type_02">Type02</string>
     <string name="dialog_type_03">Type03</string>
