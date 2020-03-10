@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_mainFragment_to_backDropTypeSelectFragment"
             app:destination="@id/backDropTypeSelectFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_dialogSelectFragment"
+            app:destination="@id/dialogSelectFragment" />
     </fragment>
 
     <fragment
@@ -38,5 +41,9 @@
             android:id="@+id/action_backDropTypeSelectFragment_to_backDropFragment"
             app:destination="@id/backDropFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/dialogSelectFragment"
+        android:name="com.komeyama.sample.design.material.ui.dialog.DialogSelectFragment"
+        android:label="DialogSelectFragment" />
 
 </navigation>

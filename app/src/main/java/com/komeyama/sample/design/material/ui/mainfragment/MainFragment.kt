@@ -18,6 +18,8 @@ class MainFragment : Fragment(){
     private var items: List<DesignInformation> = listOf(
         DesignInformation(R.drawable.top_image_bottom_bar, DesignName.APP_BARS_BOTTOM.designName),
         DesignInformation(R.drawable.top_image_backdrop, DesignName.BACKDROP.designName),
+        DesignInformation(R.drawable.ic_launcher_foreground, DesignName.CARD.designName),
+        DesignInformation(R.drawable.ic_launcher_foreground, DesignName.DIALOG.designName),
         DesignInformation(R.drawable.ic_launcher_foreground, DesignName.COMING_SOON.designName)
     )
 
@@ -37,6 +39,10 @@ class MainFragment : Fragment(){
                 }
                 DesignName.BACKDROP.designName -> {
                     findNavController().navigate(R.id.action_mainFragment_to_backDropTypeSelectFragment)
+                }
+                DesignName.CARD.designName -> {}
+                DesignName.DIALOG.designName -> {
+                    findNavController().navigate(R.id.action_mainFragment_to_dialogSelectFragment)
                 }
             }
         })
@@ -92,5 +98,7 @@ data class DesignInformation(val imageResource:Int, val designName: String)
 enum class DesignName(val designName: String){
     APP_BARS_BOTTOM("App bars: bottom"),
     BACKDROP("Backdrop"),
+    CARD("Card"),
+    DIALOG("Dialog"),
     COMING_SOON("Coming soon")
 }
