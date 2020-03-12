@@ -26,6 +26,7 @@ class MainFragment : Fragment(R.layout.fragment_main){
                             findNavController().navigate(R.id.action_mainFragment_to_backDropTypeSelectFragment)
                         }
                         DesignName.CARD.designName -> {
+                            findNavController().navigate(R.id.action_mainFragment_to_cardTypeFragment)
                         }
                         DesignName.DIALOG.designName -> {
                             findNavController().navigate(R.id.action_mainFragment_to_dialogSelectFragment)
