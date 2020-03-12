@@ -58,7 +58,15 @@
         android:label="DialogType01" />
     <fragment
         android:id="@+id/cardTypeFragment"
-        android:name="com.komeyama.sample.design.material.ui.card.CardTypeFragment"
-        android:label="CardTypeFragment" />
+        android:name="com.komeyama.sample.design.material.ui.card.CardSelectFragment"
+        android:label="CardTypeFragment" >
+        <action
+            android:id="@+id/action_cardTypeFragment_to_cardType01"
+            app:destination="@id/cardType01" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardType01"
+        android:name="com.komeyama.sample.design.material.ui.card.CardType01"
+        android:label="CardType01" />
 
 </navigation>
