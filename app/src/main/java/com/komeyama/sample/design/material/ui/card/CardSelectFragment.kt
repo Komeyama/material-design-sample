@@ -13,5 +13,8 @@ class CardSelectFragment: Fragment(R.layout.fragment_card_select) {
         card_type01.setOnClickListener {
             findNavController().navigate(R.id.action_cardTypeFragment_to_cardType01)
         }
+        card_type02.setOnClickListener {
+            findNavController().navigate(R.id.action_cardTypeFragment_to_cardType02)
+        }
     }
 }

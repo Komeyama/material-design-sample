@@ -63,10 +63,17 @@
         <action
             android:id="@+id/action_cardTypeFragment_to_cardType01"
             app:destination="@id/cardType01" />
+        <action
+            android:id="@+id/action_cardTypeFragment_to_cardType02"
+            app:destination="@id/cardType02" />
     </fragment>
     <fragment
         android:id="@+id/cardType01"
         android:name="com.komeyama.sample.design.material.ui.card.CardType01"
         android:label="CardType01" />
+    <fragment
+        android:id="@+id/cardType02"
+        android:name="com.komeyama.sample.design.material.ui.card.CardType02"
+        android:label="CardType02" />
 
 </navigation>
