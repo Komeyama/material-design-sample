@@ -1,6 +1,7 @@
 package com.komeyama.sample.design.material.ui.card
 
 import android.os.Bundle
+import android.provider.Contacts
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
@@ -28,8 +29,8 @@ class CardType02: Fragment(R.layout.fragment_card_type02){
 
     private fun ImageView.startFavoriteAnimation(scaleValue: Float, color: Int) {
         val view = this
-        GlobalScope.launch {
-            val shrink = GlobalScope.async {
+        GlobalScope.launch(Dispatchers.Main) {
+            val shrink = GlobalScope.async(Dispatchers.Main) {
                 view.startAnimation(
                     scaleAnimationAsCenter(
                     1.0f, scaleValue, 1.0f,scaleValue, initialAnimationTime
