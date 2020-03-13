@@ -13,31 +13,36 @@ import kotlinx.coroutines.*
 
 class CardType02: Fragment(R.layout.fragment_card_type02){
 
-    private val shrinkTime = 100L
+    private val initialAnimationTime = 100L
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         card_favorite.setOnClickListener {
-            card_favorite.startFavoriteAnimation()
+            if (card_favorite.drawable.constantState == ResourcesCompat.getDrawable(resources, R.drawable.ic_favorite_pink_24dp, null)?.constantState) {
+                card_favorite.startFavoriteAnimation(1.2f, R.drawable.ic_favorite_24dp)
+            } else {
+                card_favorite.startFavoriteAnimation(0.2f, R.drawable.ic_favorite_pink_24dp)
+            }
         }
     }
 
-    private fun ImageView.startFavoriteAnimation() {
+    private fun ImageView.startFavoriteAnimation(scaleValue: Float, color: Int) {
         val view = this
         GlobalScope.launch {
             val shrink = GlobalScope.async {
                 view.startAnimation(
                     scaleAnimationAsCenter(
-                    1.0f, 0.2f, 1.0f,0.2f, shrinkTime
+                    1.0f, scaleValue, 1.0f,scaleValue, initialAnimationTime
                     )
                 )
-                delay(shrinkTime)
+                delay(initialAnimationTime)
             }
             shrink.await()
-            view.changeColor()
+
+            view.setImageResource(color)
             view.startAnimation(
                 scaleAnimationAsCenter(
-                0.2f, 1.0f, 0.2f,1.0f,250)
+                scaleValue, 1.0f, scaleValue,1.0f,250)
             )
         }
     }
@@ -50,13 +55,5 @@ class CardType02: Fragment(R.layout.fragment_card_type02){
         scaleAnimation.repeatCount = 0
         scaleAnimation.fillAfter = true
         return scaleAnimation
-    }
-
-    private fun ImageView.changeColor() {
-        if (this.drawable.constantState == ResourcesCompat.getDrawable(resources, R.drawable.ic_favorite_pink_24dp, null)?.constantState) {
-            this.setImageResource(R.drawable.ic_favorite_24dp)
-        } else {
-            this.setImageResource(R.drawable.ic_favorite_pink_24dp)
-        }
     }
 }
