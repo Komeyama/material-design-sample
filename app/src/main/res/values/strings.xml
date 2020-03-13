@@ -20,6 +20,8 @@
     <string name="card_media_text">media text</string>
     <string name="card_secondary_text">Secondary text</string>
     <string name="card_title">Card title</string>
+    <string name="card_action_1">ACTION 1</string>
+    <string name="card_action_2">ACTION 2</string>
     <string name="coming_soon">Coming soon</string>
     <string name="dummy_user_image">dummy image</string>
     <string name="default_user_name">user name</string>
