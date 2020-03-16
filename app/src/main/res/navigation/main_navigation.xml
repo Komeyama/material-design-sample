@@ -66,6 +66,9 @@
         <action
             android:id="@+id/action_cardTypeFragment_to_cardType02"
             app:destination="@id/cardType02" />
+        <action
+            android:id="@+id/action_cardTypeFragment_to_cardType03"
+            app:destination="@id/cardType03" />
     </fragment>
     <fragment
         android:id="@+id/cardType01"
@@ -75,5 +78,9 @@
         android:id="@+id/cardType02"
         android:name="com.komeyama.sample.design.material.ui.card.CardType02"
         android:label="CardType02" />
+    <fragment
+        android:id="@+id/cardType03"
+        android:name="com.komeyama.sample.design.material.ui.card.CardType03"
+        android:label="CardType03" />
 
 </navigation>
