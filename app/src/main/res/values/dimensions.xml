@@ -4,6 +4,8 @@
     <dimen name="bottom_sheet_elevation">1dp</dimen>
     <dimen name="backdrop_sheet_corner_radius">16dp</dimen>
     <dimen name="backdrop_under_sheet_height">10dp</dimen>
+    <dimen name="card_top_height_expand">270dp</dimen>
+    <dimen name="card_top_height_reduce">200dp</dimen>
     <dimen name="dialog_type01_width">250dp</dimen>
     <dimen name="dialog_type01_half_width">125dp</dimen>
     <dimen name="dialog_type01_height">150dp</dimen>
