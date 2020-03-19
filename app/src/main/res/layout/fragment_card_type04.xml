@@ -2,9 +2,10 @@
 <com.google.android.material.card.MaterialCardView
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:animateLayoutChanges="true"
     android:id="@+id/card_top"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/card_top_height_reduce"
+    android:layout_height="@dimen/card_top_height_expand"
     android:layout_marginLeft="@dimen/mtrl_card_spacing"
     android:layout_marginTop="@dimen/mtrl_card_spacing"
     android:layout_marginRight="@dimen/mtrl_card_spacing"
@@ -49,13 +50,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:animateLayoutChanges="true"
             android:id="@+id/text_filed_constraint"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_gravity="bottom"
             android:background="@color/colorWhite"
             android:padding="10dp"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintTop_toBottomOf="@+id/expand_control_button_ground"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
