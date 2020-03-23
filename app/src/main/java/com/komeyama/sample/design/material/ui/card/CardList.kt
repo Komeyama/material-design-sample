@@ -1,7 +1,6 @@
 package com.komeyama.sample.design.material.ui.card
 
 import android.animation.LayoutTransition
-import android.content.Context
 import android.content.res.Resources
 import android.os.Bundle
 import android.view.View
@@ -15,11 +14,10 @@ import com.komeyama.sample.design.material.databinding.ListItemCardType04Binding
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.databinding.ViewHolder
 import com.xwray.groupie.databinding.BindableItem
-import kotlinx.android.synthetic.main.fragment_card_type03.*
-import kotlinx.android.synthetic.main.fragment_card_type04.*
+import kotlinx.android.synthetic.main.fragment_card_list.*
 import timber.log.Timber
 
-class CardType03: Fragment(R.layout.fragment_card_type03) {
+class CardList: Fragment(R.layout.fragment_card_list) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

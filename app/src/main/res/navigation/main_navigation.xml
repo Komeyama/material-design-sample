@@ -67,11 +67,11 @@
             android:id="@+id/action_cardTypeFragment_to_cardType02"
             app:destination="@id/cardType02" />
         <action
-            android:id="@+id/action_cardTypeFragment_to_cardType03"
-            app:destination="@id/cardType03" />
-        <action
             android:id="@+id/action_cardTypeFragment_to_cardType04"
             app:destination="@id/cardType04" />
+        <action
+            android:id="@+id/action_cardTypeFragment_to_cardList"
+            app:destination="@id/cardList" />
     </fragment>
     <fragment
         android:id="@+id/cardType01"
@@ -82,12 +82,12 @@
         android:name="com.komeyama.sample.design.material.ui.card.CardType02"
         android:label="CardType02" />
     <fragment
-        android:id="@+id/cardType03"
-        android:name="com.komeyama.sample.design.material.ui.card.CardType03"
-        android:label="CardType03" />
-    <fragment
         android:id="@+id/cardType04"
         android:name="com.komeyama.sample.design.material.ui.card.CardType04"
         android:label="CardType04" />
+    <fragment
+        android:id="@+id/cardList"
+        android:name="com.komeyama.sample.design.material.ui.card.CardList"
+        android:label="CardList" />
 
 </navigation>
