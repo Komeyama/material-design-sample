@@ -6,9 +6,9 @@ import android.view.View
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.fragment.app.Fragment
 import com.komeyama.sample.design.material.R
-import kotlinx.android.synthetic.main.fragment_card_type04.*
+import kotlinx.android.synthetic.main.fragment_card_type03.*
 
-class CardType04: Fragment(R.layout.fragment_card_type04) {
+class CardType03: Fragment(R.layout.fragment_card_type03) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
