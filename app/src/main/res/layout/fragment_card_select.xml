@@ -36,6 +36,17 @@
         app:layout_constraintTop_toBottomOf="@+id/card_type02"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/card_type_list_expand"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/card_type_list_expand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/card_type_list"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/card_type03"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/card_type_list"/>
 
     <com.google.android.material.button.MaterialButton
@@ -44,7 +55,7 @@
         android:layout_height="wrap_content"
         android:text="@string/card_type_list"
         android:textAllCaps="false"
-        app:layout_constraintTop_toBottomOf="@+id/card_type03"
+        app:layout_constraintTop_toBottomOf="@+id/card_type_list_expand"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>

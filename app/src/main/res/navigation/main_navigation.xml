@@ -72,6 +72,9 @@
         <action
             android:id="@+id/action_cardTypeFragment_to_cardType03"
             app:destination="@id/cardType03" />
+        <action
+            android:id="@+id/action_cardTypeFragment_to_cardListExpand"
+            app:destination="@id/cardListExpand" />
     </fragment>
     <fragment
         android:id="@+id/cardType01"
@@ -89,5 +92,9 @@
         android:id="@+id/cardType03"
         android:name="com.komeyama.sample.design.material.ui.card.CardType03"
         android:label="CardType03" />
+    <fragment
+        android:id="@+id/cardListExpand"
+        android:name="com.komeyama.sample.design.material.ui.card.CardListExpand"
+        android:label="CardListExpand" />
 
 </navigation>
