@@ -18,6 +18,7 @@
     <string name="card_type_02">Type02</string>
     <string name="card_type_03">Type03</string>
     <string name="card_type_list">Type List</string>
+    <string name="card_type_list_expand">Type List Expand</string>
     <string name="card_media_text">media text</string>
     <string name="card_secondary_text">Secondary text</string>
     <string name="card_supporting_text">Card supporting text!\nThis is practice.</string>
