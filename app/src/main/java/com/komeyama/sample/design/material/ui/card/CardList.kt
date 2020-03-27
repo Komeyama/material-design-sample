@@ -3,11 +3,15 @@ package com.komeyama.sample.design.material.ui.card
 import android.content.res.Resources
 import android.os.Bundle
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.Transformation
+import android.widget.RelativeLayout
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.komeyama.sample.design.material.R
 import com.komeyama.sample.design.material.databinding.ListItemCardType01Binding
 import com.komeyama.sample.design.material.databinding.ListItemCardType02Binding
+import com.komeyama.sample.design.material.databinding.ListItemCardType03Binding
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.databinding.ViewHolder
 import com.xwray.groupie.databinding.BindableItem
@@ -24,10 +28,11 @@ class CardList: Fragment(R.layout.fragment_card_list) {
         val items = listOf(
             CardType01Item("Card Title1","sub text 1", View.VISIBLE),
             CardType01Item("Card Title2","sub text 2", View.GONE),
-            CardType01Item("Card Title3","sub text 3", View.INVISIBLE),
+            CardType03Item("Card Title3","sub text 3"),
             CardType01Item("Card Title4","sub text 4", View.VISIBLE),
             CardType02Item("Card Title5","sub text 5", resources),
-            CardType01Item("Card Title6","sub text 6", View.VISIBLE)
+            CardType03Item("Card Title6","sub text 6"),
+            CardType01Item("Card Title7","sub text 7", View.VISIBLE)
         )
         groupAdapter.update(items)
     }
@@ -69,6 +74,63 @@ class CardType02Item(private val titleText: String, private val subTitleText: St
         }
         viewBinding.cardAction02.setOnClickListener {
             Timber.d("on click button2(type02) position:%s, title:%s ",position, viewBinding.subheadTitleText.text)
+        }
+    }
+}
+
+class CardType03Item(private val titleText: String, private val secondaryText: String): BindableItem<ListItemCardType03Binding>() {
+
+    private var originalHeight:Int = 0
+    private val customDuration = 500L
+
+    override fun getLayout() = R.layout.list_item_card_type03
+
+    override fun bind(viewBinding: ListItemCardType03Binding, position: Int) {
+        viewBinding.cardTitleText.text = titleText
+        viewBinding.cardSecondaryText.text = secondaryText
+
+        setInitializeOfCard(viewBinding.expandableText)
+
+        viewBinding.expandControlButton.setOnClickListener {
+            viewBinding.expandableText.clearAnimation()
+            if(viewBinding.expandableText.height > 0) {
+                viewBinding.expandableText.startAnimation(
+                    CustomAnimation(
+                        viewBinding.expandableText,
+                        0,
+                        originalHeight,
+                        customDuration
+                    )
+                )
+            } else{
+                viewBinding.expandableText.startAnimation(
+                    CustomAnimation(
+                        viewBinding.expandableText,
+                        originalHeight,
+                        0,
+                        customDuration
+                    )
+                )
+            }
+        }
+    }
+
+    private fun setInitializeOfCard(textView: RelativeLayout) {
+        textView.measure(0,0)
+        originalHeight = textView.measuredHeight
+        textView.layoutParams.height = 0
+    }
+
+    private class CustomAnimation(var view: View, private val endHeight: Int, var startHeight: Int, customDuration: Long): Animation() {
+
+        init {
+            duration = customDuration
+        }
+
+        override fun applyTransformation(interpolatedTime: Float, t: Transformation?) {
+            val newHeight = (startHeight + (endHeight - startHeight) * interpolatedTime).toInt()
+            view.layoutParams.height = newHeight
+            view.requestLayout()
         }
     }
 }
