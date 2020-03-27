@@ -1,47 +1,49 @@
 package com.komeyama.sample.design.material.ui.card
 
-import android.animation.LayoutTransition
 import android.os.Bundle
 import android.view.View
-import androidx.constraintlayout.widget.ConstraintSet
+import android.view.animation.Animation
+import android.view.animation.Transformation
 import androidx.fragment.app.Fragment
 import com.komeyama.sample.design.material.R
 import kotlinx.android.synthetic.main.fragment_card_type03.*
 
 class CardType03: Fragment(R.layout.fragment_card_type03) {
 
+    private var originalHeight:Int = 0
+    private val customDuration = 500L
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setCardTopHeight(R.dimen.card_top_height_reduce,0)
-        setTextFiledConstraintHeight(R.dimen.card_text_field_height_reduce,0)
+
+        setInitializeOfCard()
 
         expand_control_button.setOnClickListener {
-            if (text_filed_constraint.layoutParams.height == activity?.resources?.getDimensionPixelSize(R.dimen.card_text_field_height_reduce)!!.toInt()) {
-                setCardTopHeight(R.dimen.card_top_height_expand,250)
-                setTextFiledConstraintHeight(R.dimen.card_text_field_height_expand,250)
-            } else {
-                setCardTopHeight(R.dimen.card_top_height_reduce,250)
-                setTextFiledConstraintHeight(R.dimen.card_text_field_height_reduce,250)
+            expandable_text.clearAnimation()
+            if(expandable_text.height > 0) {
+                expandable_text.startAnimation(CustomAnimation(expandable_text, 0, originalHeight, customDuration))
+            } else{
+                expandable_text.startAnimation(CustomAnimation(expandable_text, originalHeight, 0,customDuration))
             }
         }
     }
 
-    private fun setCardTopHeight(heightId:Int, duration: Long) {
-        val transition = card_top.layoutTransition
-        card_top.layoutTransition.enableTransitionType(LayoutTransition.CHANGING)
-        transition.setDuration(duration)
-
-        card_top.layoutParams.height = activity?.resources?.getDimensionPixelSize(heightId)!!.toInt()
+    private fun setInitializeOfCard() {
+        expandable_text.measure(0,0)
+        originalHeight = expandable_text.measuredHeight
+        expandable_text.layoutParams.height = 0
     }
 
-    private fun setTextFiledConstraintHeight(heightId: Int, duration: Long) {
-        val transition = text_filed_constraint.layoutTransition
-        text_filed_constraint.layoutTransition.enableTransitionType(LayoutTransition.CHANGING)
-        transition.setDuration(duration)
+    private class CustomAnimation(var view: View, private val endHeight: Int, var startHeight: Int, customDuration: Long): Animation() {
 
-        text_filed_constraint.layoutParams.height = activity?.resources?.getDimensionPixelSize(heightId)!!.toInt()
-        val constraintSet = ConstraintSet()
-        constraintSet.clone(text_filed_constraint)
-        constraintSet.applyTo(text_filed_constraint)
+        init {
+            duration = customDuration
+        }
+
+        override fun applyTransformation(interpolatedTime: Float, t: Transformation?) {
+            val newHeight = (startHeight + (endHeight - startHeight) * interpolatedTime).toInt()
+            view.layoutParams.height = newHeight
+            view.requestLayout()
+        }
     }
 }
