@@ -21,6 +21,7 @@
     <string name="card_type_list_expand">Type List Expand</string>
     <string name="card_media_text">media text</string>
     <string name="card_secondary_text">Secondary text</string>
+    <string name="card_detail_text">test!\ntest!\ntest!\ntest!\ntest!\ntest!\ntest!\ntest!\ntest!\ntest!\n</string>
     <string name="card_supporting_text">Card supporting text!\nThis is practice.</string>
     <string name="card_title">Card title</string>
     <string name="card_action_1">ACTION 1</string>

@@ -40,6 +40,57 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/media_image">
 
+                <TextView
+                    android:id="@+id/card_title_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:text="@string/card_title"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorBlack"
+                    app:layout_constraintBottom_toTopOf="@+id/expandable_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RelativeLayout
+                    android:id="@+id/expandable_text"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:background="@color/colorWhite"
+                    app:layout_constraintBottom_toTopOf="@+id/horizontal_divider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/card_title_text">
+
+                    <TextView
+                        android:id="@+id/card_secondary_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="2dp"
+                        android:text="@string/card_secondary_text"/>
+
+                    <TextView
+                        android:id="@+id/card_detail_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:padding="2dp"
+                        android:text="@string/card_detail_text"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/horizontal_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorLightGray"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/expandable_text"
+                    app:layout_constraintBottom_toTopOf="@+id/expand_control_button"/>
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/expand_control_button"
                     android:layout_width="wrap_content"
@@ -48,36 +99,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/horizontal_divider" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <RelativeLayout
-            android:id="@+id/expandable_text"
-            android:layout_marginTop="195dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:animateLayoutChanges="true"
-            android:background="@color/colorWhite">
-
-            <TextView
-                android:id="@+id/card_title_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="2dp"
-                android:text="@string/card_title"
-                android:textSize="20sp"
-                android:textColor="@color/colorBlack"/>
-
-            <TextView
-                android:id="@+id/card_secondary_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:padding="2dp"
-                android:text="@string/card_secondary_text"/>
-
-        </RelativeLayout>
     </RelativeLayout>
 </com.google.android.material.card.MaterialCardView>
