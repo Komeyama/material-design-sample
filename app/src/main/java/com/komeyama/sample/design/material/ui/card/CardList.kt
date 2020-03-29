@@ -1,15 +1,15 @@
 package com.komeyama.sample.design.material.ui.card
 
-import android.content.Context
+
 import android.content.res.Resources
 import android.os.Bundle
 import android.view.View
-import android.view.animation.Animation
-import android.view.animation.Transformation
+import android.view.animation.*
 import android.widget.RelativeLayout
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import com.komeyama.sample.design.material.R
 import com.komeyama.sample.design.material.databinding.ListItemCardType01Binding
 import com.komeyama.sample.design.material.databinding.ListItemCardType02Binding
@@ -28,24 +28,20 @@ class CardList: Fragment(R.layout.fragment_card_list) {
         val groupAdapter = GroupAdapter<ViewHolder<*>>()
         card_recycler_view.adapter = groupAdapter
         val items = listOf(
-            CardType01Item("Card Title1","sub text 1", View.VISIBLE) { transitionFragment() },
-            CardType01Item("Card Title2","sub text 2", View.GONE){ transitionFragment() },
+            CardType01Item("Card Title1","sub text 1", View.VISIBLE),
+            CardType01Item("Card Title2","sub text 2", View.GONE),
             CardType03Item("Card Title3","sub text 3"),
-            CardType01Item("Card Title4","sub text 4", View.VISIBLE){ transitionFragment() },
+            CardType01Item("Card Title4","sub text 4", View.VISIBLE),
             CardType02Item("Card Title5","sub text 5", resources),
             CardType03Item("Card Title6","sub text 6"),
-            CardType01Item("Card Title7","sub text 7", View.VISIBLE){ transitionFragment() }
+            CardType01Item("Card Title7","sub text 7", View.VISIBLE)
         )
         groupAdapter.update(items)
 
     }
-
-    private fun transitionFragment() {
-        findNavController().navigate(R.id.action_cardList_to_transitionCard)
-    }
 }
 
-class CardType01Item(private val titleText: String, private val subTitleText: String, private val button2Visibility: Int, private val transition :() -> Unit ) : BindableItem<ListItemCardType01Binding>() {
+class CardType01Item(private val titleText: String, private val subTitleText: String, private val button2Visibility: Int) : BindableItem<ListItemCardType01Binding>() {
     override fun getLayout() = R.layout.list_item_card_type01
 
     override fun bind(viewBinding: ListItemCardType01Binding, position: Int) {
@@ -58,8 +54,13 @@ class CardType01Item(private val titleText: String, private val subTitleText: St
         viewBinding.cardAction02.setOnClickListener {
             Timber.d("on click button2(type02) position:%s, title:%s ",position, viewBinding.cardSecondaryText.text)
         }
-        viewBinding.mediaImage.setOnClickListener {
-            transition()
+        viewBinding.cardType01Top.setOnClickListener {
+            viewBinding.cardType01Top.transitionName = "transition_card_container"
+            val extras = FragmentNavigatorExtras(
+                viewBinding.cardType01Top to viewBinding.cardType01Top.transitionName
+            )
+            viewBinding.root.findNavController().navigate(R.id.action_cardList_to_transitionCard,null,null, extras)
+
         }
     }
 }

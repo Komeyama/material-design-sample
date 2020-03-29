@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         findNavController(R.id.nav_host_fragment).addOnDestinationChangedListener { _, destination, _ ->
             when(destination.id) {
-                R.id.bottomBarFragment, R.id.backDropTypeSelectFragment, R.id.backDropFragment -> top_toolbar.visibility = View.GONE
+                R.id.bottomBarFragment, R.id.backDropTypeSelectFragment, R.id.backDropFragment, R.id.transitionCard -> top_toolbar.visibility = View.GONE
                 else -> top_toolbar.visibility = View.VISIBLE
             }
         }
