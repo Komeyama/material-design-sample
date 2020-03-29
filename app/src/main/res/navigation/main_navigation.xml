@@ -87,7 +87,11 @@
     <fragment
         android:id="@+id/cardList"
         android:name="com.komeyama.sample.design.material.ui.card.CardList"
-        android:label="CardList" />
+        android:label="CardList" >
+        <action
+            android:id="@+id/action_cardList_to_transitionCard"
+            app:destination="@id/transitionCard" />
+    </fragment>
     <fragment
         android:id="@+id/cardType03"
         android:name="com.komeyama.sample.design.material.ui.card.CardType03"
@@ -96,5 +100,9 @@
         android:id="@+id/cardListExpand"
         android:name="com.komeyama.sample.design.material.ui.card.CardListExpand"
         android:label="CardListExpand" />
+    <fragment
+        android:id="@+id/transitionCard"
+        android:name="com.komeyama.sample.design.material.ui.card.TransitionCard"
+        android:label="TransitionCard" />
 
 </navigation>
