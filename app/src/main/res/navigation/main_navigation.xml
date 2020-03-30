@@ -103,6 +103,11 @@
     <fragment
         android:id="@+id/transitionCard"
         android:name="com.komeyama.sample.design.material.ui.card.TransitionCard"
-        android:label="TransitionCard" />
+        android:label="TransitionCard" >
+        <argument
+            android:name="titleName"
+            app:argType="string"
+            android:defaultValue='""' />
+    </fragment>
 
 </navigation>

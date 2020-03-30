@@ -54,13 +54,14 @@ class CardType01Item(private val titleText: String, private val subTitleText: St
         viewBinding.cardAction02.setOnClickListener {
             Timber.d("on click button2(type02) position:%s, title:%s ",position, viewBinding.cardSecondaryText.text)
         }
-        viewBinding.cardType01Top.setOnClickListener {
+        viewBinding.mediaImage.setOnClickListener {
             viewBinding.cardType01Top.transitionName = "transition_card_container"
             val extras = FragmentNavigatorExtras(
                 viewBinding.cardType01Top to viewBinding.cardType01Top.transitionName
             )
-            viewBinding.root.findNavController().navigate(R.id.action_cardList_to_transitionCard,null,null, extras)
-
+            Timber.d("tap! %s", viewBinding.cardTitleText.text)
+            viewBinding.root.findNavController().navigate(
+                CardListDirections.actionCardListToTransitionCard(titleName = viewBinding.cardTitleText.text.toString()),extras)
         }
     }
 }
