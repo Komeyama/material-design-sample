@@ -78,6 +78,9 @@
         <action
             android:id="@+id/action_cardTypeFragment_to_cardListHorizontal"
             app:destination="@id/cardListHorizontal" />
+        <action
+            android:id="@+id/action_cardTypeFragment_to_cardListGrid"
+            app:destination="@id/cardListGrid" />
     </fragment>
     <fragment
         android:id="@+id/cardType01"
@@ -116,5 +119,9 @@
         android:id="@+id/cardListHorizontal"
         android:name="com.komeyama.sample.design.material.ui.card.CardListHorizontal"
         android:label="CardListHorizontal" />
+    <fragment
+        android:id="@+id/cardListGrid"
+        android:name="com.komeyama.sample.design.material.ui.card.CardListGrid"
+        android:label="CardListGrid" />
 
 </navigation>

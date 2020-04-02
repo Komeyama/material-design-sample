@@ -69,6 +69,17 @@
         app:layout_constraintTop_toBottomOf="@+id/card_type_list"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/card_type_list_grid"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/card_type_list_grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/card_type_list_grid"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/card_type_list_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 

@@ -18,6 +18,7 @@
     <string name="card_type_02">Type02</string>
     <string name="card_type_03">Type03</string>
     <string name="card_type_list">Type List Vertical</string>
+    <string name="card_type_list_grid">Type List Grid</string>
     <string name="card_type_list_horizontal">Type List Horizontal</string>
     <string name="card_type_list_expand">Type List Expand</string>
     <string name="card_media_text">media text</string>

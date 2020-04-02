@@ -28,5 +28,8 @@ class CardSelectFragment: Fragment(R.layout.fragment_card_select) {
         card_type_list_horizontal.setOnClickListener {
             findNavController().navigate(R.id.action_cardTypeFragment_to_cardListHorizontal)
         }
+        card_type_list_grid.setOnClickListener {
+            findNavController().navigate(R.id.action_cardTypeFragment_to_cardListGrid)
+        }
     }
 }
