@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.RecyclerView
 import com.komeyama.sample.design.material.R
 import com.komeyama.sample.design.material.databinding.ListItemCardGridBinding
 import com.xwray.groupie.GroupAdapter
@@ -24,6 +26,8 @@ class CardListGrid: Fragment(R.layout.fragment_card_list_grid) {
         CardTypeGrid("Card Title7", "sub text 7")
     )
 
+    private var previewViewHolder: RecyclerView.ViewHolder?? = null
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -37,6 +41,37 @@ class CardListGrid: Fragment(R.layout.fragment_card_list_grid) {
             adapter = groupAdapter
         }
         groupAdapter.update(items)
+
+        val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(
+            ItemTouchHelper.UP or ItemTouchHelper.DOWN or ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT,
+            ItemTouchHelper.UP or ItemTouchHelper.DOWN) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                val fromPosition = viewHolder.adapterPosition
+                val toPosition = target.adapterPosition
+                card_grid_recycler_view.adapter?.notifyItemMoved(fromPosition, toPosition)
+
+                return true
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {}
+
+            override fun onSelectedChanged(viewHolder: RecyclerView.ViewHolder?, actionState: Int) {
+                super.onSelectedChanged(viewHolder, actionState)
+                when(actionState) {
+                    2 -> {
+                        previewViewHolder = viewHolder
+                        viewHolder?.itemView?.alpha = 0.5f
+                    }
+                    else -> previewViewHolder?.itemView?.alpha = 1f
+                }
+            }
+
+        })
+        itemTouchHelper.attachToRecyclerView(card_grid_recycler_view)
     }
 
     private class CardTypeGrid(private val title:String, private val subTitle:String ): BindableItem<ListItemCardGridBinding>() {
