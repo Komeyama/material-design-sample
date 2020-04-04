@@ -6,7 +6,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/card_type01"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/card_type_01"
         android:textAllCaps="false"
@@ -18,7 +18,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/card_type02"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/card_type_02"
         android:textAllCaps="false"
@@ -29,7 +29,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/card_type03"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/card_type_03"
         android:textAllCaps="false"
@@ -40,7 +40,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/card_type_list_expand"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/card_type_list_expand"
         android:textAllCaps="false"
@@ -51,7 +51,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/card_type_list"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/card_type_list"
         android:textAllCaps="false"
@@ -62,7 +62,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/card_type_list_horizontal"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/card_type_list_horizontal"
         android:textAllCaps="false"
@@ -73,14 +73,24 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/card_type_list_grid"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/card_type_list_grid"
         android:textAllCaps="false"
         app:layout_constraintTop_toBottomOf="@+id/card_type_list_horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toTopOf="@+id/card_type_list_dashboard"/>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/card_type_list_dashboard"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/card_type_list_dashboard"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/card_type_list_grid"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

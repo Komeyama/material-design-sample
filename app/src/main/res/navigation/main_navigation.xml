@@ -81,6 +81,9 @@
         <action
             android:id="@+id/action_cardTypeFragment_to_cardListGrid"
             app:destination="@id/cardListGrid" />
+        <action
+            android:id="@+id/action_cardTypeFragment_to_cardListDashboard"
+            app:destination="@id/cardListDashboard" />
     </fragment>
     <fragment
         android:id="@+id/cardType01"
@@ -123,5 +126,9 @@
         android:id="@+id/cardListGrid"
         android:name="com.komeyama.sample.design.material.ui.card.CardListGrid"
         android:label="CardListGrid" />
+    <fragment
+        android:id="@+id/cardListDashboard"
+        android:name="com.komeyama.sample.design.material.ui.card.CardListDashboard"
+        android:label="CardListDashboard" />
 
 </navigation>
