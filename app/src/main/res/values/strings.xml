@@ -27,6 +27,14 @@
     <string name="card_detail_text">test!\ntest!\ntest!\ntest!\ntest!\ntest!\ntest!\ntest!\ntest!\ntest!\n</string>
     <string name="card_supporting_text">Card supporting text!\nThis is practice.</string>
     <string name="card_title">Card title</string>
+    <string name="card_sales">Sales</string>
+    <string name="card_sales_value_1">345.8 M</string>
+    <string name="card_sales_value_2">+11% of target</string>
+    <string name="card_conversion">Conversion</string>
+    <string name="card_conversion_1">537</string>
+    <string name="card_conversion_2">+22% of target</string>
+    <string name="card_marketing">Marketing</string>
+    <string name="card_marketing_value">123.4 M</string>
     <string name="card_action_1">ACTION 1</string>
     <string name="card_action_2">ACTION 2</string>
     <string name="coming_soon">Coming soon</string>

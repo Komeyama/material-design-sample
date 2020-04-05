@@ -26,7 +26,7 @@ class CardListGrid: Fragment(R.layout.fragment_card_list_grid) {
         CardTypeGrid("Card Title7", "sub text 7")
     )
 
-    private var previewViewHolder: RecyclerView.ViewHolder?? = null
+    private var previewViewHolder: RecyclerView.ViewHolder? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
