@@ -11,6 +11,7 @@ class MainFragmentData {
             DesignInformation(R.drawable.top_image_backdrop, DesignName.BACKDROP.designName),
             DesignInformation(R.drawable.ic_launcher_foreground, DesignName.CARD.designName),
             DesignInformation(R.drawable.ic_launcher_foreground, DesignName.DIALOG.designName),
+            DesignInformation(R.drawable.ic_launcher_foreground, DesignName.FLOATING_ACTION.designName),
             DesignInformation(R.drawable.ic_launcher_foreground, DesignName.COMING_SOON.designName)
         )
     }
@@ -20,7 +21,8 @@ class MainFragmentData {
         BACKDROP("Backdrop"),
         CARD("Card"),
         DIALOG("Dialog"),
-        COMING_SOON("Coming soon")
+        FLOATING_ACTION("Floating Action"),
+        COMING_SOON("Coming soon"),
     }
 
 }

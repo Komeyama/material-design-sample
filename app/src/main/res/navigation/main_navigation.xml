@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_mainFragment_to_cardTypeFragment"
             app:destination="@id/cardTypeFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_floatingSelectFragment"
+            app:destination="@id/floatingSelectFragment" />
     </fragment>
 
     <fragment
@@ -130,5 +133,9 @@
         android:id="@+id/cardListDashboard"
         android:name="com.komeyama.sample.design.material.ui.card.CardListDashboard"
         android:label="CardListDashboard" />
+    <fragment
+        android:id="@+id/floatingSelectFragment"
+        android:name="com.komeyama.sample.design.material.ui.floatingaction.FloatingSelectFragment"
+        android:label="FloatingSelectFragment" />
 
 </navigation>

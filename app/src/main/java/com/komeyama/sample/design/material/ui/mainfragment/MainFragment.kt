@@ -31,6 +31,9 @@ class MainFragment : Fragment(R.layout.fragment_main){
                         DesignName.DIALOG.designName -> {
                             findNavController().navigate(R.id.action_mainFragment_to_dialogSelectFragment)
                         }
+                        DesignName.FLOATING_ACTION.designName -> {
+                            findNavController().navigate(R.id.action_mainFragment_to_floatingSelectFragment)
+                        }
                     }
                 })
 
