@@ -136,6 +136,14 @@
     <fragment
         android:id="@+id/floatingSelectFragment"
         android:name="com.komeyama.sample.design.material.ui.floatingaction.FloatingSelectFragment"
-        android:label="FloatingSelectFragment" />
+        android:label="FloatingSelectFragment" >
+        <action
+            android:id="@+id/action_floatingSelectFragment_to_floatingType01Fragment"
+            app:destination="@id/floatingType01Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/floatingType01Fragment"
+        android:name="com.komeyama.sample.design.material.ui.floatingaction.FloatingType01Fragment"
+        android:label="FloatingType01Fragment" />
 
 </navigation>
