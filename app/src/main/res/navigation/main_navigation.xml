@@ -140,10 +140,17 @@
         <action
             android:id="@+id/action_floatingSelectFragment_to_floatingType01Fragment"
             app:destination="@id/floatingType01Fragment" />
+        <action
+            android:id="@+id/action_floatingSelectFragment_to_floatingType02Fragment"
+            app:destination="@id/floatingType02Fragment" />
     </fragment>
     <fragment
         android:id="@+id/floatingType01Fragment"
         android:name="com.komeyama.sample.design.material.ui.floatingaction.FloatingType01Fragment"
         android:label="FloatingType01Fragment" />
+    <fragment
+        android:id="@+id/floatingType02Fragment"
+        android:name="com.komeyama.sample.design.material.ui.floatingaction.FloatingType02Fragment"
+        android:label="FloatingType02Fragment" />
 
 </navigation>
