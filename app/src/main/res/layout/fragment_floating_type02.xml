@@ -23,13 +23,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_add_gray_24dp" />
+            app:srcCompat="@drawable/ic_share_gray_24dp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floating_type02_01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
+            android:visibility="invisible"
             app:backgroundTint="@color/colorWhite"
             app:fabSize="mini"
             app:layout_constraintBottom_toTopOf="@+id/floating_type02_00"
@@ -38,10 +39,11 @@
             app:srcCompat="@drawable/ic_mail_gray_24dp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floating_type02_03"
+            android:id="@+id/floating_type02_02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:visibility="invisible"
             app:backgroundTint="@color/colorWhite"
             app:fabSize="mini"
             app:layout_constraintBottom_toTopOf="@+id/floating_type02_01"
@@ -49,6 +51,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/ic_content_copy_gray_24dp" />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_type02_03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:visibility="invisible"
+            app:backgroundTint="@color/colorWhite"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toTopOf="@+id/floating_type02_02"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_bluetooth_gray_24dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
