@@ -15,16 +15,12 @@ class FloatingType02Fragment: Fragment(R.layout.fragment_floating_type02) {
     private var isOpenOfFab = false
     private lateinit var fabOpenRotationAnimation: Animation
     private lateinit var fabCloseRotationAnimation: Animation
-    private lateinit var fabOpenAnimation: Animation
-    private lateinit var fabCloseAnimation: Animation
-    private lateinit var fabList:List<FloatingActionButton>
+    private lateinit var fabList: List<FloatingActionButton>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         fabOpenRotationAnimation = AnimationUtils.loadAnimation(activity, R.anim.fab_open_rotation)
         fabCloseRotationAnimation = AnimationUtils.loadAnimation(activity, R.anim.fab_close_rotation)
-        fabOpenAnimation = AnimationUtils.loadAnimation(activity, R.anim.fab_open)
-        fabCloseAnimation = AnimationUtils.loadAnimation(activity, R.anim.fab_close)
         fabList = listOf(floating_type02_01,floating_type02_02,floating_type02_03)
 
         floating_type02_00.setOnClickListener {
@@ -52,13 +48,17 @@ class FloatingType02Fragment: Fragment(R.layout.fragment_floating_type02) {
 
     private fun setVisibilityOfMiniFab(fab: List<FloatingActionButton>, isOpen: Boolean) {
         if (isOpen) {
-            fab.forEach{
-                it.startAnimation(fabOpenAnimation)
+            fab.forEachIndexed{ index, it ->
+                val animation = AnimationUtils.loadAnimation(activity, R.anim.fab_open)
+                animation.duration = 200L + 70L * index.toLong()
+                it.startAnimation(animation)
                 it.visibility = View.VISIBLE
             }
         } else {
-            fab.forEach{
-                it.startAnimation(fabCloseAnimation)
+            fab.reversed().forEachIndexed{ index, it ->
+                val animation = AnimationUtils.loadAnimation(activity, R.anim.fab_close)
+                animation.duration = 200L + 70L * index.toLong()
+                it.startAnimation(animation)
                 it.visibility = View.INVISIBLE
             }
         }
