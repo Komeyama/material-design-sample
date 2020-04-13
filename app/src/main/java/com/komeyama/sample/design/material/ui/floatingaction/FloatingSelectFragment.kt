@@ -17,6 +17,9 @@ class FloatingSelectFragment: Fragment(R.layout.fragment_floating_select) {
         floating_type02.setOnClickListener {
             findNavController().navigate(R.id.action_floatingSelectFragment_to_floatingType02Fragment)
         }
+        floating_type03.setOnClickListener {
+            findNavController().navigate(R.id.action_floatingSelectFragment_to_floatingType03Fragment)
+        }
     }
 
 }

@@ -143,6 +143,9 @@
         <action
             android:id="@+id/action_floatingSelectFragment_to_floatingType02Fragment"
             app:destination="@id/floatingType02Fragment" />
+        <action
+            android:id="@+id/action_floatingSelectFragment_to_floatingType03Fragment"
+            app:destination="@id/floatingType03Fragment" />
     </fragment>
     <fragment
         android:id="@+id/floatingType01Fragment"
@@ -152,5 +155,9 @@
         android:id="@+id/floatingType02Fragment"
         android:name="com.komeyama.sample.design.material.ui.floatingaction.FloatingType02Fragment"
         android:label="FloatingType02Fragment" />
+    <fragment
+        android:id="@+id/floatingType03Fragment"
+        android:name="com.komeyama.sample.design.material.ui.floatingaction.FloatingType03Fragment"
+        android:label="FloatingType03Fragment" />
 
 </navigation>
