@@ -1,4 +1,4 @@
-package com.komeyama.sample.design.material.ui.mainfragment
+package com.komeyama.sample.design.material
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,14 +7,15 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
-import com.komeyama.sample.design.material.R
 
 class MainFragmentRecycleView {
     class TopListAdapter(private val items:List<DesignInformation>, private val itemClick: ItemClick): RecyclerView.Adapter<TopListHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopListHolder {
             val layoutInflater = LayoutInflater.from(parent.context)
-            return TopListHolder(layoutInflater.inflate(R.layout.list_item_top, parent, false))
+            return TopListHolder(
+                layoutInflater.inflate(R.layout.list_item_top, parent, false)
+            )
         }
 
         override fun getItemCount() = items.size

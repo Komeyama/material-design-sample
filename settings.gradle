@@ -1,2 +1,4 @@
 include ':app'
 rootProject.name='material-design-sample'
+include ':feature:main'
+include ':corecomponent:core'
