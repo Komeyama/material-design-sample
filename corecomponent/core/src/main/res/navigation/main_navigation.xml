@@ -61,7 +61,7 @@
         android:label="DialogType01" />
     <fragment
         android:id="@+id/cardTypeFragment"
-        android:name="com.komeyama.sample.design.material.ui.card.CardSelectFragment"
+        android:name="com.komeyama.sample.design.material.card.CardSelectFragment"
         android:label="CardTypeFragment" >
         <action
             android:id="@+id/action_cardTypeFragment_to_cardType01"
@@ -90,15 +90,15 @@
     </fragment>
     <fragment
         android:id="@+id/cardType01"
-        android:name="com.komeyama.sample.design.material.ui.card.CardType01"
+        android:name="com.komeyama.sample.design.material.card.CardType01"
         android:label="CardType01" />
     <fragment
         android:id="@+id/cardType02"
-        android:name="com.komeyama.sample.design.material.ui.card.CardType02"
+        android:name="com.komeyama.sample.design.material.card.CardType02"
         android:label="CardType02" />
     <fragment
         android:id="@+id/cardList"
-        android:name="com.komeyama.sample.design.material.ui.card.CardList"
+        android:name="com.komeyama.sample.design.material.card.CardList"
         android:label="CardList" >
         <action
             android:id="@+id/action_cardList_to_transitionCard"
@@ -106,15 +106,15 @@
     </fragment>
     <fragment
         android:id="@+id/cardType03"
-        android:name="com.komeyama.sample.design.material.ui.card.CardType03"
+        android:name="com.komeyama.sample.design.material.card.CardType03"
         android:label="CardType03" />
     <fragment
         android:id="@+id/cardListExpand"
-        android:name="com.komeyama.sample.design.material.ui.card.CardListExpand"
+        android:name="com.komeyama.sample.design.material.card.CardListExpand"
         android:label="CardListExpand" />
     <fragment
         android:id="@+id/transitionCard"
-        android:name="com.komeyama.sample.design.material.ui.card.TransitionCard"
+        android:name="com.komeyama.sample.design.material.card.TransitionCard"
         android:label="TransitionCard" >
         <argument
             android:name="titleName"
@@ -123,15 +123,15 @@
     </fragment>
     <fragment
         android:id="@+id/cardListHorizontal"
-        android:name="com.komeyama.sample.design.material.ui.card.CardListHorizontal"
+        android:name="com.komeyama.sample.design.material.card.CardListHorizontal"
         android:label="CardListHorizontal" />
     <fragment
         android:id="@+id/cardListGrid"
-        android:name="com.komeyama.sample.design.material.ui.card.CardListGrid"
+        android:name="com.komeyama.sample.design.material.card.CardListGrid"
         android:label="CardListGrid" />
     <fragment
         android:id="@+id/cardListDashboard"
-        android:name="com.komeyama.sample.design.material.ui.card.CardListDashboard"
+        android:name="com.komeyama.sample.design.material.card.CardListDashboard"
         android:label="CardListDashboard" />
     <fragment
         android:id="@+id/floatingSelectFragment"
