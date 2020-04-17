@@ -1,11 +1,10 @@
-package com.komeyama.sample.design.material.ui.dialog
+package com.komeyama.sample.design.material.dialog
 
 import android.app.Dialog
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import com.google.android.material.button.MaterialButton
-import com.komeyama.sample.design.material.R
 import timber.log.Timber
 
 class DialogType01: DialogFragment() {
