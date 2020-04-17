@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/backDropFragment"
-        android:name="com.komeyama.sample.design.material.ui.backdropfragment.BackDropFragment"
+        android:name="com.komeyama.sample.design.material.ui.backdrop.BackDropFragment"
         android:label="BackDropFragment" >
         <argument
             android:name="backDropType"
@@ -41,7 +41,7 @@
 
     <fragment
         android:id="@+id/backDropTypeSelectFragment"
-        android:name="com.komeyama.sample.design.material.ui.backdropfragment.BackDropTypeSelectFragment"
+        android:name="com.komeyama.sample.design.material.ui.backdrop.BackDropTypeSelectFragment"
         android:label="BackDropTypeSelectFragment" >
         <action
             android:id="@+id/action_backDropTypeSelectFragment_to_backDropFragment"

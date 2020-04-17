@@ -1,9 +1,8 @@
-package com.komeyama.sample.design.material.ui.backdropfragment
+package com.komeyama.sample.design.material.ui.backdrop
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.komeyama.sample.design.material.R
 import kotlinx.android.synthetic.main.fragment_backdrop_select.*
 
 class BackDropTypeSelectFragment: Fragment(R.layout.fragment_backdrop_select) {

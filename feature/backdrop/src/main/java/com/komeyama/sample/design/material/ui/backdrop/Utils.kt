@@ -1,4 +1,4 @@
-package com.komeyama.sample.design.material.ui.backdropfragment
+package com.komeyama.sample.design.material.ui.backdrop
 
 import android.app.Activity
 import android.content.res.ColorStateList
@@ -14,7 +14,6 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.shape.ShapeAppearanceModel
-import com.komeyama.sample.design.material.R
 import timber.log.Timber
 
 fun View.createTopSheetMaterialShape(activity: Activity, color: Int) {

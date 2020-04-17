@@ -1,4 +1,4 @@
-package com.komeyama.sample.design.material.ui.backdropfragment
+package com.komeyama.sample.design.material.ui.backdrop
 
 import android.os.Bundle
 import android.os.Handler
@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.komeyama.sample.design.material.R
 import kotlinx.android.synthetic.main.fragment_backdrop.*
 import kotlinx.android.synthetic.main.list_backdrop_under_sheet_item.view.*
 import timber.log.Timber

@@ -1,4 +1,4 @@
-package com.komeyama.sample.design.material.ui.backdropfragment
+package com.komeyama.sample.design.material.ui.backdrop
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,6 @@ import androidx.annotation.LayoutRes
 import androidx.core.content.ContextCompat
 import androidx.core.view.children
 import androidx.recyclerview.widget.RecyclerView
-import com.komeyama.sample.design.material.R
 import kotlinx.android.synthetic.main.list_backdrop_under_sheet_item.view.*
 
 class BackDropRecycleViewUnder {

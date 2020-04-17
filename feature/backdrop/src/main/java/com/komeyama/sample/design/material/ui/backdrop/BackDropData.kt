@@ -1,8 +1,7 @@
-package com.komeyama.sample.design.material.ui.backdropfragment
+package com.komeyama.sample.design.material.ui.backdrop
 
-import com.komeyama.sample.design.material.R
-import com.komeyama.sample.design.material.ui.backdropfragment.BackDropRecycleView.BackDropTopSheetInformation
-import com.komeyama.sample.design.material.ui.backdropfragment.BackDropRecycleViewUnder.BackDropUnderSheetInformation
+import com.komeyama.sample.design.material.ui.backdrop.BackDropRecycleView.BackDropTopSheetInformation
+import com.komeyama.sample.design.material.ui.backdrop.BackDropRecycleViewUnder.BackDropUnderSheetInformation
 
 class BackDropTopSheetData {
     val backdropDummyItems: List<BackDropTopSheetInformation> = listOf(
