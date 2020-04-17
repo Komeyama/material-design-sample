@@ -1,4 +1,4 @@
-package com.komeyama.sample.design.material.ui.bottombarfragment
+package com.komeyama.sample.design.material.ui.bottombar
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
-import com.komeyama.sample.design.material.R
 
 class BottomBarRecycleView {
     class UserListAdapter(private val users:List<UserInformation>, private val userClick: UserClick): RecyclerView.Adapter<UserListHolder>() {

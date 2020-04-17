@@ -1,4 +1,4 @@
-package com.komeyama.sample.design.material.ui.bottombarfragment
+package com.komeyama.sample.design.material.ui.bottombar
 
 import android.os.Bundle
 import android.view.*
@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomappbar.BottomAppBar.FAB_ANIMATION_MODE_SCALE
 import com.google.android.material.bottomappbar.BottomAppBar.FAB_ANIMATION_MODE_SLIDE
-import com.komeyama.sample.design.material.R
 import kotlinx.android.synthetic.main.fragment_bottm_bar.*
 import timber.log.Timber
 
