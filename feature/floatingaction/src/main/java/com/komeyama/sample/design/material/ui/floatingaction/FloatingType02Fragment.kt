@@ -7,7 +7,6 @@ import android.view.animation.AnimationUtils
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.komeyama.sample.design.material.R
 import kotlinx.android.synthetic.main.fragment_floating_type02.*
 
 class FloatingType02Fragment: Fragment(R.layout.fragment_floating_type02) {
