@@ -32,6 +32,14 @@ android {
 }
 
 dependencies {
+    implementation project(':feature:backdrop')
+    implementation project(':feature:bottombar')
+    implementation project(':feature:floatingaction')
+    implementation project(':feature:dialog')
+    implementation project(':feature:card')
+    implementation project(':feature:main')
+    implementation project(":corecomponent:core")
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'

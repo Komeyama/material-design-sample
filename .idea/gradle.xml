@@ -12,6 +12,15 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/corecomponent" />
+            <option value="$PROJECT_DIR$/corecomponent/core" />
+            <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/backdrop" />
+            <option value="$PROJECT_DIR$/feature/bottombar" />
+            <option value="$PROJECT_DIR$/feature/card" />
+            <option value="$PROJECT_DIR$/feature/dialog" />
+            <option value="$PROJECT_DIR$/feature/floatingaction" />
+            <option value="$PROJECT_DIR$/feature/main" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

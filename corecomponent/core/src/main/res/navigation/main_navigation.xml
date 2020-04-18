@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.komeyama.sample.design.material.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_bottomBarFragment"
+            app:destination="@id/bottomBarFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_backDropTypeSelectFragment"
+            app:destination="@id/backDropTypeSelectFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_dialogSelectFragment"
+            app:destination="@id/dialogSelectFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_cardTypeFragment"
+            app:destination="@id/cardTypeFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_floatingSelectFragment"
+            app:destination="@id/floatingSelectFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bottomBarFragment"
+        android:name="com.komeyama.sample.design.material.ui.bottombar.BottomBarFragment"
+        android:label="BottomBarFragment" />
+
+    <fragment
+        android:id="@+id/backDropFragment"
+        android:name="com.komeyama.sample.design.material.ui.backdrop.BackDropFragment"
+        android:label="BackDropFragment" >
+        <argument
+            android:name="backDropType"
+            app:argType="string"
+            android:defaultValue="type01" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/backDropTypeSelectFragment"
+        android:name="com.komeyama.sample.design.material.ui.backdrop.BackDropTypeSelectFragment"
+        android:label="BackDropTypeSelectFragment" >
+        <action
+            android:id="@+id/action_backDropTypeSelectFragment_to_backDropFragment"
+            app:destination="@id/backDropFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dialogSelectFragment"
+        android:name="com.komeyama.sample.design.material.dialog.DialogSelectFragment"
+        android:label="DialogSelectFragment" >
+        <action
+            android:id="@+id/action_dialogSelectFragment_to_dialogType01"
+            app:destination="@id/dialogType01" />
+    </fragment>
+    <dialog
+        android:id="@+id/dialogType01"
+        android:name="com.komeyama.sample.design.material.dialog.DialogType01"
+        android:label="DialogType01" />
+    <fragment
+        android:id="@+id/cardTypeFragment"
+        android:name="com.komeyama.sample.design.material.card.CardSelectFragment"
+        android:label="CardTypeFragment" >
+        <action
+            android:id="@+id/action_cardTypeFragment_to_cardType01"
+            app:destination="@id/cardType01" />
+        <action
+            android:id="@+id/action_cardTypeFragment_to_cardType02"
+            app:destination="@id/cardType02" />
+        <action
+            android:id="@+id/action_cardTypeFragment_to_cardList"
+            app:destination="@id/cardList" />
+        <action
+            android:id="@+id/action_cardTypeFragment_to_cardType03"
+            app:destination="@id/cardType03" />
+        <action
+            android:id="@+id/action_cardTypeFragment_to_cardListExpand"
+            app:destination="@id/cardListExpand" />
+        <action
+            android:id="@+id/action_cardTypeFragment_to_cardListHorizontal"
+            app:destination="@id/cardListHorizontal" />
+        <action
+            android:id="@+id/action_cardTypeFragment_to_cardListGrid"
+            app:destination="@id/cardListGrid" />
+        <action
+            android:id="@+id/action_cardTypeFragment_to_cardListDashboard"
+            app:destination="@id/cardListDashboard" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardType01"
+        android:name="com.komeyama.sample.design.material.card.CardType01"
+        android:label="CardType01" />
+    <fragment
+        android:id="@+id/cardType02"
+        android:name="com.komeyama.sample.design.material.card.CardType02"
+        android:label="CardType02" />
+    <fragment
+        android:id="@+id/cardList"
+        android:name="com.komeyama.sample.design.material.card.CardList"
+        android:label="CardList" >
+        <action
+            android:id="@+id/action_cardList_to_transitionCard"
+            app:destination="@id/transitionCard" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardType03"
+        android:name="com.komeyama.sample.design.material.card.CardType03"
+        android:label="CardType03" />
+    <fragment
+        android:id="@+id/cardListExpand"
+        android:name="com.komeyama.sample.design.material.card.CardListExpand"
+        android:label="CardListExpand" />
+    <fragment
+        android:id="@+id/transitionCard"
+        android:name="com.komeyama.sample.design.material.card.TransitionCard"
+        android:label="TransitionCard" >
+        <argument
+            android:name="titleName"
+            app:argType="string"
+            android:defaultValue='""' />
+    </fragment>
+    <fragment
+        android:id="@+id/cardListHorizontal"
+        android:name="com.komeyama.sample.design.material.card.CardListHorizontal"
+        android:label="CardListHorizontal" />
+    <fragment
+        android:id="@+id/cardListGrid"
+        android:name="com.komeyama.sample.design.material.card.CardListGrid"
+        android:label="CardListGrid" />
+    <fragment
+        android:id="@+id/cardListDashboard"
+        android:name="com.komeyama.sample.design.material.card.CardListDashboard"
+        android:label="CardListDashboard" />
+    <fragment
+        android:id="@+id/floatingSelectFragment"
+        android:name="com.komeyama.sample.design.material.ui.floatingaction.FloatingSelectFragment"
+        android:label="FloatingSelectFragment" >
+        <action
+            android:id="@+id/action_floatingSelectFragment_to_floatingType01Fragment"
+            app:destination="@id/floatingType01Fragment" />
+        <action
+            android:id="@+id/action_floatingSelectFragment_to_floatingType02Fragment"
+            app:destination="@id/floatingType02Fragment" />
+        <action
+            android:id="@+id/action_floatingSelectFragment_to_floatingType03Fragment"
+            app:destination="@id/floatingType03Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/floatingType01Fragment"
+        android:name="com.komeyama.sample.design.material.ui.floatingaction.FloatingType01Fragment"
+        android:label="FloatingType01Fragment" />
+    <fragment
+        android:id="@+id/floatingType02Fragment"
+        android:name="com.komeyama.sample.design.material.ui.floatingaction.FloatingType02Fragment"
+        android:label="FloatingType02Fragment" />
+    <fragment
+        android:id="@+id/floatingType03Fragment"
+        android:name="com.komeyama.sample.design.material.ui.floatingaction.FloatingType03Fragment"
+        android:label="FloatingType03Fragment" />
+
+</navigation>
