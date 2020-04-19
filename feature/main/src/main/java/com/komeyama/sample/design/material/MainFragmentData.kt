@@ -27,6 +27,10 @@ class MainFragmentData {
             ),
             MainFragmentRecycleView.DesignInformation(
                 R.drawable.ic_launcher_foreground,
+                DesignName.TEXT_FIELD.designName
+            ),
+            MainFragmentRecycleView.DesignInformation(
+                R.drawable.ic_launcher_foreground,
                 DesignName.COMING_SOON.designName
             )
         )
@@ -38,6 +42,7 @@ class MainFragmentData {
         CARD("Card"),
         DIALOG("Dialog"),
         FLOATING_ACTION("Floating Action"),
+        TEXT_FIELD("Text Field"),
         COMING_SOON("Coming soon"),
     }
 
