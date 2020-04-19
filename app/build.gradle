@@ -32,6 +32,7 @@ android {
 }
 
 dependencies {
+    implementation project(':feature:textfield')
     implementation project(':feature:backdrop')
     implementation project(':feature:bottombar')
     implementation project(':feature:floatingaction')
