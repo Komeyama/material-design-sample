@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/text_type01"
+        android:id="@+id/text_type01_button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/text_type_01"
@@ -13,27 +13,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/text_type02"
+        app:layout_constraintBottom_toTopOf="@+id/text_type02_button"
         app:layout_constraintVertical_chainStyle="packed"/>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/text_type02"
+        android:id="@+id/text_type02_button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/text_type_02"
         android:textAllCaps="false"
-        app:layout_constraintTop_toBottomOf="@+id/text_type01"
+        app:layout_constraintTop_toBottomOf="@+id/text_type01_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/text_type03"/>
+        app:layout_constraintBottom_toTopOf="@+id/text_type03_button"/>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/text_type03"
+        android:id="@+id/text_type03_button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/text_type_03"
         android:textAllCaps="false"
-        app:layout_constraintTop_toBottomOf="@+id/text_type02"
+        app:layout_constraintTop_toBottomOf="@+id/text_type02_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
