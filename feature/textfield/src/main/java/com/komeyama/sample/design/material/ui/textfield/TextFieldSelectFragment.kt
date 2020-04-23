@@ -13,5 +13,8 @@ class TextFieldSelectFragment: Fragment(R.layout.fragment_text_filed_select) {
         text_type01_button.setOnClickListener {
             findNavController().navigate(R.id.action_floatingSelectFragment_to_textfieldType01Fragment)
         }
+        text_type02_button.setOnClickListener {
+            findNavController().navigate(R.id.action_floatingSelectFragment_to_textfieldType02Fragment)
+        }
     }
 }
