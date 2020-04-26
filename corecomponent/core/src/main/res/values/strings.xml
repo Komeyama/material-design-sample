@@ -57,8 +57,14 @@
     <string name="text_field_address">Address</string>
     <string name="text_field_birthday">Birthday</string>
     <string name="text_field_city">City</string>
+    <string name="text_field_count">"Count"</string>
+    <string name="text_field_count_prefix">"/100"</string>
+    <string name="text_field_dollar">Amount of money</string>
+    <string name="text_field_dollar_prefix">"$"</string>
     <string name="text_field_email">Mail Address</string>
     <string name="text_field_email_address">Email</string>
+    <string name="text_field_gmail">Gmail</string>
+    <string name="text_field_gmail_suffix">"@gmial.com"</string>
     <string name="text_field_name">Name</string>
     <string name="text_field_password">Password</string>
     <string name="text_field_phone">Phone</string>

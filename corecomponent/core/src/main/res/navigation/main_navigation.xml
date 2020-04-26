@@ -171,15 +171,22 @@
         android:name="com.komeyama.sample.design.material.ui.textfield.TextFieldType02"
         android:label="TextFieldType02" />
     <fragment
+        android:id="@+id/textfieldType03Fragment"
+        android:name="com.komeyama.sample.design.material.ui.textfield.TextFieldType03"
+        android:label="TextFieldType03" />
+    <fragment
         android:id="@+id/textfieldSelectFragment"
         android:name="com.komeyama.sample.design.material.ui.textfield.TextFieldSelectFragment"
         android:label="TextFieldSelectFragment" >
         <action
-            android:id="@+id/action_floatingSelectFragment_to_textfieldType01Fragment"
+            android:id="@+id/action_textfieldSelectFragment_to_textfieldType01Fragment"
             app:destination="@id/textfieldType01Fragment" />
         <action
-            android:id="@+id/action_floatingSelectFragment_to_textfieldType02Fragment"
+            android:id="@+id/action_textfieldSelectFragment_to_textfieldType02Fragment"
             app:destination="@id/textfieldType02Fragment" />
+        <action
+            android:id="@+id/action_textfieldSelectFragment_to_textfieldType03Fragment"
+            app:destination="@id/textfieldType03Fragment" />
     </fragment>
 
 </navigation>
