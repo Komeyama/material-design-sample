@@ -36,6 +36,9 @@ class MainFragment : Fragment(R.layout.fragment_main){
                         MainFragmentData.DesignName.TEXT_FIELD.designName -> {
                             findNavController().navigate(R.id.action_mainFragment_to_textfieldSelectFragment)
                         }
+                        MainFragmentData.DesignName.SELECTION_CONTROL.designName -> {
+                            findNavController().navigate(R.id.action_mainFragment_to_selectionControlSelectionFragment)
+                        }
                     }
                 })
 

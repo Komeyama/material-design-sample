@@ -31,6 +31,14 @@ class MainFragmentData {
             ),
             MainFragmentRecycleView.DesignInformation(
                 R.drawable.ic_launcher_foreground,
+                DesignName.SELECTION_CONTROL.designName
+            ),
+            MainFragmentRecycleView.DesignInformation(
+                R.drawable.ic_launcher_foreground,
+                DesignName.COMING_SOON.designName
+            ),
+            MainFragmentRecycleView.DesignInformation(
+                R.drawable.ic_launcher_foreground,
                 DesignName.COMING_SOON.designName
             )
         )
@@ -43,7 +51,8 @@ class MainFragmentData {
         DIALOG("Dialog"),
         FLOATING_ACTION("Floating Action"),
         TEXT_FIELD("Text Field"),
-        COMING_SOON("Coming soon"),
+        SELECTION_CONTROL("Selection Control"),
+        COMING_SOON("Coming soon")
     }
 
 }

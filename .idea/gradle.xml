@@ -21,6 +21,7 @@
             <option value="$PROJECT_DIR$/feature/dialog" />
             <option value="$PROJECT_DIR$/feature/floatingaction" />
             <option value="$PROJECT_DIR$/feature/main" />
+            <option value="$PROJECT_DIR$/feature/selectioncontrol" />
             <option value="$PROJECT_DIR$/feature/textfield" />
           </set>
         </option>

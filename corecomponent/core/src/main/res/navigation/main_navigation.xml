@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_mainFragment_to_textfieldSelectFragment"
             app:destination="@id/textfieldSelectFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_selectionControlSelectionFragment"
+            app:destination="@+id/selectionControlSelectionFragment" />
     </fragment>
 
     <fragment
@@ -188,5 +191,13 @@
             android:id="@+id/action_textfieldSelectFragment_to_textfieldType03Fragment"
             app:destination="@id/textfieldType03Fragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/selectionControlSelectionFragment"
+        android:name="com.komeyama.sample.design.material.ui.selectioncontrol.SelectionControlSelectFragment"
+        android:label="SelectionControlSelectFragment" >
+    </fragment>
+
+
 
 </navigation>
