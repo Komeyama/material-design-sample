@@ -193,11 +193,16 @@
     </fragment>
 
     <fragment
+        android:id="@+id/selectionControlType01Fragment"
+        android:name="com.komeyama.sample.design.material.ui.selectioncontrol.SelectionControlType01Fragment"
+        android:label="SelectionControlType01Fragment" />
+    <fragment
         android:id="@+id/selectionControlSelectionFragment"
         android:name="com.komeyama.sample.design.material.ui.selectioncontrol.SelectionControlSelectFragment"
         android:label="SelectionControlSelectFragment" >
+        <action
+            android:id="@+id/action_selectionControlSelectionFragment_to_selectionControlType01Fragment"
+            app:destination="@id/selectionControlType01Fragment" />
     </fragment>
-
-
 
 </navigation>
