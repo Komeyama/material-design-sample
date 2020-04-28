@@ -52,6 +52,7 @@
     <string name="selection_control_type_01">Type01</string>
     <string name="selection_control_type_02">Type02</string>
     <string name="selection_control_type_03">Type03</string>
+    <string name="selection_control_daily_email">Daily mails</string>
     <string name="sheet_operation_button_name">sheet</string>
     <string name="text_type_01">Type01</string>
     <string name="text_type_02">Type02</string>
