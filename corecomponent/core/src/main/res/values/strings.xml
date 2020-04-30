@@ -49,6 +49,11 @@
     <string name="floating_type_01">Floating type01</string>
     <string name="floating_type_02">Floating type02</string>
     <string name="floating_type_03">Floating type03</string>
+    <string name="selection_control_radio_00">Phone ringtone</string>
+    <string name="selection_control_radio_01">None</string>
+    <string name="selection_control_radio_02">Callisto</string>
+    <string name="selection_control_radio_03">Ganymede</string>
+    <string name="selection_control_radio_04">Luna</string>
     <string name="selection_control_type_01">Type01</string>
     <string name="selection_control_type_02">Type02</string>
     <string name="selection_control_type_03">Type03</string>

@@ -1,6 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/selection_action_radio_phone_ringtone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/selection_control_radio_00"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/selection_action_radio_group"
+        app:layout_constraintVertical_chainStyle="packed"/>
+
+    <RadioGroup
+        android:id="@+id/selection_action_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkedButton="@+id/first"
+        android:orientation="vertical"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/selection_action_radio_phone_ringtone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RadioButton
+            android:id="@+id/selection_control_radio_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selection_control_radio_01"
+            android:checked="true"
+            android:buttonTint="@color/colorPrimary"
+            android:paddingStart="32dp"
+            android:paddingEnd="0dp"/>
+        <RadioButton
+            android:id="@+id/selection_control_radio_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selection_control_radio_02"
+            android:buttonTint="@color/colorPrimary"
+            android:paddingStart="32dp"
+            android:paddingEnd="0dp"/>
+        <RadioButton
+            android:id="@+id/selection_control_radio_03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selection_control_radio_03"
+            android:buttonTint="@color/colorPrimary"
+            android:paddingStart="32dp"
+            android:paddingEnd="0dp"/>
+        <RadioButton
+            android:id="@+id/selection_control_radio_04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selection_control_radio_04"
+            android:buttonTint="@color/colorPrimary"
+            android:paddingStart="32dp"
+            android:paddingEnd="0dp"/>
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
