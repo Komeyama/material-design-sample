@@ -13,5 +13,8 @@ class SelectionControlSelectFragment: Fragment(R.layout.fragment_selection_contr
         selection_control_type01.setOnClickListener {
             findNavController().navigate(R.id.action_selectionControlSelectionFragment_to_selectionControlType01Fragment)
         }
+        selection_control_type02.setOnClickListener {
+            findNavController().navigate(R.id.action_selectionControlSelectionFragment_to_selectionControlType02Fragment)
+        }
     }
 }
