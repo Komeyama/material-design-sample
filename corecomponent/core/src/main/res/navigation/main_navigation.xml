@@ -201,6 +201,10 @@
         android:name="com.komeyama.sample.design.material.ui.selectioncontrol.SelectionControlType02Fragment"
         android:label="SelectionControlType02Fragment" />
     <fragment
+        android:id="@+id/selectionControlType03Fragment"
+        android:name="com.komeyama.sample.design.material.ui.selectioncontrol.SelectionControlType03Fragment"
+        android:label="SelectionControlType03Fragment" />
+    <fragment
         android:id="@+id/selectionControlSelectionFragment"
         android:name="com.komeyama.sample.design.material.ui.selectioncontrol.SelectionControlSelectFragment"
         android:label="SelectionControlSelectFragment" >
@@ -210,6 +214,9 @@
         <action
             android:id="@+id/action_selectionControlSelectionFragment_to_selectionControlType02Fragment"
             app:destination="@id/selectionControlType02Fragment" />
+        <action
+            android:id="@+id/action_selectionControlSelectionFragment_to_selectionControlType03Fragment"
+            app:destination="@id/selectionControlType03Fragment" />
     </fragment>
 
 </navigation>
