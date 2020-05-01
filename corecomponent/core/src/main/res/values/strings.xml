@@ -54,6 +54,11 @@
     <string name="selection_control_radio_02">Callisto</string>
     <string name="selection_control_radio_03">Ganymede</string>
     <string name="selection_control_radio_04">Luna</string>
+    <string name="selection_control_option_00">Additions</string>
+    <string name="selection_control_option_01">Pickles</string>
+    <string name="selection_control_option_02">Tomato</string>
+    <string name="selection_control_option_03">Lettuce</string>
+    <string name="selection_control_option_04">Cheese</string>
     <string name="selection_control_type_01">Type01</string>
     <string name="selection_control_type_02">Type02</string>
     <string name="selection_control_type_03">Type03</string>
