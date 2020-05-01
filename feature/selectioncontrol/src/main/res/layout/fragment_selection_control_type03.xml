@@ -13,7 +13,6 @@
         android:layout_marginStart="8dp"
         android:paddingStart="16dp"
         android:paddingEnd="0dp"
-        android:buttonTintMode="multiply"
         android:theme="@style/CheckBoxTheme"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
