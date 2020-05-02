@@ -3,22 +3,23 @@ material-design-sample
 [![platform](https://img.shields.io/badge/platform-android-lightgrey)](https://img.shields.io/badge/platform-android-lightgrey)
 
 ## Feature
-This is a practice repository that reproduces the [Material.io Commonents page](https://material.io/components/) by android.
+This is a practice repository that reproduce the [Material.io Commonents page](https://material.io/components/) by android.
 
-### App bars: bottom 
-<img width="200" src="https://github.com/Komeyama/material-design-sample/blob/images/bottom_app_bar.gif">
+### [App bars: bottom](https://github.com/Komeyama/material-design-sample/blob/master/document/app_bar_bottom/README_APPBAR.md) 
 
-### Backdrop
-<img width="200" src="https://github.com/Komeyama/material-design-sample/blob/images/backdrop.gif">
+### [Backdrop](https://github.com/Komeyama/material-design-sample/blob/master/document/backdrop/README_BACKDROP.md)
 
 - todo
   - refactor
   - add variation
 
-### Navigation drawer 
+### [Card](https://github.com/Komeyama/material-design-sample/blob/master/document/card/README_CARD.md) 
 
-<img width="200" src="https://github.com/Komeyama/material-design-sample/blob/images/navigation_drawer.gif">
+### [Floating action](https://github.com/Komeyama/material-design-sample/blob/master/document/floating_action/README_FLOATING.md) 
 
+### [Navigation drawer](https://github.com/Komeyama/material-design-sample/blob/master/document/navigation_drawer/README_NAVIGATION_DRAWER.md) 
+
+### [Text field](https://github.com/Komeyama/material-design-sample/blob/master/document/text_field/README_TEXTFIELD.md) 
 
 ## Future outlook
 - [ ] Bottom navigation
