@@ -1,13 +1,17 @@
 package com.komeyama.sample.design.material.dialog
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import kotlinx.android.synthetic.main.fragment_dialog_select.*
+import kotlinx.android.synthetic.main.fragment_dialog_selection.*
 
-class DialogSelectFragment: Fragment(R.layout.fragment_dialog_select) {
+
+class DialogSelectFragment: Fragment(R.layout.fragment_dialog_selection) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -22,6 +26,10 @@ class DialogSelectFragment: Fragment(R.layout.fragment_dialog_select) {
 
         dialog_type03.setOnClickListener {
             showAlertDialogType02()
+        }
+
+        dialog_type04.setOnClickListener {
+            showConfirmationDialog()
         }
 
     }
@@ -42,6 +50,24 @@ class DialogSelectFragment: Fragment(R.layout.fragment_dialog_select) {
             .setNegativeButton(resources.getString(R.string.dialog_cancel)) { _, _ -> }
             .setPositiveButton(resources.getString(R.string.dialog_accept)) { _, _ ->}
             .show()
+    }
+
+    private fun showConfirmationDialog() {
+        val items = arrayOf("Item01", "Item02", "Item03")
+        val dialog = MaterialAlertDialogBuilder(context, R.style.ConfirmationDialogTheme)
+            .setTitle(resources.getString(R.string.dialog_title))
+            .setSingleChoiceItems(items, 0) { _, _ -> }
+            .setNeutralButton(resources.getString(R.string.dialog_cancel)) { _, _ -> }
+            .setPositiveButton(resources.getString(R.string.dialog_ok)) { _, _ -> }
+            .create()
+
+        dialog.setOnShowListener {
+            dialog.getButton(AlertDialog.BUTTON_NEUTRAL).setTextColor(ContextCompat.getColor(activity!!, R.color.colorBlue))
+            dialog.getButton(AlertDialog.BUTTON_NEUTRAL).background.setTint(ContextCompat.getColor(activity!!, R.color.colorWhiteThin00))
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(ContextCompat.getColor(activity!!, R.color.colorBlue))
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE).background.setTint(ContextCompat.getColor(activity!!, R.color.colorWhiteThin00))
+        }
+        dialog.show()
     }
 
 }
