@@ -16,25 +16,24 @@ class DialogSelectFragment : Fragment(R.layout.fragment_dialog_selection) {
         super.onViewCreated(view, savedInstanceState)
 
         dialog_type01.setOnClickListener {
-            findNavController().navigate(R.id.action_dialogSelectFragment_to_dialogType01)
-        }
-
-        dialog_type02.setOnClickListener {
             showAlertDialogType01()
         }
 
-        dialog_type03.setOnClickListener {
+        dialog_type02.setOnClickListener {
             showAlertDialogType02()
         }
 
-        dialog_type04.setOnClickListener {
+        dialog_type03.setOnClickListener {
             showConfirmationDialog()
         }
 
-        dialog_type05.setOnClickListener {
+        dialog_type04.setOnClickListener {
             showMultiChoiceDialog()
         }
 
+        dialog_ios_like.setOnClickListener {
+            findNavController().navigate(R.id.action_dialogSelectFragment_to_dialogType01)
+        }
     }
 
     private fun showAlertDialogType01() {
