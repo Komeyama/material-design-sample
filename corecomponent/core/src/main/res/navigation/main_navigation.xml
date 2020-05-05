@@ -60,11 +60,18 @@
         <action
             android:id="@+id/action_dialogSelectFragment_to_dialogType01"
             app:destination="@id/dialogType01" />
+        <action
+            android:id="@+id/action_dialogSelectFragment_to_dialogType05"
+            app:destination="@id/dialogType05" />
     </fragment>
     <dialog
         android:id="@+id/dialogType01"
         android:name="com.komeyama.sample.design.material.dialog.DialogType01"
         android:label="DialogType01" />
+    <dialog
+        android:id="@+id/dialogType05"
+        android:name="com.komeyama.sample.design.material.dialog.DialogType05"
+        android:label="DialogType05" />
     <fragment
         android:id="@+id/cardTypeFragment"
         android:name="com.komeyama.sample.design.material.card.CardSelectFragment"
