@@ -11,4 +11,6 @@
     <dimen name="dialog_type01_width">250dp</dimen>
     <dimen name="dialog_type01_half_width">125dp</dimen>
     <dimen name="dialog_type01_height">150dp</dimen>
+    <dimen name="dialog_type05_padding_row">16dp</dimen>
+    <dimen name="dialog_type05_padding_start">32dp</dimen>
 </resources>

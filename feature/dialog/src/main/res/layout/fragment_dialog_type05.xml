@@ -19,7 +19,7 @@
     <ScrollView
         android:id="@+id/dialog_scrollview"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="240dp"
         app:layout_constraintBottom_toTopOf="@+id/dialog_horizontal_divider_02"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,42 +35,6 @@
             android:checkedButton="@+id/first"
             android:orientation="vertical">
 
-            <RadioButton
-                android:id="@+id/selection_control_radio_01"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="@color/colorPrimary"
-                android:checked="true"
-                android:paddingStart="32dp"
-                android:paddingEnd="0dp"
-                android:text="@string/selection_control_radio_01" />
-
-            <RadioButton
-                android:id="@+id/selection_control_radio_02"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="@color/colorPrimary"
-                android:paddingStart="32dp"
-                android:paddingEnd="0dp"
-                android:text="@string/selection_control_radio_02" />
-
-            <RadioButton
-                android:id="@+id/selection_control_radio_03"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="@color/colorPrimary"
-                android:paddingStart="32dp"
-                android:paddingEnd="0dp"
-                android:text="@string/selection_control_radio_03" />
-
-            <RadioButton
-                android:id="@+id/selection_control_radio_04"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="@color/colorPrimary"
-                android:paddingStart="32dp"
-                android:paddingEnd="0dp"
-                android:text="@string/selection_control_radio_04" />
         </RadioGroup>
     </ScrollView>
 
