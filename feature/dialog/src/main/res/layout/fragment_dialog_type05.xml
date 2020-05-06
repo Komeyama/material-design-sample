@@ -4,13 +4,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <View
+        android:id="@+id/dialog_horizontal_divider_01"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLightGray"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/dialog_scrollview"
+        app:layout_constraintVertical_chainStyle="packed"/>
+
     <ScrollView
+        android:id="@+id/dialog_scrollview"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_horizontal_divider_02"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/dialog_horizontal_divider_01">
 
         <RadioGroup
             android:id="@+id/selection_action_radio_group"
@@ -60,5 +73,15 @@
                 android:text="@string/selection_control_radio_04" />
         </RadioGroup>
     </ScrollView>
+
+    <View
+        android:id="@+id/dialog_horizontal_divider_02"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLightGray"
+        app:layout_constraintTop_toBottomOf="@id/dialog_scrollview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
