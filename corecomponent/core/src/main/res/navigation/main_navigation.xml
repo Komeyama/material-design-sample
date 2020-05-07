@@ -63,6 +63,9 @@
         <action
             android:id="@+id/action_dialogSelectFragment_to_dialogType05"
             app:destination="@id/dialogType05" />
+        <action
+            android:id="@+id/action_dialogSelectFragment_to_dialogType06"
+            app:destination="@id/dialogType06" />
     </fragment>
     <dialog
         android:id="@+id/dialogType01"
@@ -72,6 +75,10 @@
         android:id="@+id/dialogType05"
         android:name="com.komeyama.sample.design.material.dialog.DialogType05"
         android:label="DialogType05" />
+    <dialog
+        android:id="@+id/dialogType06"
+        android:name="com.komeyama.sample.design.material.dialog.DialogType06"
+        android:label="DialogType06" />
     <fragment
         android:id="@+id/cardTypeFragment"
         android:name="com.komeyama.sample.design.material.card.CardSelectFragment"
