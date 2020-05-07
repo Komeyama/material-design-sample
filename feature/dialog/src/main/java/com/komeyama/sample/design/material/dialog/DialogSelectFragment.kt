@@ -35,6 +35,10 @@ class DialogSelectFragment : Fragment(R.layout.fragment_dialog_selection) {
             findNavController().navigate(R.id.action_dialogSelectFragment_to_dialogType05)
         }
 
+        dialog_type06.setOnClickListener {
+            findNavController().navigate(R.id.action_dialogSelectFragment_to_dialogType06)
+        }
+
         dialog_ios_like.setOnClickListener {
             findNavController().navigate(R.id.action_dialogSelectFragment_to_dialogType01)
         }
