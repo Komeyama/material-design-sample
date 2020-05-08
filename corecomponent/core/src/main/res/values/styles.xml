@@ -32,7 +32,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="android:windowIsFloating">false</item>
         <item name="android:windowBackground">@android:color/white</item>
-        <item name="actionMenuTextColor">@color/colorAccent</item>
+        <item name="actionMenuTextColor">@color/colorWhite</item>
     </style>
 
 </resources>

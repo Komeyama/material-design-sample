@@ -47,6 +47,7 @@
     <string name="dialog_discard_draft">Discard draft?</string>
     <string name="dialog_no">NO</string>
     <string name="dialog_ok">OK</string>
+    <string name="dialog_option_save">save</string>
     <string name="dialog_supporting_text">Supporting text.</string>
     <string name="dialog_title">Title</string>
     <string name="dialog_type_01">Type01</string>
