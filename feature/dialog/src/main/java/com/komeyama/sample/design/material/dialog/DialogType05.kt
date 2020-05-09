@@ -30,7 +30,7 @@ class DialogType05 : DialogFragment(){
     }
 
     private fun setRadioItems(v: View) {
-        val radioGroup: RadioGroup = v!!.findViewById(R.id.selection_action_radio_group)
+        val radioGroup: RadioGroup = v.findViewById(R.id.selection_action_radio_group)
         val itemList: List<String> = listOf("item1", "item2", "item3", "item4", "item5", "item6", "item7")
         itemList.forEachIndexed { index, item ->
             val radioButton = RadioButton(context)
