@@ -14,10 +14,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/ic_close_24dp"
-        app:title="@string/app_name"
         app:titleTextAppearance="@style/Toolbar.TitleText"
-        app:titleTextColor="@color/colorWhite" />
+        app:titleTextColor="@color/colorWhite" >
+
+        <ImageView
+            android:id="@+id/fullscreen_dialog_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_close_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:text="@string/dialog_title"
+            android:textColor="@color/colorWhite"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+
+    </androidx.appcompat.widget.Toolbar>
+
 
     <FrameLayout
         android:id="@+id/fullscreen_dialog_content_field"

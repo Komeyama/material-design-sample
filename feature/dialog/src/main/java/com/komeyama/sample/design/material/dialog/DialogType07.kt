@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.fragment.app.DialogFragment
 import kotlinx.android.synthetic.main.fragment_dialog_type07.*
 
@@ -37,7 +38,7 @@ class DialogType07 : DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        fullscreen_dialog_toolbar.title = getString(R.string.dialog_title)
+        setBackButtonAnimation()
         fullscreen_dialog_toolbar.inflateMenu(R.menu.fullscreen_dialog_menu)
         fullscreen_dialog_toolbar.setOnMenuItemClickListener {item: MenuItem? ->
             when (item!!.itemId) {
@@ -47,7 +48,12 @@ class DialogType07 : DialogFragment() {
             }
             true
         }
-        fullscreen_dialog_toolbar.setNavigationOnClickListener { dismiss() }
+        fullscreen_dialog_back_button.setOnClickListener { dismiss() }
+    }
+
+    private fun setBackButtonAnimation() {
+        val dialogBackButtonRotationAnimation = AnimationUtils.loadAnimation(activity, R.anim.dialog_back_button_rotation)
+        fullscreen_dialog_back_button.startAnimation(dialogBackButtonRotationAnimation)
     }
 
 }
