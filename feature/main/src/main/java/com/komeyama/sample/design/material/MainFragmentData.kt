@@ -18,7 +18,7 @@ class MainFragmentData {
                 DesignName.CARD.designName
             ),
             MainFragmentRecycleView.DesignInformation(
-                R.drawable.ic_launcher_foreground,
+                R.drawable.top_image_dialog,
                 DesignName.DIALOG.designName
             ),
             MainFragmentRecycleView.DesignInformation(
@@ -30,7 +30,7 @@ class MainFragmentData {
                 DesignName.TEXT_FIELD.designName
             ),
             MainFragmentRecycleView.DesignInformation(
-                R.drawable.ic_launcher_foreground,
+                R.drawable.top_image_selection_control,
                 DesignName.SELECTION_CONTROL.designName
             ),
             MainFragmentRecycleView.DesignInformation(
