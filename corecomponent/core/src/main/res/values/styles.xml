@@ -35,4 +35,9 @@
         <item name="actionMenuTextColor">@color/colorWhite</item>
     </style>
 
+    <style name="AppTheme.FullScreenDialogSlide">
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_down</item>
+    </style>
+
 </resources>
