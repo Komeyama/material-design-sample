@@ -1,14 +1,20 @@
 package com.komeyama.sample.design.material.dialog
 
 import android.app.AlertDialog
+import android.app.DatePickerDialog
 import android.content.DialogInterface
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
 import androidx.core.content.ContextCompat
+import androidx.databinding.adapters.CalendarViewBindingAdapter.setDate
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.fragment_dialog_selection.*
+import timber.log.Timber
+import java.util.*
 
 class DialogSelectFragment : Fragment(R.layout.fragment_dialog_selection) {
 
@@ -44,7 +50,7 @@ class DialogSelectFragment : Fragment(R.layout.fragment_dialog_selection) {
         }
 
         dialog_type08.setOnClickListener {
-            findNavController().navigate(R.id.action_dialogSelectFragment_to_dialogType08)
+            showDataPickerDialog()
         }
 
         dialog_ios_like.setOnClickListener {
@@ -131,6 +137,36 @@ class DialogSelectFragment : Fragment(R.layout.fragment_dialog_selection) {
         dialog.show()
     }
 
+    private fun showDataPickerDialog() {
+        val calendar = Calendar.getInstance()
+        val year = calendar.get(Calendar.YEAR)
+        val month = calendar.get(Calendar.MONTH)
+        val day = calendar.get(Calendar.DAY_OF_MONTH)
+        val datePickerDialog = DatePickerDialog(activity!!, R.style.DatePickerDialogTheme,
+            DatePickerDialog.OnDateSetListener { _, year, month, day ->
+            Timber.d("date picker select date: %s %s %s", year, month, day)
+        },year, month, day)
 
+        datePickerDialog.setOnShowListener {
+            datePickerDialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+                .setTextColor(ContextCompat.getColor(activity!!, R.color.colorPrimary))
+            datePickerDialog.getButton(AlertDialog.BUTTON_NEGATIVE).background.setTint(
+                ContextCompat.getColor(
+                    activity!!,
+                    R.color.colorWhiteThin00
+                )
+            )
+            datePickerDialog.getButton(AlertDialog.BUTTON_POSITIVE)
+                .setTextColor(ContextCompat.getColor(activity!!, R.color.colorPrimary))
+            datePickerDialog.getButton(AlertDialog.BUTTON_POSITIVE).background.setTint(
+                ContextCompat.getColor(
+                    activity!!,
+                    R.color.colorWhiteThin00
+                )
+            )
+        }
+
+        datePickerDialog.show()
+    }
 
 }
