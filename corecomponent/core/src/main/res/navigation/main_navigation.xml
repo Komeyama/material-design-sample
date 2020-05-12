@@ -70,8 +70,8 @@
             android:id="@+id/action_dialogSelectFragment_to_dialogType07"
             app:destination="@id/dialogType07" />
         <action
-            android:id="@+id/action_dialogSelectFragment_to_dialogType08"
-            app:destination="@id/dialogType08" />
+            android:id="@+id/action_dialogSelectFragment_to_dialogType09"
+            app:destination="@id/dialogType09" />
     </fragment>
     <dialog
         android:id="@+id/dialogType01"
@@ -90,9 +90,9 @@
         android:name="com.komeyama.sample.design.material.dialog.DialogType07"
         android:label="DialogType07" />
     <dialog
-        android:id="@+id/dialogType08"
-        android:name="com.komeyama.sample.design.material.dialog.DialogType08"
-        android:label="DialogType08" />
+        android:id="@+id/dialogType09"
+        android:name="com.komeyama.sample.design.material.dialog.DialogType09"
+        android:label="DialogType09" />
     <fragment
         android:id="@+id/cardTypeFragment"
         android:name="com.komeyama.sample.design.material.card.CardSelectFragment"

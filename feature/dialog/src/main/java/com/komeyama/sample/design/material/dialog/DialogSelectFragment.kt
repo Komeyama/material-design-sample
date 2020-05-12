@@ -53,6 +53,10 @@ class DialogSelectFragment : Fragment(R.layout.fragment_dialog_selection) {
             showDataPickerDialog()
         }
 
+        dialog_type09.setOnClickListener {
+            findNavController().navigate(R.id.action_dialogSelectFragment_to_dialogType09)
+        }
+
         dialog_ios_like.setOnClickListener {
             findNavController().navigate(R.id.action_dialogSelectFragment_to_dialogType01)
         }
