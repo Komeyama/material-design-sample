@@ -60,7 +60,9 @@
     <string name="dialog_type_08">Type08</string>
     <string name="dialog_type_09">Type09</string>
     <string name="dialog_type_10">Type10</string>
+    <string name="dialog_type_11">Type11</string>
     <string name="dialog_type_ios_like">FYI: iOS like</string>
+    <string name="dialog_type_multi_number_picker_middle">:</string>
     <string name="floating_type_01">Floating type01</string>
     <string name="floating_type_02">Floating type02</string>
     <string name="floating_type_03">Floating type03</string>

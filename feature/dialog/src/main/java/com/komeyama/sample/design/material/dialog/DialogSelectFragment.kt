@@ -59,6 +59,10 @@ class DialogSelectFragment : Fragment(R.layout.fragment_dialog_selection) {
             showNumberPickerDialog()
         }
 
+        dialog_type11.setOnClickListener {
+            showMultiNumberPickerDialog()
+        }
+
         dialog_ios_like.setOnClickListener {
             findNavController().navigate(R.id.action_dialogSelectFragment_to_dialogType01)
         }
@@ -190,6 +194,30 @@ class DialogSelectFragment : Fragment(R.layout.fragment_dialog_selection) {
         np.value = 50
 
         datePickerDialog.show()
+    }
+
+    private fun showMultiNumberPickerDialog() {
+        val view = layoutInflater.inflate(R.layout.multi_number_picker_dialog,null)
+        val datePickerDialog: Dialog = AlertDialog.Builder(context)
+            .setView(view)
+            .setTitle(resources.getString(R.string.dialog_title))
+            .setNegativeButton(resources.getString(R.string.dialog_cancel)) { _, _ -> }
+            .setPositiveButton(resources.getString(R.string.dialog_ok)) { _, _ -> }
+            .create()
+
+        setNumberPickerValue(view,R.id.dialog_number_picker_00)
+        setNumberPickerValue(view,R.id.dialog_number_picker_01)
+        setNumberPickerValue(view,R.id.dialog_number_picker_02)
+        setNumberPickerValue(view,R.id.dialog_number_picker_03)
+        datePickerDialog.show()
+    }
+
+    private fun setNumberPickerValue(v: View, l: Int) {
+        val np: NumberPicker = v.findViewById(l)
+        np.minValue = 0
+        np.maxValue = 9
+        np.value = 0
+
     }
 
 }
