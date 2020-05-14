@@ -2,13 +2,11 @@ package com.komeyama.sample.design.material.dialog
 
 import android.app.AlertDialog
 import android.app.DatePickerDialog
-import android.content.DialogInterface
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
+import android.app.Dialog
 import android.os.Bundle
 import android.view.View
+import android.widget.NumberPicker
 import androidx.core.content.ContextCompat
-import androidx.databinding.adapters.CalendarViewBindingAdapter.setDate
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -55,6 +53,10 @@ class DialogSelectFragment : Fragment(R.layout.fragment_dialog_selection) {
 
         dialog_type09.setOnClickListener {
             findNavController().navigate(R.id.action_dialogSelectFragment_to_dialogType09)
+        }
+
+        dialog_type10.setOnClickListener {
+            showNumberPickerDialog()
         }
 
         dialog_ios_like.setOnClickListener {
@@ -169,6 +171,23 @@ class DialogSelectFragment : Fragment(R.layout.fragment_dialog_selection) {
                 )
             )
         }
+
+        datePickerDialog.show()
+    }
+
+    private fun showNumberPickerDialog() {
+        val view = layoutInflater.inflate(R.layout.number_picker_dialog,null)
+        val datePickerDialog: Dialog = AlertDialog.Builder(context)
+            .setView(view)
+            .setTitle(resources.getString(R.string.dialog_title))
+            .setNegativeButton(resources.getString(R.string.dialog_cancel)) { _, _ -> }
+            .setPositiveButton(resources.getString(R.string.dialog_ok)) { _, _ -> }
+            .create()
+
+        val np: NumberPicker = view.findViewById(R.id.dialog_number_picker)
+        np.minValue = 0
+        np.maxValue = 100
+        np.value = 50
 
         datePickerDialog.show()
     }
