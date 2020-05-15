@@ -9,9 +9,11 @@ import android.widget.NumberPicker
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.fragment_dialog_selection.*
 import timber.log.Timber
+import java.text.SimpleDateFormat
 import java.util.*
 
 class DialogSelectFragment : Fragment(R.layout.fragment_dialog_selection) {
@@ -61,6 +63,10 @@ class DialogSelectFragment : Fragment(R.layout.fragment_dialog_selection) {
 
         dialog_type11.setOnClickListener {
             showMultiNumberPickerDialog()
+        }
+
+        dialog_type12.setOnClickListener {
+            showMaterialDatePickerDialog()
         }
 
         dialog_ios_like.setOnClickListener {
@@ -217,7 +223,15 @@ class DialogSelectFragment : Fragment(R.layout.fragment_dialog_selection) {
         np.minValue = 0
         np.maxValue = 9
         np.value = 0
+    }
 
+    private fun showMaterialDatePickerDialog() {
+        val picker = MaterialDatePicker.Builder.datePicker().build()
+        picker.show(activity!!.supportFragmentManager, "MaterialDatePicker")
+        picker.addOnPositiveButtonClickListener {
+            val df = SimpleDateFormat("yyyy/MM/dd")
+            Timber.d("showMaterialDatePicker: %s", df.format(it))
+        }
     }
 
 }

@@ -124,6 +124,17 @@
             app:layout_constraintTop_toBottomOf="@+id/dialog_type10"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/dialog_type12"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/dialog_type12"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_type_12"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_type11"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/dialog_ios_like"/>
 
         <com.google.android.material.button.MaterialButton
@@ -132,7 +143,7 @@
             android:layout_height="wrap_content"
             android:text="@string/dialog_type_ios_like"
             android:textAllCaps="false"
-            app:layout_constraintTop_toBottomOf="@+id/dialog_type11"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_type12"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
