@@ -69,6 +69,10 @@ class DialogSelectFragment : Fragment(R.layout.fragment_dialog_selection) {
             showMaterialDatePickerDialog()
         }
 
+        dialog_type13.setOnClickListener {
+            showMaterialRangeDatePickerDialog()
+        }
+
         dialog_ios_like.setOnClickListener {
             findNavController().navigate(R.id.action_dialogSelectFragment_to_dialogType01)
         }
@@ -231,6 +235,16 @@ class DialogSelectFragment : Fragment(R.layout.fragment_dialog_selection) {
         picker.addOnPositiveButtonClickListener {
             val df = SimpleDateFormat("yyyy/MM/dd")
             Timber.d("showMaterialDatePicker: %s", df.format(it))
+        }
+    }
+
+    private fun showMaterialRangeDatePickerDialog() {
+        val picker = MaterialDatePicker.Builder.dateRangePicker().setTheme(R.style.CustomMaterialRangeDatePickerTheme).build()
+        picker.show(activity!!.supportFragmentManager, "MaterialRangeDatePicker")
+
+        picker.addOnPositiveButtonClickListener {
+            val df = SimpleDateFormat("yyyy/MM/dd")
+            Timber.d("showMaterialRangeDatePicker: start %s, end %s", df.format(it.first) ,df.format(it.second))
         }
     }
 

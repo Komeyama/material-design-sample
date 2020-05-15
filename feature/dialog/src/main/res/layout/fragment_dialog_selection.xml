@@ -1,151 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/dialog_type01"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:text="@string/dialog_type_01"
-            android:textAllCaps="false"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/dialog_type02"
-            app:layout_constraintVertical_chainStyle="packed"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/dialog_type02"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:text="@string/dialog_type_02"
-            android:textAllCaps="false"
-            app:layout_constraintTop_toBottomOf="@+id/dialog_type01"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/dialog_type03"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/dialog_type03"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:text="@string/dialog_type_03"
-            android:textAllCaps="false"
-            app:layout_constraintTop_toBottomOf="@+id/dialog_type02"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/dialog_type04"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dialog_type01"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/dialog_type_01"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toTopOf="@+id/dialog_type02"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/dialog_type04"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:text="@string/dialog_type_04"
-            android:textAllCaps="false"
-            app:layout_constraintTop_toBottomOf="@+id/dialog_type03"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/dialog_type05"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dialog_type02"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_type_02"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toTopOf="@+id/dialog_type03"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dialog_type01" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/dialog_type05"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:text="@string/dialog_type_05"
-            android:textAllCaps="false"
-            app:layout_constraintTop_toBottomOf="@+id/dialog_type04"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/dialog_type06"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dialog_type03"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_type_03"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toTopOf="@+id/dialog_type04"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dialog_type02" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/dialog_type06"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:text="@string/dialog_type_06"
-            android:textAllCaps="false"
-            app:layout_constraintTop_toBottomOf="@+id/dialog_type05"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/dialog_type07"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dialog_type04"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_type_04"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toTopOf="@+id/dialog_type05"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dialog_type03" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/dialog_type07"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:text="@string/dialog_type_07"
-            android:textAllCaps="false"
-            app:layout_constraintTop_toBottomOf="@+id/dialog_type06"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/dialog_type08"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dialog_type05"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_type_05"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toTopOf="@+id/dialog_type06"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dialog_type04" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/dialog_type08"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:text="@string/dialog_type_08"
-            android:textAllCaps="false"
-            app:layout_constraintTop_toBottomOf="@+id/dialog_type07"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/dialog_type09"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dialog_type06"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_type_06"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toTopOf="@+id/dialog_type07"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dialog_type05" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/dialog_type09"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:text="@string/dialog_type_09"
-            android:textAllCaps="false"
-            app:layout_constraintTop_toBottomOf="@+id/dialog_type08"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/dialog_type10"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dialog_type07"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_type_07"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toTopOf="@+id/dialog_type08"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dialog_type06" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/dialog_type10"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:text="@string/dialog_type_10"
-            android:textAllCaps="false"
-            app:layout_constraintTop_toBottomOf="@+id/dialog_type09"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/dialog_type11"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dialog_type08"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_type_08"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toTopOf="@+id/dialog_type09"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dialog_type07" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/dialog_type11"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:text="@string/dialog_type_11"
-            android:textAllCaps="false"
-            app:layout_constraintTop_toBottomOf="@+id/dialog_type10"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/dialog_type12"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dialog_type09"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_type_09"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toTopOf="@+id/dialog_type10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dialog_type08" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/dialog_type12"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:text="@string/dialog_type_12"
-            android:textAllCaps="false"
-            app:layout_constraintTop_toBottomOf="@+id/dialog_type11"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/dialog_ios_like"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dialog_type10"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_type_10"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toTopOf="@+id/dialog_type11"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dialog_type09" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/dialog_ios_like"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:text="@string/dialog_type_ios_like"
-            android:textAllCaps="false"
-            app:layout_constraintTop_toBottomOf="@+id/dialog_type12"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dialog_type11"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_type_11"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toTopOf="@+id/dialog_type12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dialog_type10" />
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dialog_type12"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_type_12"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toTopOf="@+id/dialog_type13"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dialog_type11" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dialog_type13"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_type_13"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toTopOf="@+id/dialog_ios_like"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dialog_type12" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dialog_ios_like"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:text="@string/dialog_type_ios_like"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dialog_type13" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
