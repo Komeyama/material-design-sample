@@ -42,6 +42,13 @@
         android:id="@+id/topBarFragment"
         android:name="com.komeyama.sample.design.material.ui.topbar.TopBarSelect"
         android:label="TopBarSelect" />
+        <action
+            android:id="@+id/action_mainFragment_to_topBarType01"
+            app:destination="@+id/topBarType01" />
+    <fragment
+        android:id="@+id/topBarType01"
+        android:name="com.komeyama.sample.design.material.ui.topbar.TopBarType01"
+        android:label="TopBarType01"/>
 
     <fragment
         android:id="@+id/backDropFragment"
