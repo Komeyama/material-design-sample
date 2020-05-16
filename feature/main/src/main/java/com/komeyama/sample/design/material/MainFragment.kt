@@ -21,6 +21,9 @@ class MainFragment : Fragment(R.layout.fragment_main){
                         MainFragmentData.DesignName.APP_BARS_BOTTOM.designName -> {
                             findNavController().navigate(R.id.action_mainFragment_to_bottomBarFragment)
                         }
+                        MainFragmentData.DesignName.APP_BARS_TOP.designName -> {
+                            findNavController().navigate(R.id.action_mainFragment_to_topBarFragment)
+                        }
                         MainFragmentData.DesignName.BACKDROP.designName -> {
                             findNavController().navigate(R.id.action_mainFragment_to_backDropTypeSelectFragment)
                         }

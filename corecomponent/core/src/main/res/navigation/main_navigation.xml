@@ -11,6 +11,9 @@
             android:id="@+id/action_mainFragment_to_bottomBarFragment"
             app:destination="@id/bottomBarFragment" />
         <action
+            android:id="@+id/action_mainFragment_to_topBarFragment"
+            app:destination="@id/topBarFragment" />
+        <action
             android:id="@+id/action_mainFragment_to_backDropTypeSelectFragment"
             app:destination="@id/backDropTypeSelectFragment" />
         <action
@@ -34,6 +37,11 @@
         android:id="@+id/bottomBarFragment"
         android:name="com.komeyama.sample.design.material.ui.bottombar.BottomBarFragment"
         android:label="BottomBarFragment" />
+
+    <fragment
+        android:id="@+id/topBarFragment"
+        android:name="com.komeyama.sample.design.material.ui.topbar.TopBarSelect"
+        android:label="TopBarSelect" />
 
     <fragment
         android:id="@+id/backDropFragment"

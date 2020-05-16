@@ -10,6 +10,10 @@ class MainFragmentData {
                 DesignName.APP_BARS_BOTTOM.designName
             ),
             MainFragmentRecycleView.DesignInformation(
+                R.drawable.ic_launcher_foreground,
+                DesignName.APP_BARS_TOP.designName
+            ),
+            MainFragmentRecycleView.DesignInformation(
                 R.drawable.top_image_backdrop,
                 DesignName.BACKDROP.designName
             ),
@@ -46,6 +50,7 @@ class MainFragmentData {
 
     enum class DesignName(val designName: String){
         APP_BARS_BOTTOM("App bars: bottom"),
+        APP_BARS_TOP("App bars: top"),
         BACKDROP("Backdrop"),
         CARD("Card"),
         DIALOG("Dialog"),
