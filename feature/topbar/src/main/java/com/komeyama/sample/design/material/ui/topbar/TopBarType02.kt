@@ -3,6 +3,7 @@ package com.komeyama.sample.design.material.ui.topbar
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.komeyama.sample.design.material.ui.topbar.databinding.TopAppListItemBinding
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.databinding.BindableItem
@@ -24,6 +25,10 @@ class TopBarType02 : Fragment(R.layout.fragment_top_bar_type02) {
         }
 
         groupAdapter.update(items)
+
+        top_bar_type02_top_toolbar.setNavigationOnClickListener {
+            findNavController().navigateUp()
+        }
     }
 }
 
