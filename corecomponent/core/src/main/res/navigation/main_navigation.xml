@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_navigation"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
     app:startDestination="@id/mainFragment">
 
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.komeyama.sample.design.material.MainFragment"
-        android:label="MainFragment" >
+        android:label="MainFragment">
         <action
             android:id="@+id/action_mainFragment_to_bottomBarFragment"
             app:destination="@id/bottomBarFragment" />
@@ -41,29 +42,37 @@
     <fragment
         android:id="@+id/topBarFragment"
         android:name="com.komeyama.sample.design.material.ui.topbar.TopBarSelect"
-        android:label="TopBarSelect" />
+        android:label="TopBarSelect">
         <action
             android:id="@+id/action_mainFragment_to_topBarType01"
             app:destination="@+id/topBarType01" />
+        <action
+            android:id="@+id/action_mainFragment_to_topBarType02"
+            app:destination="@+id/topBarType02" />
+    </fragment>
     <fragment
         android:id="@+id/topBarType01"
         android:name="com.komeyama.sample.design.material.ui.topbar.TopBarType01"
-        android:label="TopBarType01"/>
+        android:label="TopBarType01" />
+    <fragment
+        android:id="@+id/topBarType02"
+        android:name="com.komeyama.sample.design.material.ui.topbar.TopBarType02"
+        android:label="TopBarType02" />
 
     <fragment
         android:id="@+id/backDropFragment"
         android:name="com.komeyama.sample.design.material.ui.backdrop.BackDropFragment"
-        android:label="BackDropFragment" >
+        android:label="BackDropFragment">
         <argument
             android:name="backDropType"
-            app:argType="string"
-            android:defaultValue="type01" />
+            android:defaultValue="type01"
+            app:argType="string" />
     </fragment>
 
     <fragment
         android:id="@+id/backDropTypeSelectFragment"
         android:name="com.komeyama.sample.design.material.ui.backdrop.BackDropTypeSelectFragment"
-        android:label="BackDropTypeSelectFragment" >
+        android:label="BackDropTypeSelectFragment">
         <action
             android:id="@+id/action_backDropTypeSelectFragment_to_backDropFragment"
             app:destination="@id/backDropFragment" />
@@ -71,7 +80,7 @@
     <fragment
         android:id="@+id/dialogSelectFragment"
         android:name="com.komeyama.sample.design.material.dialog.DialogSelectFragment"
-        android:label="DialogSelectFragment" >
+        android:label="DialogSelectFragment">
         <action
             android:id="@+id/action_dialogSelectFragment_to_dialogType01"
             app:destination="@id/dialogType01" />
@@ -111,7 +120,7 @@
     <fragment
         android:id="@+id/cardTypeFragment"
         android:name="com.komeyama.sample.design.material.card.CardSelectFragment"
-        android:label="CardTypeFragment" >
+        android:label="CardTypeFragment">
         <action
             android:id="@+id/action_cardTypeFragment_to_cardType01"
             app:destination="@id/cardType01" />
@@ -148,7 +157,7 @@
     <fragment
         android:id="@+id/cardList"
         android:name="com.komeyama.sample.design.material.card.CardList"
-        android:label="CardList" >
+        android:label="CardList">
         <action
             android:id="@+id/action_cardList_to_transitionCard"
             app:destination="@id/transitionCard" />
@@ -164,11 +173,11 @@
     <fragment
         android:id="@+id/transitionCard"
         android:name="com.komeyama.sample.design.material.card.TransitionCard"
-        android:label="TransitionCard" >
+        android:label="TransitionCard">
         <argument
             android:name="titleName"
-            app:argType="string"
-            android:defaultValue='""' />
+            android:defaultValue='""'
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/cardListHorizontal"
@@ -185,7 +194,7 @@
     <fragment
         android:id="@+id/floatingSelectFragment"
         android:name="com.komeyama.sample.design.material.ui.floatingaction.FloatingSelectFragment"
-        android:label="FloatingSelectFragment" >
+        android:label="FloatingSelectFragment">
         <action
             android:id="@+id/action_floatingSelectFragment_to_floatingType01Fragment"
             app:destination="@id/floatingType01Fragment" />
@@ -223,7 +232,7 @@
     <fragment
         android:id="@+id/textfieldSelectFragment"
         android:name="com.komeyama.sample.design.material.ui.textfield.TextFieldSelectFragment"
-        android:label="TextFieldSelectFragment" >
+        android:label="TextFieldSelectFragment">
         <action
             android:id="@+id/action_textfieldSelectFragment_to_textfieldType01Fragment"
             app:destination="@id/textfieldType01Fragment" />
@@ -250,7 +259,7 @@
     <fragment
         android:id="@+id/selectionControlSelectionFragment"
         android:name="com.komeyama.sample.design.material.ui.selectioncontrol.SelectionControlSelectFragment"
-        android:label="SelectionControlSelectFragment" >
+        android:label="SelectionControlSelectFragment">
         <action
             android:id="@+id/action_selectionControlSelectionFragment_to_selectionControlType01Fragment"
             app:destination="@id/selectionControlType01Fragment" />
