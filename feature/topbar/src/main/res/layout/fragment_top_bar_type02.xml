@@ -14,17 +14,20 @@
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/top_bar_typ02_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="match_parent"
             app:collapsedTitleTextAppearance="@style/TextAppearance.App.CollapsingToolbar.Collapsed"
             app:expandedTitleMarginBottom="28dp"
             app:expandedTitleMarginStart="72dp"
             app:expandedTitleTextAppearance="@style/TextAppearance.App.CollapsingToolbar.Expanded"
-            app:layout_scrollFlags="scroll|enterAlways">
+            android:minHeight="?attr/actionBarSize"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="?attr/actionBarSize"
                 android:elevation="0dp"
+                app:navigationIcon="@drawable/ic_navigate_before_24dp"
+                app:layout_collapseMode="pin"
                 app:title="@string/top_bar_type_02" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>

@@ -3,7 +3,6 @@ package com.komeyama.sample.design.material.ui.topbar
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import com.google.android.material.appbar.AppBarLayout
 import com.komeyama.sample.design.material.ui.topbar.databinding.TopAppListItemBinding
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.databinding.BindableItem
@@ -25,15 +24,6 @@ class TopBarType02 : Fragment(R.layout.fragment_top_bar_type02) {
         }
 
         groupAdapter.update(items)
-
-        val toolBarHeight = top_bar_typ02_toolbar.height
-        AppBarLayout.OnOffsetChangedListener { _, verticalOffset ->
-            when (verticalOffset) {
-                0 -> {}
-                toolBarHeight -> {}
-                else -> {}
-            }
-        }
     }
 }
 
