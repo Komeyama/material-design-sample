@@ -49,6 +49,9 @@
         <action
             android:id="@+id/action_mainFragment_to_topBarType02"
             app:destination="@+id/topBarType02" />
+        <action
+            android:id="@+id/action_mainFragment_to_topBarType03"
+            app:destination="@+id/topBarType03" />
     </fragment>
     <fragment
         android:id="@+id/topBarType01"
@@ -58,6 +61,10 @@
         android:id="@+id/topBarType02"
         android:name="com.komeyama.sample.design.material.ui.topbar.TopBarType02"
         android:label="TopBarType02" />
+    <fragment
+        android:id="@+id/topBarType03"
+        android:name="com.komeyama.sample.design.material.ui.topbar.TopBarType03"
+        android:label="TopBarType03" />
 
     <fragment
         android:id="@+id/backDropFragment"

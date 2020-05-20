@@ -16,5 +16,8 @@ class TopBarSelect: Fragment(R.layout.fragment_top_bar_select) {
         top_bar_type02.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_topBarType02)
         }
+        top_bar_type03.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_topBarType03)
+        }
     }
 }

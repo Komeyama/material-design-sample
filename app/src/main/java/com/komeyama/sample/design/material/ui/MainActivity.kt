@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
             when(destination.id) {
                 R.id.topBarType01,
                 R.id.topBarType02,
+                R.id.topBarType03,
                 R.id.bottomBarFragment,
                 R.id.backDropTypeSelectFragment,
                 R.id.backDropFragment,
