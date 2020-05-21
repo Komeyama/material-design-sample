@@ -26,6 +26,8 @@ class TopBarType01: Fragment(R.layout.fragment_top_bar_type01) {
 
         groupAdapter.update(items)
 
+        top_bar_type01_top_toolbar.inflateMenu(R.menu.top_bar_menu)
+
         top_bar_type01_top_toolbar.setNavigationOnClickListener {
             findNavController().navigateUp()
         }

@@ -27,6 +27,8 @@ class TopBarType03 : Fragment(R.layout.fragment_top_bar_type03) {
 
         groupAdapter.update(items)
 
+        top_bar_type03_top_toolbar.inflateMenu(R.menu.top_bar_menu_black)
+
         top_bar_type03_recycler_view.addOnScrollListener(onScrollListener)
         top_bar_type03_top_toolbar.setNavigationOnClickListener {
             findNavController().navigateUp()
