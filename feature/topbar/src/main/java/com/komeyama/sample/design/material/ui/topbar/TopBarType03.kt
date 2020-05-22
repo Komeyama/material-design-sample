@@ -2,6 +2,7 @@ package com.komeyama.sample.design.material.ui.topbar
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -36,6 +37,8 @@ class TopBarType03 : Fragment(R.layout.fragment_top_bar_type03) {
         top_bar_type03_top_toolbar.inflateMenu(R.menu.top_bar_menu_black)
         val searchItem = top_bar_type03_top_toolbar.menu.findItem(R.id.bottom_bar_serch)
         val searchView = searchItem.actionView as SearchView
+        val icon: ImageView = searchView.findViewById(androidx.appcompat.R.id.search_button)
+        icon.setImageResource(R.drawable.ic_search_black_24dp)
         searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                 searchView.clearFocus()
