@@ -37,6 +37,7 @@ class TopBarType02 : Fragment(R.layout.fragment_top_bar_type02) {
         val searchView = searchItem.actionView as SearchView
         val icon: ImageView = searchView.findViewById(androidx.appcompat.R.id.search_button)
         icon.setImageResource(R.drawable.ic_search_24dp)
+        setMenuButtonVisibility(searchView)
         searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                 searchView.clearFocus()
@@ -49,6 +50,16 @@ class TopBarType02 : Fragment(R.layout.fragment_top_bar_type02) {
                 return false
             }
         })
+    }
+
+    private fun setMenuButtonVisibility(searchView: SearchView) {
+        searchView.setOnSearchClickListener {
+            top_bar_type02_top_toolbar.menu.findItem(R.id.bottom_bar_more_vert_white).isVisible = false
+        }
+        searchView.setOnCloseListener {
+            top_bar_type02_top_toolbar.menu.findItem(R.id.bottom_bar_more_vert_white).isVisible = true
+            false
+        }
     }
 }
 

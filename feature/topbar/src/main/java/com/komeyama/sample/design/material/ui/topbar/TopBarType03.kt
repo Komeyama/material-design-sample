@@ -39,6 +39,7 @@ class TopBarType03 : Fragment(R.layout.fragment_top_bar_type03) {
         val searchView = searchItem.actionView as SearchView
         val icon: ImageView = searchView.findViewById(androidx.appcompat.R.id.search_button)
         icon.setImageResource(R.drawable.ic_search_black_24dp)
+        setMenuButtonVisibility(searchView)
         searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                 searchView.clearFocus()
@@ -60,6 +61,16 @@ class TopBarType03 : Fragment(R.layout.fragment_top_bar_type03) {
             if (!recyclerView.canScrollVertically(-1)) {
                 top_bar_type03_top_toolbar.elevation = 0f
             }
+        }
+    }
+
+    private fun setMenuButtonVisibility(searchView: SearchView) {
+        searchView.setOnSearchClickListener {
+            top_bar_type03_top_toolbar.menu.findItem(R.id.bottom_bar_more_vert).isVisible = false
+        }
+        searchView.setOnCloseListener {
+            top_bar_type03_top_toolbar.menu.findItem(R.id.bottom_bar_more_vert).isVisible = true
+            false
         }
     }
 }
