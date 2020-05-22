@@ -3,14 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/bottom_bar_serch"
+        android:id="@+id/bottom_bar_search_white"
         android:icon="@drawable/ic_search_24dp"
         app:showAsAction="ifRoom"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
         android:title="search">
     </item>
 
     <item
-        android:id="@+id/bottom_bar_more_vert"
+        android:id="@+id/bottom_bar_more_vert_white"
         android:icon="@drawable/ic_more_vert_24dp"
         app:showAsAction="ifRoom"
         android:title="more_vert" >
