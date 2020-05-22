@@ -2,6 +2,7 @@ package com.komeyama.sample.design.material.ui.topbar
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -27,12 +28,26 @@ class TopBarType03 : Fragment(R.layout.fragment_top_bar_type03) {
 
         groupAdapter.update(items)
 
-        top_bar_type03_top_toolbar.inflateMenu(R.menu.top_bar_menu_black)
-
         top_bar_type03_recycler_view.addOnScrollListener(onScrollListener)
         top_bar_type03_top_toolbar.setNavigationOnClickListener {
             findNavController().navigateUp()
         }
+
+        top_bar_type03_top_toolbar.inflateMenu(R.menu.top_bar_menu_black)
+        val searchItem = top_bar_type03_top_toolbar.menu.findItem(R.id.bottom_bar_serch)
+        val searchView = searchItem.actionView as SearchView
+        searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                searchView.clearFocus()
+                Timber.d("query text submit: %s", query)
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                Timber.d("query text change: %s", newText)
+                return false
+            }
+        })
     }
 
     private val onScrollListener = object: RecyclerView.OnScrollListener() {
