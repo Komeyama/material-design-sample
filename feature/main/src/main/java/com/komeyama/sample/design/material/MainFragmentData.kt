@@ -10,7 +10,7 @@ class MainFragmentData {
                 DesignName.APP_BARS_BOTTOM.designName
             ),
             MainFragmentRecycleView.DesignInformation(
-                R.drawable.ic_launcher_foreground,
+                R.drawable.top_image_top_bar,
                 DesignName.APP_BARS_TOP.designName
             ),
             MainFragmentRecycleView.DesignInformation(
