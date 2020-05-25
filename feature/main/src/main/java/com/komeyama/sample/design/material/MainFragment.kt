@@ -27,6 +27,9 @@ class MainFragment : Fragment(R.layout.fragment_main){
                         MainFragmentData.DesignName.BACKDROP.designName -> {
                             findNavController().navigate(R.id.action_mainFragment_to_backDropTypeSelectFragment)
                         }
+                        MainFragmentData.DesignName.BOTTOM_NAVIGATION.designName -> {
+                            findNavController().navigate(R.id.action_mainFragment_to_bottomNavigationSelect)
+                        }
                         MainFragmentData.DesignName.CARD.designName -> {
                             findNavController().navigate(R.id.action_mainFragment_to_cardTypeFragment)
                         }

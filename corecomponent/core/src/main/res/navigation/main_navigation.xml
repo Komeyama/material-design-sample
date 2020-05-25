@@ -18,6 +18,9 @@
             android:id="@+id/action_mainFragment_to_backDropTypeSelectFragment"
             app:destination="@id/backDropTypeSelectFragment" />
         <action
+            android:id="@+id/action_mainFragment_to_bottomNavigationSelect"
+            app:destination="@id/bottomNavigationSelectFragment" />
+        <action
             android:id="@+id/action_mainFragment_to_dialogSelectFragment"
             app:destination="@id/dialogSelectFragment" />
         <action
@@ -104,6 +107,14 @@
             android:id="@+id/action_dialogSelectFragment_to_dialogType09"
             app:destination="@id/dialogType09" />
     </fragment>
+
+    <fragment
+        android:id="@+id/bottomNavigationSelectFragment"
+        android:name="com.komeyama.sample.design.material.ui.bottomnavigation.BottomNavigationSelect"
+        android:label="BottomNavigationSelect">
+
+    </fragment>
+
     <dialog
         android:id="@+id/dialogType01"
         android:name="com.komeyama.sample.design.material.dialog.DialogType01"
