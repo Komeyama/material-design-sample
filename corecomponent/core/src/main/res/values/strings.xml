@@ -17,6 +17,9 @@
     <string name="bottom_navigation_type_01">Type01</string>
     <string name="bottom_navigation_type_02">Type02</string>
     <string name="bottom_navigation_type_03">Type03</string>
+    <string name="bottom_navigation_favorites">Favorites</string>
+    <string name="bottom_navigation_music">Music</string>
+    <string name="bottom_navigation_places">Places</string>
     <string name="card_type_01">Type01</string>
     <string name="card_type_02">Type02</string>
     <string name="card_type_03">Type03</string>

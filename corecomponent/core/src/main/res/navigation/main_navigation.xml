@@ -107,7 +107,7 @@
             android:id="@+id/action_dialogSelectFragment_to_dialogType09"
             app:destination="@id/dialogType09" />
     </fragment>
-    
+
     <fragment
         android:id="@+id/bottomNavigationSelectFragment"
         android:name="com.komeyama.sample.design.material.ui.bottomnavigation.BottomNavigationSelect"
