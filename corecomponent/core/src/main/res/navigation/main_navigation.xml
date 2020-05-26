@@ -107,13 +107,19 @@
             android:id="@+id/action_dialogSelectFragment_to_dialogType09"
             app:destination="@id/dialogType09" />
     </fragment>
-
+    
     <fragment
         android:id="@+id/bottomNavigationSelectFragment"
         android:name="com.komeyama.sample.design.material.ui.bottomnavigation.BottomNavigationSelect"
         android:label="BottomNavigationSelect">
-
+        <action
+            android:id="@+id/action_bottomNavigationSelectFragment_to_bottomNavigationType01Fragment"
+            app:destination="@+id/bottomNavigationType01Fragment"/>
     </fragment>
+    <fragment
+        android:id="@+id/bottomNavigationType01Fragment"
+        android:name="com.komeyama.sample.design.material.ui.bottomnavigation.BottomNavigationType01"
+        android:label="BottomNavigationType01"/>
 
     <dialog
         android:id="@+id/dialogType01"
