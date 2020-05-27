@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_navigation_type01_navigation"
+    app:startDestination="@id/bottomNavigationType01FragmentItem01">
+
+    <fragment
+        android:id="@+id/bottomNavigationType01FragmentItem01"
+        android:name="com.komeyama.sample.design.material.ui.bottomnavigation.type01.BottomNavigationType01Item01"
+        android:label="BottomNavigationType01Item01"/>
+
+    <fragment
+        android:id="@+id/bottomNavigationType01FragmentItem02"
+        android:name="com.komeyama.sample.design.material.ui.bottomnavigation.type01.BottomNavigationType01Item02"
+        android:label="BottomNavigationType01Item02"/>
+
+    <fragment
+        android:id="@+id/bottomNavigationType01FragmentItem03"
+        android:name="com.komeyama.sample.design.material.ui.bottomnavigation.type01.BottomNavigationType01Item03"
+        android:label="BottomNavigationType01Item03"/>
+
+</navigation>
