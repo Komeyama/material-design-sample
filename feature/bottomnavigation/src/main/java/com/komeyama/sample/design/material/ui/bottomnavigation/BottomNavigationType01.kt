@@ -14,13 +14,19 @@ class BottomNavigationType01 : Fragment(R.layout.fragment_bottom_navigation_type
         val navController = activity!!.findNavController(R.id.bottom_nav_view_type01_nav_host_fragment)
         NavigationUI.setupWithNavController(bottom_navigation_view_type01, navController)
 
-        val badge = bottom_navigation_view_type01.getOrCreateBadge(R.id.bottomNavigationType01FragmentItem02)
-        badge.isVisible = true
-        badge.number = 3
+        setBadgeNumber(R.id.bottomNavigationType01FragmentItem01,1)
+        setBadgeNumber(R.id.bottomNavigationType01FragmentItem02,3)
+        setBadgeNumber(R.id.bottomNavigationType01FragmentItem03,10)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             bottom_navigation_view_type01.removeBadge(destination.id)
         }
+    }
+
+    private fun setBadgeNumber(menuId: Int, setNumber: Int) {
+        val badge = bottom_navigation_view_type01.getOrCreateBadge(menuId)
+        badge.isVisible = true
+        badge.number = setNumber
     }
 
 
