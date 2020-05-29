@@ -32,6 +32,6 @@ class BottomNavType02Item(private val titleText: String) : BindableItem<BottomNa
 
     override fun bind(viewBinding: BottomNavType02ItemBinding, position: Int) {
         viewBinding.bottomNavType02Item01TitleText.text = titleText
-        Timber.d("on click button1(type01) position:%s, title:%s ",position, viewBinding.bottomNavType02Item01TitleText.text)
+        Timber.d("on click button1(type02) position:%s, title:%s ",position, viewBinding.bottomNavType02Item01TitleText.text)
     }
 }

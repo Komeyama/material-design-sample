@@ -2,9 +2,11 @@ package com.komeyama.sample.design.material.ui.bottomnavigation
 
 import android.os.Bundle
 import android.view.View
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.komeyama.sample.design.material.ui.bottomnavigation.type02.BottomNavigationBehavior
 import kotlinx.android.synthetic.main.fragment_bottom_navigation_type02.*
 
 class BottomNavigationType02: Fragment(R.layout.fragment_bottom_navigation_type02) {
@@ -13,6 +15,9 @@ class BottomNavigationType02: Fragment(R.layout.fragment_bottom_navigation_type0
         super.onViewCreated(view, savedInstanceState)
         val navController = activity!!.findNavController(R.id.bottom_nav_view_type02_nav_host_fragment)
         NavigationUI.setupWithNavController(bottom_navigation_view_type02, navController)
+
+        val layoutParams: CoordinatorLayout.LayoutParams = bottom_navigation_view_type02.layoutParams as CoordinatorLayout.LayoutParams
+        layoutParams.behavior = BottomNavigationBehavior(activity!!)
     }
 
 }
