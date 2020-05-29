@@ -115,11 +115,18 @@
         <action
             android:id="@+id/action_bottomNavigationSelectFragment_to_bottomNavigationType01Fragment"
             app:destination="@+id/bottomNavigationType01Fragment"/>
+        <action
+            android:id="@+id/action_bottomNavigationSelectFragment_to_bottomNavigationType02Fragment"
+            app:destination="@+id/bottomNavigationType02Fragment"/>
     </fragment>
     <fragment
         android:id="@+id/bottomNavigationType01Fragment"
         android:name="com.komeyama.sample.design.material.ui.bottomnavigation.BottomNavigationType01"
         android:label="BottomNavigationType01"/>
+    <fragment
+        android:id="@+id/bottomNavigationType02Fragment"
+        android:name="com.komeyama.sample.design.material.ui.bottomnavigation.BottomNavigationType02"
+        android:label="BottomNavigationType02"/>
 
     <dialog
         android:id="@+id/dialogType01"

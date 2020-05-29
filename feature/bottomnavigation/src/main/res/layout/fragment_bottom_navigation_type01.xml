@@ -20,7 +20,7 @@
             android:id="@+id/bottom_navigation_view_type01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:menu="@menu/bottom_navigation_menu"
+            app:menu="@menu/bottom_navigation_menu_type01"
             app:layout_constraintTop_toBottomOf="@+id/bottom_nav_view_type01_nav_host_fragment"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

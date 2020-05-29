@@ -21,7 +21,7 @@ class BottomNavigationType01Item01: Fragment(R.layout.fragment_bottom_navigation
         val items: MutableList<BottomNavType01Item> = mutableListOf()
         for(index in 0 until 20) {
             Timber.d("bottom type01: %s", index)
-            items.add(BottomNavType01Item("Bottom Navigation Item $index"))
+            items.add(BottomNavType01Item("Bottom Navigation Type01 Item $index"))
         }
         groupAdapter.update(items)
     }

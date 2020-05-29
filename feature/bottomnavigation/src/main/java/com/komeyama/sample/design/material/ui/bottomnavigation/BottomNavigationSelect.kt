@@ -13,5 +13,8 @@ class BottomNavigationSelect: Fragment(R.layout.fragment_bottom_navigation_selec
         bottom_navigation_type01_button.setOnClickListener {
             findNavController().navigate(R.id.action_bottomNavigationSelectFragment_to_bottomNavigationType01Fragment)
         }
+        bottom_navigation_type02_button.setOnClickListener {
+            findNavController().navigate(R.id.action_bottomNavigationSelectFragment_to_bottomNavigationType02Fragment)
+        }
     }
 }

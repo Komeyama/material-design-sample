@@ -13,27 +13,27 @@
         android:layout_height="wrap_content">
 
         <View
-            android:id="@+id/bottom_nav_type01_item01_top_view"
+            android:id="@+id/bottom_nav_type02_item01_top_view"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/colorLightGray"
-            app:layout_constraintBottom_toTopOf="@+id/bottom_nav_type01_item01_title_text"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_nav_type02_item01_title_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="parent"/>
 
         <TextView
-            android:id="@+id/bottom_nav_type01_item01_title_text"
+            android:id="@+id/bottom_nav_type02_item01_title_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="16sp"
-            android:text="@string/top_bar_type_01"
+            android:text="@string/top_bar_type_02"
             android:layout_margin="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bottom_nav_type01_item01_top_view" />
+            app:layout_constraintTop_toBottomOf="@+id/bottom_nav_type02_item01_top_view" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
