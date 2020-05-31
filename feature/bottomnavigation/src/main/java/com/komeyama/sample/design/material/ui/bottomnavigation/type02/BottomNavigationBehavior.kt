@@ -11,6 +11,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class BottomNavigationBehavior constructor(context: Context, attrs: AttributeSet? = null) :
     CoordinatorLayout.Behavior<BottomNavigationView>(context, attrs) {
 
+    /**
+     * Because the initial movement of the animation is slowed down by the slight change in the scrolling
+     */
+    private var scrolledUp = true
+    private var scrolledDown = true
+
     override fun layoutDependsOn(
         parent: CoordinatorLayout,
         child: BottomNavigationView,
@@ -35,9 +41,17 @@ class BottomNavigationBehavior constructor(context: Context, attrs: AttributeSet
         target: View, dx: Int, dy: Int, consumed: IntArray, type: Int
     ) {
         if (dy < 0) {
-            showBottomNavigationView(child)
+            if (scrolledUp) {
+                scrolledUp = false
+                scrolledDown = true
+                showBottomNavigationView(child)
+            }
         } else if (dy > 0) {
-            hideBottomNavigationView(child)
+            if (scrolledDown) {
+                scrolledUp = true
+                scrolledDown = false
+                hideBottomNavigationView(child)
+            }
         }
     }
 
