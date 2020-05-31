@@ -2,45 +2,15 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorWhite">
-
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/bottom_nav_type02_search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorWhite"
-            android:textCursorDrawable="@null"
-            android:layout_margin="16dp"
-            android:elevation="8dp"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:iconifiedByDefault="false"
-            app:queryHint="@string/bottom_navigation_search"
-            app:queryBackground="@null"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.core.widget.NestedScrollView
+    <fragment
+        android:id="@+id/bottom_nav_view_type02_nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:ignore="PrivateResource">
-
-        <fragment
-            android:id="@+id/bottom_nav_view_type02_nav_host_fragment"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/bottom_navigation_type02_navigation" />
-
-    </androidx.core.widget.NestedScrollView>
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/bottom_navigation_type02_navigation" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_view_type02"
