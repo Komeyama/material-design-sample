@@ -2,6 +2,7 @@ package com.komeyama.sample.design.material.ui.bottomnavigation.type02
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.AppBarLayout
@@ -34,6 +35,28 @@ class BottomNavigationType02Item01: Fragment(R.layout.fragment_bottom_navigation
         groupAdapter.update(items)
 
         bottom_nav_type02_item01_recycler_view.addOnScrollListener(onScrollListener)
+
+        bottom_nav_type02_item01_search.setOnQueryTextFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                bottom_nav_type02_item01_recycler_view.visibility = View.INVISIBLE
+            } else {
+                bottom_nav_type02_item01_recycler_view.visibility = View.VISIBLE
+            }
+        }
+
+        bottom_nav_type02_item01_search.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                bottom_nav_type02_item01_search.clearFocus()
+                Timber.d("query text submit: %s", query)
+                bottom_nav_type02_item01_recycler_view.visibility = View.VISIBLE
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                Timber.d("query text change: %s", newText)
+                return false
+            }
+        })
     }
 
     private val onScrollListener = object: RecyclerView.OnScrollListener() {
