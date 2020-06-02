@@ -21,7 +21,7 @@ class BottomNavigationType02Item02: Fragment(R.layout.fragment_bottom_navigation
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        bottom_navigation_type02_item02_pager.adapter = TabAdapter(activity!!.supportFragmentManager, activity!!)
+        bottom_navigation_type02_item02_pager.adapter = TabAdapter(childFragmentManager, activity!!)
         bottom_navigation_type02_item02_tabLayout.setupWithViewPager(bottom_navigation_type02_item02_pager)
 
         bottom_navigation_type02_item02_toolbar.inflateMenu(R.menu.bottom_navigation_type02_top_app_menu)
