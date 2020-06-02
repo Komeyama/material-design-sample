@@ -67,14 +67,14 @@ class BottomNavigationType02Item01: Fragment(R.layout.fragment_bottom_navigation
                 if (scrolledUp) {
                     scrolledUp = false
                     scrolledDown = true
-                    showAppBarLayoutAndMoveRecyclerView(bottom_navigation_type01_item01_appbar,bottom_nav_type02_item01_recycler_view)
+                    showAppBarLayoutAndMoveRecyclerView(bottom_navigation_type02_item01_appbar,bottom_nav_type02_item01_recycler_view)
                 }
 
             } else if (dy > 0) {
                 if (scrolledDown) {
                     scrolledUp = true
                     scrolledDown = false
-                    hideAppBarLayoutAndMoveRecyclerView(bottom_navigation_type01_item01_appbar,bottom_nav_type02_item01_recycler_view)
+                    hideAppBarLayoutAndMoveRecyclerView(bottom_navigation_type02_item01_appbar,bottom_nav_type02_item01_recycler_view)
                 }
             }
         }

@@ -66,4 +66,8 @@
         <item name="searchIcon">@drawable/ic_search_24dp</item>
     </style>
 
+    <style name="Toolbar.BottomNavigationToolbar" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">24sp</item>
+    </style>
+
 </resources>
