@@ -10,7 +10,9 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.komeyama.sample.design.material.ui.bottomnavigation.R
+import com.komeyama.sample.design.material.ui.bottomnavigation.databinding.BottomNavType02AlbumBinding
 import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.databinding.BindableItem
 import com.xwray.groupie.databinding.ViewHolder
 import kotlinx.android.synthetic.main.fragment_bottom_navigation_type02_item02.*
 import kotlinx.android.synthetic.main.fragment_bottom_navigation_type02_item02_albums.*
@@ -87,10 +89,14 @@ class BottomNavigationType02Item02Albums: Fragment(R.layout.fragment_bottom_navi
         super.onViewCreated(view, savedInstanceState)
         val groupAdapter = GroupAdapter<ViewHolder<*>>()
         bottom_nav_type02_item02_recycler_view.adapter = groupAdapter
-        val items: MutableList<BottomNavType02Item> = mutableListOf()
+        val items: MutableList<BottomNavType02ItemAlbum> = mutableListOf()
         for(index in 0 until 20) {
             Timber.d("bottom type02: %s", index)
-            items.add(BottomNavType02Item("Bottom Navigation Type02 Item $index"))
+            items.add(BottomNavType02ItemAlbum(
+                "Album name $index",
+                "Artist name $index",
+                index.toString()
+                ))
         }
         groupAdapter.update(items)
         bottom_nav_type02_item02_recycler_view.addOnScrollListener(onScrollListener)
@@ -106,3 +112,14 @@ class BottomNavigationType02Item02Albums: Fragment(R.layout.fragment_bottom_navi
 class BottomNavigationType02Item02Artists: Fragment(R.layout.fragment_bottom_navigation_type02_item02_artists){}
 
 class BottomNavigationType02Item02Playlists: Fragment(R.layout.fragment_bottom_navigation_type02_item02_playlists){}
+
+class BottomNavType02ItemAlbum(private val albumName: String, private val artistName: String, private val albumTime: String) : BindableItem<BottomNavType02AlbumBinding>() {
+    override fun getLayout() = R.layout.bottom_nav_type02_album
+
+    override fun bind(viewBinding: BottomNavType02AlbumBinding, position: Int) {
+        viewBinding.albumName.text = albumName
+        viewBinding.artistName.text = artistName
+        viewBinding.albumTime.text = albumTime
+        Timber.d("on click album position:%s, title:%s ",position, viewBinding.albumName.text)
+    }
+}

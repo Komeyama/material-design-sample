@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="text"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_well"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_well"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <com.komeyama.sample.design.material.ui.bottomnavigation.utils.RoundClipFrameLayout
+            android:id="@+id/album_icon"
+            android:layout_width="@dimen/album_image_size"
+            android:layout_height="@dimen/album_image_size"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/left_well"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cornerRadius="8dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@color/colorLightGray"
+                android:contentDescription="@string/bottom_navigation_albums" />
+
+        </com.komeyama.sample.design.material.ui.bottomnavigation.utils.RoundClipFrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/album_name_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/album_icon">
+
+            <TextView
+                android:id="@+id/album_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="22dp"
+                android:text="@string/bottom_navigation_albums"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/artist_name" />
+
+            <TextView
+                android:id="@+id/artist_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="12dp"
+                android:text="@string/bottom_navigation_artists"
+                android:textAllCaps="false"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/album_name" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/album_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="@string/bottom_navigation_default_time"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/album_time_unit"/>
+
+        <TextView
+            android:id="@+id/album_time_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="@string/bottom_navigation_default_time_unit"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/right_well"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorLightGray"
+            app:layout_constraintTop_toBottomOf="@+id/album_name_area"
+            app:layout_constraintStart_toEndOf="@+id/left_well"
+            app:layout_constraintEnd_toStartOf="@+id/right_well"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
