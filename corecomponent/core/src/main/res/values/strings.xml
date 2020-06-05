@@ -15,6 +15,10 @@
     <string name="bottom_bar_fab_position_animation_button_slide">Slide</string>
     <string name="bottom_bar_fab_position_animation_button_scale">Scale</string>
     <string name="bottom_navigation_albums">Albums</string>
+    <string name="bottom_navigation_album_order_type01">Recently played</string>
+    <string name="bottom_navigation_album_order_type02">Popularity　music</string>
+    <string name="bottom_navigation_album_order_type03">Longer play time</string>
+    <string name="bottom_navigation_album_order_type04">Shorter play time</string>
     <string name="bottom_navigation_albums_num">0</string>
     <string name="bottom_navigation_albums_num_unit">albums</string>
     <string name="bottom_navigation_artists">Artists</string>

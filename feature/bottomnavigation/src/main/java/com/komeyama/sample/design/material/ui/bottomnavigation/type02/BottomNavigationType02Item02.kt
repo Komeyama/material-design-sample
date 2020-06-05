@@ -91,6 +91,8 @@ class TabAdapter(fm: FragmentManager, private val context: Context) :
 class BottomNavigationType02Item02Albums :
     Fragment(R.layout.fragment_bottom_navigation_type02_item02_albums) {
 
+    private lateinit var spinnerType: ArrayList<String>
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val groupAdapter = GroupAdapter<ViewHolder<*>>()
@@ -102,21 +104,25 @@ class BottomNavigationType02Item02Albums :
                 BottomNavType02ItemAlbum(
                     "Album name $index",
                     "Artist name $index",
-                    index.toString()
+                    (index + 1).toString()
                 )
             )
         }
         groupAdapter.update(items)
         bottom_nav_type02_item02_recycler_view.addOnScrollListener(onScrollListener)
 
-        // spinner
+        // set album total num
+        current_album_num.text = items.size.toString()
+
+        // set spinner
+        spinnerType = arrayListOf(
+            activity!!.getString(R.string.bottom_navigation_album_order_type01),
+            activity!!.getString(R.string.bottom_navigation_album_order_type02),
+            activity!!.getString(R.string.bottom_navigation_album_order_type03),
+            activity!!.getString(R.string.bottom_navigation_album_order_type04)
+        )
         album_display_order_spinner.adapter =
-            ArrayAdapter<String>(activity!!, R.layout.album_order_list).apply {
-                add("Recently played")
-                add("Popularity　music")
-                add("Longer play time")
-                add("Shorter play time")
-            }
+            ArrayAdapter<String>(activity!!, R.layout.album_order_list, spinnerType)
     }
 
     private val onScrollListener = object : RecyclerView.OnScrollListener() {
