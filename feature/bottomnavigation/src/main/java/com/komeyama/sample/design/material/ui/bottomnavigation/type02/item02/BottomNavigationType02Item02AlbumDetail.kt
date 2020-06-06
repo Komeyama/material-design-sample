@@ -13,6 +13,8 @@ class BottomNavigationType02Item02AlbumDetail :
     Fragment(R.layout.fragment_bottom_navigation_type02_item02_album_detail) {
 
     private val args: BottomNavigationType02Item02AlbumDetailArgs by navArgs()
+    private val marqueeStartHandler = Handler()
+    private lateinit var marqueeStartRunnable: Runnable
     private val marqueeStartTime: Long = 2000L
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -21,11 +23,16 @@ class BottomNavigationType02Item02AlbumDetail :
         // set title text
         val title = args.albumName + " - " + args.artistName
         album_detail_toolbar_title.text = title
-        val handler = Handler()
-        handler.postDelayed({ album_detail_toolbar_title.isSelected = true }, marqueeStartTime)
+        marqueeStartRunnable = Runnable { album_detail_toolbar_title.isSelected = true }
+        marqueeStartHandler.postDelayed(marqueeStartRunnable, marqueeStartTime)
         album_detail_toolbar.setNavigationOnClickListener {
             it.findNavController().navigateUp()
         }
 
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        marqueeStartHandler.removeCallbacks(marqueeStartRunnable)
     }
 }
