@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.komeyama.sample.design.material.ui.bottomnavigation.R
 import com.komeyama.sample.design.material.ui.bottomnavigation.databinding.BottomNavType02AlbumBinding
@@ -68,6 +69,10 @@ class BottomNavType02ItemAlbum(
         viewBinding.albumName.text = albumName
         viewBinding.artistName.text = artistName
         viewBinding.albumTime.text = albumTime
-        Timber.d("on click album position:%s, title:%s ", position, viewBinding.albumName.text)
+
+        viewBinding.root.setOnClickListener {
+            Timber.d("on click album position:%s, title:%s ", position, viewBinding.albumName.text)
+            viewBinding.root.findNavController().navigate(R.id.action_bottomNavigationType02FragmentItem02_to_bottomNavigationType02FragmentItem02Album)
+        }
     }
 }

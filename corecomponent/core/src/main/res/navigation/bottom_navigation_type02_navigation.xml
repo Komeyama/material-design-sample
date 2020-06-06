@@ -12,11 +12,21 @@
     <fragment
         android:id="@+id/bottomNavigationType02FragmentItem02"
         android:name="com.komeyama.sample.design.material.ui.bottomnavigation.type02.BottomNavigationType02Item02"
-        android:label="BottomNavigationType02Item02"/>
+        android:label="BottomNavigationType02Item02">
+
+        <action
+            android:id="@+id/action_bottomNavigationType02FragmentItem02_to_bottomNavigationType02FragmentItem02Album"
+            app:destination="@id/bottomNavigationType02FragmentItem02Album" />
+    </fragment>
 
     <fragment
         android:id="@+id/bottomNavigationType02FragmentItem03"
         android:name="com.komeyama.sample.design.material.ui.bottomnavigation.type02.BottomNavigationType02Item03"
         android:label="BottomNavigationType02Item03"/>
+
+    <fragment
+        android:id="@+id/bottomNavigationType02FragmentItem02Album"
+        android:name="com.komeyama.sample.design.material.ui.bottomnavigation.type02.item02.BottomNavigationType02Item02AlbumDetail"
+        android:label="BottomNavigationType02Item02AlbumDetail"/>
 
 </navigation>
