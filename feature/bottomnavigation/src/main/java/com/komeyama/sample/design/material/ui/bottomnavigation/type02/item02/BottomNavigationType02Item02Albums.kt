@@ -8,6 +8,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.komeyama.sample.design.material.ui.bottomnavigation.R
 import com.komeyama.sample.design.material.ui.bottomnavigation.databinding.BottomNavType02AlbumBinding
+import com.komeyama.sample.design.material.ui.bottomnavigation.type02.BottomNavigationType02Item02Directions
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.databinding.BindableItem
 import com.xwray.groupie.databinding.ViewHolder
@@ -72,7 +73,13 @@ class BottomNavType02ItemAlbum(
 
         viewBinding.root.setOnClickListener {
             Timber.d("on click album position:%s, title:%s ", position, viewBinding.albumName.text)
-            viewBinding.root.findNavController().navigate(R.id.action_bottomNavigationType02FragmentItem02_to_bottomNavigationType02FragmentItem02Album)
+            val action = BottomNavigationType02Item02Directions.
+                actionBottomNavigationType02FragmentItem02ToBottomNavigationType02FragmentItem02Album(
+                    viewBinding.albumName.text.toString(),
+                    viewBinding.artistName.text.toString(),
+                    viewBinding.albumTime.text.toString()
+                )
+            viewBinding.root.findNavController().navigate(action)
         }
     }
 }
