@@ -6,6 +6,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.transition.MaterialContainerTransform
 import com.komeyama.sample.design.material.ui.bottomnavigation.R
 import kotlinx.android.synthetic.main.fragment_bottom_navigation_type02_item02_album_detail.*
 
@@ -17,8 +18,17 @@ class BottomNavigationType02Item02AlbumDetail :
     private lateinit var marqueeStartRunnable: Runnable
     private val marqueeStartTime: Long = 2000L
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        sharedElementEnterTransition = MaterialContainerTransform(requireContext()).apply {
+//            duration = 3000L
+//            isDrawDebugEnabled = true
+        }
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        view.rootView.transitionName = "transition_album_container"
 
         // set title text
         val title = args.albumName + " - " + args.artistName

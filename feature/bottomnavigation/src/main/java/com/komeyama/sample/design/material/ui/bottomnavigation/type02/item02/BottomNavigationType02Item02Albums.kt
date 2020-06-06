@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.recyclerview.widget.RecyclerView
 import com.komeyama.sample.design.material.ui.bottomnavigation.R
 import com.komeyama.sample.design.material.ui.bottomnavigation.databinding.BottomNavType02AlbumBinding
@@ -73,13 +74,18 @@ class BottomNavType02ItemAlbum(
 
         viewBinding.root.setOnClickListener {
             Timber.d("on click album position:%s, title:%s ", position, viewBinding.albumName.text)
+            viewBinding.albumItemTop.transitionName = "transition_album_container"
+            val extras = FragmentNavigatorExtras(
+                viewBinding.albumItemTop to viewBinding.albumItemTop.transitionName
+            )
+
             val action = BottomNavigationType02Item02Directions.
                 actionBottomNavigationType02FragmentItem02ToBottomNavigationType02FragmentItem02Album(
                     viewBinding.albumName.text.toString(),
                     viewBinding.artistName.text.toString(),
                     viewBinding.albumTime.text.toString()
                 )
-            viewBinding.root.findNavController().navigate(action)
+            viewBinding.root.findNavController().navigate(action, extras)
         }
     }
 }
