@@ -32,6 +32,7 @@ class BottomNavigationType02Item02 : Fragment(R.layout.fragment_bottom_navigatio
             bottom_navigation_type02_item02_toolbar.menu.findItem(R.id.bottom_nav_type02_top_bar_search)
         val searchView = searchItem.actionView as SearchView
         searchView.maxWidth = Integer.MAX_VALUE
+        searchView.queryHint = activity!!.getString(R.string.bottom_bar_search)
         val icon: ImageView = searchView.findViewById(androidx.appcompat.R.id.search_button)
         icon.setImageResource(R.drawable.ic_search_black_24dp)
 
