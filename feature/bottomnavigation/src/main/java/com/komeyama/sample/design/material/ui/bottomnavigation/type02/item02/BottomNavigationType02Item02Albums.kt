@@ -37,7 +37,6 @@ class BottomNavigationType02Item02Albums :
             )
         }
         groupAdapter.update(items)
-        bottom_nav_type02_item02_recycler_view.addOnScrollListener(onScrollListener)
 
         // set album total num
         current_album_num.text = items.size.toString()
@@ -51,12 +50,6 @@ class BottomNavigationType02Item02Albums :
         )
         album_display_order_spinner.adapter =
             ArrayAdapter<String>(activity!!, R.layout.album_order_list, spinnerType)
-    }
-
-    private val onScrollListener = object : RecyclerView.OnScrollListener() {
-        override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-            super.onScrolled(recyclerView, dx, dy)
-        }
     }
 }
 
