@@ -32,4 +32,10 @@ class BottomNavigationType02: Fragment(R.layout.fragment_bottom_navigation_type0
         bottom_navigation_view_type02.animate().translationY(0f)
     }
 
+    fun hideBottomNavigation() {
+        bottomNavigationBehavior.scrolledDown = true
+        bottomNavigationBehavior.scrolledUp = true
+        bottom_navigation_view_type02.animate().translationY(bottom_navigation_view_type02.height.toFloat())
+    }
+
 }

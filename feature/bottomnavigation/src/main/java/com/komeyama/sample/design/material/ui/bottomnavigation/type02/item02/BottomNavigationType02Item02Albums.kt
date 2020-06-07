@@ -20,6 +20,7 @@ class BottomNavigationType02Item02Albums :
     Fragment(R.layout.fragment_bottom_navigation_type02_item02_albums) {
 
     private lateinit var spinnerType: ArrayList<String>
+    lateinit var bottomNavigationType02: BottomNavigationType02
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -58,36 +59,39 @@ class BottomNavigationType02Item02Albums :
      */
     override fun onResume() {
         super.onResume()
-        (parentFragment?.parentFragment?.parentFragment as BottomNavigationType02).initBottomNavigation()
+        bottomNavigationType02 = (parentFragment?.parentFragment?.parentFragment as BottomNavigationType02)
+        bottomNavigationType02.initBottomNavigation()
     }
-}
 
-class BottomNavType02ItemAlbum(
-    private val albumName: String,
-    private val artistName: String,
-    private val albumTime: String
-) : BindableItem<BottomNavType02AlbumBinding>() {
-    override fun getLayout() = R.layout.bottom_nav_type02_album
+    inner class BottomNavType02ItemAlbum(
+        private val albumName: String,
+        private val artistName: String,
+        private val albumTime: String
+    ) : BindableItem<BottomNavType02AlbumBinding>() {
+        override fun getLayout() = R.layout.bottom_nav_type02_album
 
-    override fun bind(viewBinding: BottomNavType02AlbumBinding, position: Int) {
-        viewBinding.albumName.text = albumName
-        viewBinding.artistName.text = artistName
-        viewBinding.albumTime.text = albumTime
-
-        viewBinding.root.setOnClickListener {
-            Timber.d("on click album position:%s, title:%s ", position, viewBinding.albumName.text)
-            viewBinding.albumItemTop.transitionName = "transition_album_container"
-            val extras = FragmentNavigatorExtras(
-                viewBinding.albumItemTop to viewBinding.albumItemTop.transitionName
-            )
-
-            val action = BottomNavigationType02Item02Directions.
-                actionBottomNavigationType02FragmentItem02ToBottomNavigationType02FragmentItem02Album(
-                    viewBinding.albumName.text.toString(),
-                    viewBinding.artistName.text.toString(),
-                    viewBinding.albumTime.text.toString()
+        override fun bind(viewBinding: BottomNavType02AlbumBinding, position: Int) {
+            viewBinding.albumName.text = albumName
+            viewBinding.artistName.text = artistName
+            viewBinding.albumTime.text = albumTime
+            
+            viewBinding.root.setOnClickListener {
+                Timber.d("on click album position:%s, title:%s ", position, viewBinding.albumName.text)
+                viewBinding.albumItemTop.transitionName = "transition_album_container"
+                val extras = FragmentNavigatorExtras(
+                    viewBinding.albumItemTop to viewBinding.albumItemTop.transitionName
                 )
-            viewBinding.root.findNavController().navigate(action, extras)
+
+                this@BottomNavigationType02Item02Albums.bottomNavigationType02.hideBottomNavigation()
+                val action = BottomNavigationType02Item02Directions.
+                    actionBottomNavigationType02FragmentItem02ToBottomNavigationType02FragmentItem02Album(
+                        viewBinding.albumName.text.toString(),
+                        viewBinding.artistName.text.toString(),
+                        viewBinding.albumTime.text.toString()
+                    )
+                viewBinding.root.findNavController().navigate(action, extras)
+            }
         }
     }
 }
+
