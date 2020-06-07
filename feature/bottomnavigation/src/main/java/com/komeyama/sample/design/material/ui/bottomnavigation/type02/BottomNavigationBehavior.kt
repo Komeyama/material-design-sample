@@ -14,8 +14,8 @@ class BottomNavigationBehavior constructor(context: Context, attrs: AttributeSet
     /**
      * Because the initial movement of the animation is slowed down by the slight change in the scrolling
      */
-    private var scrolledUp = true
-    private var scrolledDown = true
+    var scrolledUp = true
+    var scrolledDown = true
 
     override fun layoutDependsOn(
         parent: CoordinatorLayout,

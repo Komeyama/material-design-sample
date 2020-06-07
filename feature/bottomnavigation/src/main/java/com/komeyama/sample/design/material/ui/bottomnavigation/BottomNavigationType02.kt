@@ -11,13 +11,25 @@ import kotlinx.android.synthetic.main.fragment_bottom_navigation_type02.*
 
 class BottomNavigationType02: Fragment(R.layout.fragment_bottom_navigation_type02) {
 
+    lateinit var bottomNavigationBehavior: BottomNavigationBehavior
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val navController = activity!!.findNavController(R.id.bottom_nav_view_type02_nav_host_fragment)
         NavigationUI.setupWithNavController(bottom_navigation_view_type02, navController)
 
         val layoutParams: CoordinatorLayout.LayoutParams = bottom_navigation_view_type02.layoutParams as CoordinatorLayout.LayoutParams
-        layoutParams.behavior = BottomNavigationBehavior(activity!!)
+        bottomNavigationBehavior = BottomNavigationBehavior(activity!!)
+        layoutParams.behavior = bottomNavigationBehavior
+    }
+
+    /**
+     * Todo: refactor
+     */
+    fun initBottomNavigation() {
+        bottomNavigationBehavior.scrolledDown = true
+        bottomNavigationBehavior.scrolledUp = true
+        bottom_navigation_view_type02.animate().translationY(0f)
     }
 
 }

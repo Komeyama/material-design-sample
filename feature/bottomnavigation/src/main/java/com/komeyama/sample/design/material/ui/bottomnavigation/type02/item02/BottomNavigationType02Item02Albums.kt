@@ -6,7 +6,7 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
-import androidx.recyclerview.widget.RecyclerView
+import com.komeyama.sample.design.material.ui.bottomnavigation.BottomNavigationType02
 import com.komeyama.sample.design.material.ui.bottomnavigation.R
 import com.komeyama.sample.design.material.ui.bottomnavigation.databinding.BottomNavType02AlbumBinding
 import com.komeyama.sample.design.material.ui.bottomnavigation.type02.BottomNavigationType02Item02Directions
@@ -23,6 +23,7 @@ class BottomNavigationType02Item02Albums :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val groupAdapter = GroupAdapter<ViewHolder<*>>()
         bottom_nav_type02_item02_recycler_view.adapter = groupAdapter
         val items: MutableList<BottomNavType02ItemAlbum> = mutableListOf()
@@ -50,6 +51,14 @@ class BottomNavigationType02Item02Albums :
         )
         album_display_order_spinner.adapter =
             ArrayAdapter<String>(activity!!, R.layout.album_order_list, spinnerType)
+    }
+
+    /**
+     * Todo: refactor
+     */
+    override fun onResume() {
+        super.onResume()
+        (parentFragment?.parentFragment?.parentFragment as BottomNavigationType02).initBottomNavigation()
     }
 }
 
