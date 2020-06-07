@@ -62,6 +62,14 @@ class BottomNavigationType02Item01: Fragment(R.layout.fragment_bottom_navigation
         })
     }
 
+    /**
+     *  Because the focus of this fragment is on search, after searching on the music fragment,
+     */
+    override fun onResume() {
+        super.onResume()
+        bottom_nav_type02_item01_recycler_view.requestFocus()
+    }
+
     private val onScrollListener = object: RecyclerView.OnScrollListener() {
         override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
             super.onScrolled(recyclerView, dx, dy)
