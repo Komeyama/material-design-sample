@@ -20,22 +20,28 @@ class BottomNavigationType02Item02 : Fragment(R.layout.fragment_bottom_navigatio
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // pager
         bottom_navigation_type02_item02_pager.adapter = TabAdapter(childFragmentManager, activity!!)
         bottom_navigation_type02_item02_tabLayout.setupWithViewPager(
             bottom_navigation_type02_item02_pager
         )
 
+        // toolbar & search view
         bottom_navigation_type02_item02_toolbar.inflateMenu(R.menu.bottom_navigation_type02_top_app_menu)
         val searchItem =
             bottom_navigation_type02_item02_toolbar.menu.findItem(R.id.bottom_nav_type02_top_bar_search)
         val searchView = searchItem.actionView as SearchView
+        searchView.maxWidth = Integer.MAX_VALUE
         val icon: ImageView = searchView.findViewById(androidx.appcompat.R.id.search_button)
         icon.setImageResource(R.drawable.ic_search_black_24dp)
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                searchView.clearFocus()
                 Timber.d("query text submit: %s", query)
+                searchView.setQuery(null,false)
+                searchView.clearFocus()
+                searchView.isFocusable = false
+                searchView.isIconified = true
                 return false
             }
 
@@ -44,6 +50,16 @@ class BottomNavigationType02Item02 : Fragment(R.layout.fragment_bottom_navigatio
                 return false
             }
         })
+
+        searchView.setOnQueryTextFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                bottom_navigation_type02_item02_tabLayout.visibility = View.INVISIBLE
+                bottom_navigation_type02_item02_pager.visibility = View.INVISIBLE
+            } else {
+                bottom_navigation_type02_item02_tabLayout.visibility = View.VISIBLE
+                bottom_navigation_type02_item02_pager.visibility = View.VISIBLE
+            }
+        }
 
     }
 }

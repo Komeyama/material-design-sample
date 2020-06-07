@@ -46,9 +46,12 @@ class BottomNavigationType02Item01: Fragment(R.layout.fragment_bottom_navigation
 
         bottom_nav_type02_item01_search.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
-                bottom_nav_type02_item01_search.clearFocus()
                 Timber.d("query text submit: %s", query)
                 bottom_nav_type02_item01_recycler_view.visibility = View.VISIBLE
+                bottom_nav_type02_item01_search.setQuery(null,false)
+                bottom_nav_type02_item01_search.clearFocus()
+                bottom_nav_type02_item01_search.isFocusable = false
+                bottom_nav_type02_item01_search.isIconified = true
                 return false
             }
 
@@ -96,6 +99,8 @@ class BottomNavType02Item(private val titleText: String) : BindableItem<BottomNa
 
     override fun bind(viewBinding: BottomNavType02ItemBinding, position: Int) {
         viewBinding.bottomNavType02Item01TitleText.text = titleText
-        Timber.d("on click button1(type02) position:%s, title:%s ",position, viewBinding.bottomNavType02Item01TitleText.text)
+        viewBinding.root.setOnClickListener {
+            Timber.d("on click type02 item01 position:%s, title:%s ",position, viewBinding.bottomNavType02Item01TitleText.text)
+        }
     }
 }
