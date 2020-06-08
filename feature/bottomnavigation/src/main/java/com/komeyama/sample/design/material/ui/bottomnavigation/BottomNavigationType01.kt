@@ -6,8 +6,11 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import kotlinx.android.synthetic.main.fragment_bottom_navigation_type01.*
+import kotlin.properties.Delegates
 
 class BottomNavigationType01 : Fragment(R.layout.fragment_bottom_navigation_type01){
+
+    var initNavHeight by Delegates.notNull<Int>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -21,6 +24,8 @@ class BottomNavigationType01 : Fragment(R.layout.fragment_bottom_navigation_type
         navController.addOnDestinationChangedListener { _, destination, _ ->
             bottom_navigation_view_type01.removeBadge(destination.id)
         }
+
+        initNavHeight = bottom_navigation_view_type01.height
     }
 
     private fun setBadgeNumber(menuId: Int, setNumber: Int) {
@@ -29,6 +34,12 @@ class BottomNavigationType01 : Fragment(R.layout.fragment_bottom_navigation_type
         badge.number = setNumber
     }
 
+    fun initBottomNavigation() {
+        bottom_navigation_view_type01.visibility = View.VISIBLE
+    }
 
+    fun hideBottomNavigation() {
+        bottom_navigation_view_type01.visibility = View.GONE
+    }
 
 }
