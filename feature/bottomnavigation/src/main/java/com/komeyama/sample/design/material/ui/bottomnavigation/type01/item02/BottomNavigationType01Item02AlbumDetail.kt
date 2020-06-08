@@ -1,4 +1,4 @@
-package com.komeyama.sample.design.material.ui.bottomnavigation.type02.item02
+package com.komeyama.sample.design.material.ui.bottomnavigation.type01.item02
 
 import android.os.Bundle
 import android.os.Handler
@@ -8,12 +8,12 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.transition.MaterialContainerTransform
 import com.komeyama.sample.design.material.ui.bottomnavigation.R
-import kotlinx.android.synthetic.main.fragment_bottom_navigation_type02_item02_album_detail.*
+import kotlinx.android.synthetic.main.fragment_bottom_navigation_type01_item02_album_detail.*
 
-class BottomNavigationType02Item02AlbumDetail :
-    Fragment(R.layout.fragment_bottom_navigation_type02_item02_album_detail) {
+class BottomNavigationType01Item02AlbumDetail:
+    Fragment(R.layout.fragment_bottom_navigation_type01_item02_album_detail) {
 
-    private val args: BottomNavigationType02Item02AlbumDetailArgs by navArgs()
+    private val args: BottomNavigationType01Item02AlbumDetailArgs by navArgs()
     private val marqueeStartHandler = Handler()
     private lateinit var marqueeStartRunnable: Runnable
     private val marqueeStartTime: Long = 2000L
@@ -21,7 +21,7 @@ class BottomNavigationType02Item02AlbumDetail :
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         sharedElementEnterTransition = MaterialContainerTransform(requireContext()).apply {
-//            duration = 3000L
+            //            duration = 3000L
 //            isDrawDebugEnabled = true
         }
     }
@@ -32,10 +32,10 @@ class BottomNavigationType02Item02AlbumDetail :
 
         // set title text
         val title = args.albumName + " - " + args.artistName
-        album_detail_type02_toolbar_title.text = title
-        marqueeStartRunnable = Runnable { album_detail_type02_toolbar_title.isSelected = true }
+        album_detail_type01_toolbar_title.text = title
+        marqueeStartRunnable = Runnable { album_detail_type01_toolbar_title.isSelected = true }
         marqueeStartHandler.postDelayed(marqueeStartRunnable, marqueeStartTime)
-        album_detail_type02_toolbar.setNavigationOnClickListener {
+        album_detail_type01_toolbar.setNavigationOnClickListener {
             it.findNavController().navigateUp()
         }
 

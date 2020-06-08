@@ -7,9 +7,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.komeyama.sample.design.material.ui.bottomnavigation.R
-import com.komeyama.sample.design.material.ui.bottomnavigation.type01.item01.BottomNavigationType01Item02Albums
-import com.komeyama.sample.design.material.ui.bottomnavigation.type01.item01.BottomNavigationType01Item02Artists
-import com.komeyama.sample.design.material.ui.bottomnavigation.type01.item01.BottomNavigationType01Item02Playlists
+import com.komeyama.sample.design.material.ui.bottomnavigation.type01.item02.BottomNavigationType01Item02Albums
+import com.komeyama.sample.design.material.ui.bottomnavigation.type01.item02.BottomNavigationType01Item02Artists
+import com.komeyama.sample.design.material.ui.bottomnavigation.type01.item02.BottomNavigationType01Item02Playlists
 import kotlinx.android.synthetic.main.fragment_bottom_navigation_type01_item02.*
 
 class BottomNavigationType01Item02: Fragment(R.layout.fragment_bottom_navigation_type01_item02) {

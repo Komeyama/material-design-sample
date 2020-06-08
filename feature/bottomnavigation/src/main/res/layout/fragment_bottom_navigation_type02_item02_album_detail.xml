@@ -6,7 +6,7 @@
     android:transitionName="transition_album_container">
 
     <ImageView
-        android:id="@+id/album_detail_top_image"
+        android:id="@+id/album_detail_type02_top_image"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:src="@color/colorLightGray"
@@ -16,7 +16,7 @@
         android:contentDescription="@string/bottom_navigation_albums" />
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/album_detail_appbar"
+        android:id="@+id/album_detail_type02_appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorWhiteThin00"
@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/album_detail_toolbar"
+            android:id="@+id/album_detail_type02_toolbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -34,7 +34,7 @@
             app:navigationIcon="@drawable/ic_arrow_back_white_24dp">
 
             <TextView
-                android:id="@+id/album_detail_toolbar_title"
+                android:id="@+id/album_detail_type02_toolbar_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="24sp"

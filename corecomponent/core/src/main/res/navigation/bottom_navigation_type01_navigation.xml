@@ -12,11 +12,33 @@
     <fragment
         android:id="@+id/bottomNavigationType01FragmentItem02"
         android:name="com.komeyama.sample.design.material.ui.bottomnavigation.type01.BottomNavigationType01Item02"
-        android:label="BottomNavigationType01Item02"/>
+        android:label="BottomNavigationType01Item02">
+        <action
+            android:id="@+id/action_bottomNavigationType01FragmentItem02_to_bottomNavigationType01FragmentItem02Album"
+            app:destination="@id/bottomNavigationType01FragmentItem02Album" />
+    </fragment>
 
     <fragment
         android:id="@+id/bottomNavigationType01FragmentItem03"
         android:name="com.komeyama.sample.design.material.ui.bottomnavigation.type01.BottomNavigationType01Item03"
         android:label="BottomNavigationType01Item03"/>
+
+    <fragment
+        android:id="@+id/bottomNavigationType01FragmentItem02Album"
+        android:name="com.komeyama.sample.design.material.ui.bottomnavigation.type01.item02.BottomNavigationType01Item02AlbumDetail"
+        android:label="BottomNavigationType01Item02AlbumDetail">
+        <argument
+            android:name="album_name"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="artist_name"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="album_time"
+            app:argType="string"
+            android:defaultValue='""' />
+    </fragment>
 
 </navigation>

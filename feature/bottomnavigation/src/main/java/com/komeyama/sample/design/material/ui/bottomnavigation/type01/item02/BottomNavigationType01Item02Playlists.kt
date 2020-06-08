@@ -1,4 +1,4 @@
-package com.komeyama.sample.design.material.ui.bottomnavigation.type01.item01
+package com.komeyama.sample.design.material.ui.bottomnavigation.type01.item02
 
 import androidx.fragment.app.Fragment
 import com.komeyama.sample.design.material.ui.bottomnavigation.R
