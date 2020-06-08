@@ -8,7 +8,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import com.komeyama.sample.design.material.ui.bottomnavigation.BottomNavigationType02
 import com.komeyama.sample.design.material.ui.bottomnavigation.R
-import com.komeyama.sample.design.material.ui.bottomnavigation.databinding.BottomNavType02AlbumBinding
+import com.komeyama.sample.design.material.ui.bottomnavigation.databinding.BottomNavAlbumBinding
 import com.komeyama.sample.design.material.ui.bottomnavigation.type02.BottomNavigationType02Item02Directions
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.databinding.BindableItem
@@ -67,10 +67,10 @@ class BottomNavigationType02Item02Albums :
         private val albumName: String,
         private val artistName: String,
         private val albumTime: String
-    ) : BindableItem<BottomNavType02AlbumBinding>() {
-        override fun getLayout() = R.layout.bottom_nav_type02_album
+    ) : BindableItem<BottomNavAlbumBinding>() {
+        override fun getLayout() = R.layout.bottom_nav_album
 
-        override fun bind(viewBinding: BottomNavType02AlbumBinding, position: Int) {
+        override fun bind(viewBinding: BottomNavAlbumBinding, position: Int) {
             viewBinding.albumName.text = albumName
             viewBinding.artistName.text = artistName
             viewBinding.albumTime.text = albumTime
