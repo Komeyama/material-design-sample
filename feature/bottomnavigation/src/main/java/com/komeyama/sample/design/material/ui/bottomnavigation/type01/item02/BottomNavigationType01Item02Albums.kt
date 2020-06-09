@@ -5,7 +5,6 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
-import com.komeyama.sample.design.material.ui.bottomnavigation.BottomNavigationType01
 import com.komeyama.sample.design.material.ui.bottomnavigation.R
 import com.komeyama.sample.design.material.ui.bottomnavigation.databinding.BottomNavAlbumBinding
 import com.komeyama.sample.design.material.ui.bottomnavigation.type01.BottomNavigationType01Item02Directions
@@ -16,8 +15,6 @@ import kotlinx.android.synthetic.main.fragment_bottom_navigation_type01_item02_a
 import timber.log.Timber
 
 class BottomNavigationType01Item02Albums: Fragment(R.layout.fragment_bottom_navigation_type01_item02_album) {
-
-    lateinit var bottomNavigationType01: BottomNavigationType01
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -38,15 +35,6 @@ class BottomNavigationType01Item02Albums: Fragment(R.layout.fragment_bottom_navi
         groupAdapter.update(items)
     }
 
-    /**
-     * Todo: refactor
-     */
-    override fun onResume() {
-        super.onResume()
-        bottomNavigationType01 = (parentFragment?.parentFragment?.parentFragment as BottomNavigationType01)
-        bottomNavigationType01.initBottomNavigation()
-    }
-
     inner class BottomNavType01ItemAlbum(
         private val albumName: String,
         private val artistName: String,
@@ -61,7 +49,6 @@ class BottomNavigationType01Item02Albums: Fragment(R.layout.fragment_bottom_navi
 
             viewBinding.root.setOnClickListener {
                 Timber.d("on click album position:%s, title:%s ", position, viewBinding.albumName.text)
-                this@BottomNavigationType01Item02Albums.bottomNavigationType01.hideBottomNavigation()
 
                 viewBinding.albumItemTop.transitionName = "transition_album_container"
                 val extras = FragmentNavigatorExtras(

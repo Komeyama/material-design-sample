@@ -33,13 +33,4 @@ class BottomNavigationType01 : Fragment(R.layout.fragment_bottom_navigation_type
         badge.isVisible = true
         badge.number = setNumber
     }
-
-    fun initBottomNavigation() {
-        bottom_navigation_view_type01.visibility = View.VISIBLE
-    }
-
-    fun hideBottomNavigation() {
-        bottom_navigation_view_type01.visibility = View.GONE
-    }
-
 }
