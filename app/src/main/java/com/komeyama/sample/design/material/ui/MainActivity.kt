@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.backDropTypeSelectFragment,
                 R.id.backDropFragment,
                 R.id.transitionCard,
+                R.id.bottomNavigationType01Fragment,
                 R.id.bottomNavigationType02Fragment
                     -> top_toolbar.visibility = View.GONE
                 else -> top_toolbar.visibility = View.VISIBLE
