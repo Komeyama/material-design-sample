@@ -2,6 +2,7 @@ package com.komeyama.sample.design.material.ui.bottomnavigation.type01.item02
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
@@ -15,6 +16,8 @@ import kotlinx.android.synthetic.main.fragment_bottom_navigation_type01_item02_a
 import timber.log.Timber
 
 class BottomNavigationType01Item02Albums: Fragment(R.layout.fragment_bottom_navigation_type01_item02_album) {
+
+    private lateinit var spinnerType: ArrayList<String>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -33,6 +36,19 @@ class BottomNavigationType01Item02Albums: Fragment(R.layout.fragment_bottom_navi
             )
         }
         groupAdapter.update(items)
+
+        // set album total num
+        current_album_num.text = items.size.toString()
+
+        // set spinner
+        spinnerType = arrayListOf(
+            activity!!.getString(R.string.bottom_navigation_album_order_type01),
+            activity!!.getString(R.string.bottom_navigation_album_order_type02),
+            activity!!.getString(R.string.bottom_navigation_album_order_type03),
+            activity!!.getString(R.string.bottom_navigation_album_order_type04)
+        )
+        album_display_order_spinner.adapter =
+            ArrayAdapter<String>(activity!!, R.layout.album_order_list, spinnerType)
     }
 
     inner class BottomNavType01ItemAlbum(
