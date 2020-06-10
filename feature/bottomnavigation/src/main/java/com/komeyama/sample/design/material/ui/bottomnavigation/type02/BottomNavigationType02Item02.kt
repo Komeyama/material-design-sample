@@ -27,9 +27,9 @@ class BottomNavigationType02Item02 : Fragment(R.layout.fragment_bottom_navigatio
         )
 
         // toolbar & search view
-        bottom_navigation_type02_item02_toolbar.inflateMenu(R.menu.bottom_navigation_type02_top_app_menu)
+        bottom_navigation_type02_item02_toolbar.inflateMenu(R.menu.bottom_navigation_top_app_menu)
         val searchItem =
-            bottom_navigation_type02_item02_toolbar.menu.findItem(R.id.bottom_nav_type02_top_bar_search)
+            bottom_navigation_type02_item02_toolbar.menu.findItem(R.id.bottom_nav_top_bar_search)
         val searchView = searchItem.actionView as SearchView
         searchView.maxWidth = Integer.MAX_VALUE
         searchView.queryHint = activity!!.getString(R.string.bottom_bar_search)
