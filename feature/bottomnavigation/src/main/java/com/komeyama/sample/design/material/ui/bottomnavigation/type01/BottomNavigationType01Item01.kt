@@ -2,6 +2,7 @@ package com.komeyama.sample.design.material.ui.bottomnavigation.type01
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.AppBarLayout
@@ -34,6 +35,31 @@ class BottomNavigationType01Item01 : Fragment(R.layout.fragment_bottom_navigatio
         groupAdapter.update(items)
 
         bottom_nav_type01_item01_recycler_view.addOnScrollListener(onScrollListener)
+
+        bottom_nav_type01_item01_search.setOnQueryTextFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                bottom_nav_type01_item01_recycler_view.visibility = View.INVISIBLE
+            } else {
+                bottom_nav_type01_item01_recycler_view.visibility = View.VISIBLE
+            }
+        }
+
+        bottom_nav_type01_item01_search.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                Timber.d("query text submit: %s", query)
+                bottom_nav_type01_item01_recycler_view.visibility = View.VISIBLE
+                bottom_nav_type01_item01_search.setQuery(null,false)
+                bottom_nav_type01_item01_search.clearFocus()
+                bottom_nav_type01_item01_search.isFocusable = false
+                bottom_nav_type01_item01_search.isIconified = true
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                Timber.d("query text change: %s", newText)
+                return false
+            }
+        })
     }
 
     private val onScrollListener = object : RecyclerView.OnScrollListener() {
@@ -74,10 +100,8 @@ class BottomNavType01Item(private val titleText: String) :
 
     override fun bind(viewBinding: BottomNavType01ItemBinding, position: Int) {
         viewBinding.bottomNavType01Item01TitleText.text = titleText
-        Timber.d(
-            "on click button1(type01) position:%s, title:%s ",
-            position,
-            viewBinding.bottomNavType01Item01TitleText.text
-        )
+        viewBinding.root.setOnClickListener {
+            Timber.d("on click type01 item02 position:%s, title:%s ",position, viewBinding.bottomNavType01Item01TitleText.text)
+        }
     }
 }
