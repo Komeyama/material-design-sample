@@ -18,7 +18,7 @@ class MainFragmentData {
                 DesignName.BACKDROP.designName
             ),
             MainFragmentRecycleView.DesignInformation(
-                R.drawable.ic_launcher_foreground,
+                R.drawable.top_image_bottom_navigation,
                 DesignName.BOTTOM_NAVIGATION.designName
             ),
             MainFragmentRecycleView.DesignInformation(
