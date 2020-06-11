@@ -22,6 +22,10 @@ class MainFragmentData {
                 DesignName.BOTTOM_NAVIGATION.designName
             ),
             MainFragmentRecycleView.DesignInformation(
+                R.drawable.ic_launcher_foreground,
+                DesignName.BUTTON.designName
+            ),
+            MainFragmentRecycleView.DesignInformation(
                 R.drawable.top_image_card,
                 DesignName.CARD.designName
             ),
@@ -56,6 +60,7 @@ class MainFragmentData {
         APP_BARS_BOTTOM("App bars: bottom"),
         APP_BARS_TOP("App bars: top"),
         BACKDROP("Backdrop"),
+        BUTTON("Button"),
         BOTTOM_NAVIGATION("Bottom Navigation"),
         CARD("Card"),
         DIALOG("Dialog"),

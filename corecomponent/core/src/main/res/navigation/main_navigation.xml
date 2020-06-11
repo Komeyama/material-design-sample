@@ -21,6 +21,9 @@
             android:id="@+id/action_mainFragment_to_bottomNavigationSelect"
             app:destination="@id/bottomNavigationSelectFragment" />
         <action
+            android:id="@+id/action_mainFragment_to_buttonSelectFragment"
+            app:destination="@+id/buttonSelectFragment"/>
+        <action
             android:id="@+id/action_mainFragment_to_dialogSelectFragment"
             app:destination="@id/dialogSelectFragment" />
         <action
@@ -114,19 +117,24 @@
         android:label="BottomNavigationSelect">
         <action
             android:id="@+id/action_bottomNavigationSelectFragment_to_bottomNavigationType01Fragment"
-            app:destination="@+id/bottomNavigationType01Fragment"/>
+            app:destination="@+id/bottomNavigationType01Fragment" />
         <action
             android:id="@+id/action_bottomNavigationSelectFragment_to_bottomNavigationType02Fragment"
-            app:destination="@+id/bottomNavigationType02Fragment"/>
+            app:destination="@+id/bottomNavigationType02Fragment" />
     </fragment>
     <fragment
         android:id="@+id/bottomNavigationType01Fragment"
         android:name="com.komeyama.sample.design.material.ui.bottomnavigation.BottomNavigationType01"
-        android:label="BottomNavigationType01"/>
+        android:label="BottomNavigationType01" />
     <fragment
         android:id="@+id/bottomNavigationType02Fragment"
         android:name="com.komeyama.sample.design.material.ui.bottomnavigation.BottomNavigationType02"
-        android:label="BottomNavigationType02"/>
+        android:label="BottomNavigationType02" />
+
+    <fragment
+        android:id="@+id/buttonSelectFragment"
+        android:name="com.komeyama.sample.design.material.ui.button.ButtonSelect"
+        android:label="ButtonSelect" />
 
     <dialog
         android:id="@+id/dialogType01"

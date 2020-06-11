@@ -30,6 +30,9 @@ class MainFragment : Fragment(R.layout.fragment_main){
                         MainFragmentData.DesignName.BOTTOM_NAVIGATION.designName -> {
                             findNavController().navigate(R.id.action_mainFragment_to_bottomNavigationSelect)
                         }
+                        MainFragmentData.DesignName.BUTTON.designName -> {
+                            findNavController().navigate(R.id.action_mainFragment_to_buttonSelectFragment)
+                        }
                         MainFragmentData.DesignName.CARD.designName -> {
                             findNavController().navigate(R.id.action_mainFragment_to_cardTypeFragment)
                         }
