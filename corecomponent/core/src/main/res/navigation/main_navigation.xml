@@ -90,26 +90,6 @@
             android:id="@+id/action_backDropTypeSelectFragment_to_backDropFragment"
             app:destination="@id/backDropFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/dialogSelectFragment"
-        android:name="com.komeyama.sample.design.material.dialog.DialogSelectFragment"
-        android:label="DialogSelectFragment">
-        <action
-            android:id="@+id/action_dialogSelectFragment_to_dialogType01"
-            app:destination="@id/dialogType01" />
-        <action
-            android:id="@+id/action_dialogSelectFragment_to_dialogType05"
-            app:destination="@id/dialogType05" />
-        <action
-            android:id="@+id/action_dialogSelectFragment_to_dialogType06"
-            app:destination="@id/dialogType06" />
-        <action
-            android:id="@+id/action_dialogSelectFragment_to_dialogType07"
-            app:destination="@id/dialogType07" />
-        <action
-            android:id="@+id/action_dialogSelectFragment_to_dialogType09"
-            app:destination="@id/dialogType09" />
-    </fragment>
 
     <fragment
         android:id="@+id/bottomNavigationSelectFragment"
@@ -134,7 +114,36 @@
     <fragment
         android:id="@+id/buttonSelectFragment"
         android:name="com.komeyama.sample.design.material.ui.button.ButtonSelect"
-        android:label="ButtonSelect" />
+        android:label="ButtonSelect" >
+        <action
+            android:id="@+id/action_buttonSelectFragment_to_buttonType01Fragment"
+            app:destination="@+id/buttonType01Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/buttonType01Fragment"
+        android:name="com.komeyama.sample.design.material.ui.button.ButtonType01"
+        android:label="ButtonType01"/>
+
+    <fragment
+        android:id="@+id/dialogSelectFragment"
+        android:name="com.komeyama.sample.design.material.dialog.DialogSelectFragment"
+        android:label="DialogSelectFragment">
+        <action
+            android:id="@+id/action_dialogSelectFragment_to_dialogType01"
+            app:destination="@id/dialogType01" />
+        <action
+            android:id="@+id/action_dialogSelectFragment_to_dialogType05"
+            app:destination="@id/dialogType05" />
+        <action
+            android:id="@+id/action_dialogSelectFragment_to_dialogType06"
+            app:destination="@id/dialogType06" />
+        <action
+            android:id="@+id/action_dialogSelectFragment_to_dialogType07"
+            app:destination="@id/dialogType07" />
+        <action
+            android:id="@+id/action_dialogSelectFragment_to_dialogType09"
+            app:destination="@id/dialogType09" />
+    </fragment>
 
     <dialog
         android:id="@+id/dialogType01"
