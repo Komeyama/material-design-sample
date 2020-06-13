@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/button_type02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/button_type_02_text01"
+            android:textStyle="italic"
+            app:rippleColor="@drawable/button_state_ripple"
+            android:textColor="@color/colorBlack"
+            app:iconTint="@color/colorBlack"
+            app:strokeColor="@color/colorLightGray"
+            app:backgroundTint="@drawable/button_state"
+            style="?attr/materialButtonOutlinedStyle"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/button_type_02_text02"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlack"
+            app:rippleColor="@drawable/button_state_ripple"
+            app:iconTint="@color/colorBlack"
+            app:strokeColor="@color/colorLightGray"
+            app:backgroundTint="@drawable/button_state"
+            style="?attr/materialButtonOutlinedStyle"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/button_type_02_text03"
+            android:textStyle="normal"
+            android:textColor="@color/colorBlack"
+            app:rippleColor="@drawable/button_state_ripple"
+            app:strokeColor="@color/colorLightGray"
+            app:backgroundTint="@drawable/button_state"
+            style="?attr/materialButtonOutlinedStyle"/>
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

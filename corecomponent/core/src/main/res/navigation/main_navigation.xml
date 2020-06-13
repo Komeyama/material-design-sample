@@ -118,11 +118,18 @@
         <action
             android:id="@+id/action_buttonSelectFragment_to_buttonType01Fragment"
             app:destination="@+id/buttonType01Fragment" />
+        <action
+            android:id="@+id/action_buttonSelectFragment_to_buttonType02Fragment"
+            app:destination="@+id/buttonType02Fragment" />
     </fragment>
     <fragment
         android:id="@+id/buttonType01Fragment"
         android:name="com.komeyama.sample.design.material.ui.button.ButtonType01"
         android:label="ButtonType01"/>
+    <fragment
+        android:id="@+id/buttonType02Fragment"
+        android:name="com.komeyama.sample.design.material.ui.button.ButtonType02"
+        android:label="ButtonType02"/>
 
     <fragment
         android:id="@+id/dialogSelectFragment"

@@ -11,6 +11,7 @@
     <color name="colorWhiteThin32">#32FFFFFF</color>
     <color name="colorWhiteThin00">#00FFFFFF</color>
     <color name="colorLightGray">#d3d3d3</color>
+    <color name="colorLightGrayF0">#f0f0f0</color>
     <color name="colorGray">#808080</color>
     <color name="colorBlack">#000000</color>
     <color name="colorBlackAlpha60">#99000000</color>

@@ -13,5 +13,9 @@ class ButtonSelect : Fragment(R.layout.fragment_button_select) {
         button_select_type01.setOnClickListener {
             findNavController().navigate(R.id.action_buttonSelectFragment_to_buttonType01Fragment)
         }
+
+        button_select_type02.setOnClickListener {
+            findNavController().navigate(R.id.action_buttonSelectFragment_to_buttonType02Fragment)
+        }
     }
 }
