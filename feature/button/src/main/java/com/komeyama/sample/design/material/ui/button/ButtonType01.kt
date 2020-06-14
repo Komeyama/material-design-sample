@@ -19,5 +19,8 @@ class ButtonType01 : Fragment(R.layout.fragment_button_type01) {
         textButton03.setOnClickListener {
             Snackbar.make(view, "text button 03", Snackbar.LENGTH_LONG).show()
         }
+        textButton04.setOnClickListener {
+            Snackbar.make(view, "text button 04", Snackbar.LENGTH_LONG).show()
+        }
     }
 }
