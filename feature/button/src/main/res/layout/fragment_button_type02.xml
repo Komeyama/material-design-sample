@@ -97,5 +97,5 @@
             style="?attr/materialButtonOutlinedStyle"/>
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
-    
+
 </androidx.constraintlayout.widget.ConstraintLayout>

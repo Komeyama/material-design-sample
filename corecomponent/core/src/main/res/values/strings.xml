@@ -35,7 +35,9 @@
     <string name="bottom_navigation_type_03">Type03</string>
     <string name="button_type_01">Type01</string>
     <string name="button_type_02">Type02</string>
-    <string name="button_type_01_text">Type01 text</string>
+    <string name="button_type_01_text01">Text01</string>
+    <string name="button_type_01_text02">Text02</string>
+    <string name="button_type_01_text03">Text03</string>
     <string name="button_type_02_text01">I</string>
     <string name="button_type_02_text02">B</string>
     <string name="button_type_02_text03"><u>U</u></string>

@@ -5,13 +5,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/textButton"
+        android:id="@+id/textButton01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_type_01_text"
+        android:text="@string/button_type_01_text01"
         android:textAllCaps="false"
-        app:strokeColor="@color/colorPrimary"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textButton02"
+        app:layout_constraintVertical_chainStyle="packed"
+        style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/textButton02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_type_01_text02"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/textButton01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textButton03"
+        style="?attr/materialButtonOutlinedStyle"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/textButton03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_type_01_text03"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/textButton02"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
