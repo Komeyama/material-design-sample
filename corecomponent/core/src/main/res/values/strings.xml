@@ -33,6 +33,8 @@
     <string name="bottom_navigation_type_01">Type01</string>
     <string name="bottom_navigation_type_02">Type02</string>
     <string name="bottom_navigation_type_03">Type03</string>
+    <string name="button_activity_on">enable</string>
+    <string name="button_activity_off">disable</string>
     <string name="button_type_01">Type01</string>
     <string name="button_type_02">Type02</string>
     <string name="button_type_01_text01">Text01</string>

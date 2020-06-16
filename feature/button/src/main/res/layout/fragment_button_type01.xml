@@ -4,13 +4,27 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <androidx.appcompat.widget.AppCompatToggleButton
+        android:id="@+id/button_enabled_toggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOn="@string/button_activity_off"
+        android:textOff="@string/button_activity_on"
+        android:textAllCaps="false"
+        android:checked="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textButton01"
+        app:layout_constraintVertical_chainStyle="packed" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/textButton01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_type_01_text01"
         android:textAllCaps="false"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_enabled_toggle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/textButton02"
@@ -48,7 +62,7 @@
         app:icon="@drawable/ic_format_align_center_black_24dp"
         app:rippleColor="@drawable/button_state_ripple"
         app:strokeColor="@color/colorLightGray"
-        app:iconTint="@color/colorBlack"
+        app:iconTint="@drawable/icon_button_state"
         app:backgroundTint="@drawable/button_state"
         app:layout_constraintTop_toBottomOf="@+id/textButton03"
         app:layout_constraintStart_toStartOf="parent"
