@@ -23,7 +23,7 @@ class ButtonType01 : Fragment(R.layout.fragment_button_type01) {
             Snackbar.make(view, "text button 04", Snackbar.LENGTH_LONG).show()
         }
 
-        button_enabled_toggle.setOnCheckedChangeListener { _, isChecked ->
+        button_enabled_toggle_type01.setOnCheckedChangeListener { _, isChecked ->
             setButtonEnabled(isChecked)
         }
     }

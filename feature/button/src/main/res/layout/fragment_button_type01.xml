@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.appcompat.widget.AppCompatToggleButton
-        android:id="@+id/button_enabled_toggle"
+        android:id="@+id/button_enabled_toggle_type01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textOn="@string/button_activity_off"
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:text="@string/button_type_01_text01"
         android:textAllCaps="false"
-        app:layout_constraintTop_toBottomOf="@+id/button_enabled_toggle"
+        app:layout_constraintTop_toBottomOf="@+id/button_enabled_toggle_type01"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/textButton02"
